@@ -22,14 +22,5 @@ class Kebab {
     public function getPrecioBase() {
         return $this->precioBase;
     }
-
-    // Setters
-    public function setNombre($nombre) {
-        $this->nombre = $nombre;
-    }
-
-    public function setPrecioBase($precioBase) {
-        $this->precioBase = $precioBase;
-    }
 }
 ?>
