@@ -1,5 +1,7 @@
 <?php
 
+include_once '../repositorios/Conexion.php';
+
 class RepoUsuarios {
     private $conexion;
 
@@ -33,6 +35,12 @@ class RepoUsuarios {
     public function eliminar($id) {
         $stmt = $this->conexion->prepare("DELETE FROM usuarios WHERE id = ?");
         return $stmt->execute([$id]);
+    }
+
+    public function obtenerPorEmail($email) {
+        $stmt = $this->conexion->prepare("SELECT * FROM usuarios WHERE email = ?");
+        $stmt->execute([$email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC); 
     }
 }
 ?>
