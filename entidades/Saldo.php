@@ -1,6 +1,6 @@
 <?php
 
-Class historialSaldo{
+Class Saldo{
     private $id;
     private $usuario_id;
     private $fecha;

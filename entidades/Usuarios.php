@@ -1,37 +1,40 @@
 <?php
 
-class Usuarios{
-    private $id;
+class Usuarios {
     private $nombre;
+    private $contrasenia;
     private $email;
     private $direccion;
     private $rol;
     
-    public function __construct($id,$nombre, $email, $direccion, $rol) {
-        $this->id = $id;
+    public function __construct($nombre = "", $contrasenia = "", $email = "",  $direccion = "", $rol = "") {
         $this->nombre = $nombre;
+        $this->contrasenia = $contrasenia;
         $this->email = $email;
         $this->direccion = $direccion;
         $this->rol = $rol;
-
-    }
-    public function getId(){
-        return $this->id;
     }
 
-    public function getNombre(){
+    public function getNombre() {
         return $this->nombre;
     }
 
-    public function getEmail(){
+    public function getEmail() {
         return $this->email;
     }
-    public function getDireccion(){
+
+    public function getContrasenia() {
+        return $this->contrasenia;
+    }
+
+    public function getDireccion() {
         return $this->direccion;
     }
-    public function getRol(){
+
+    public function getRol() {
         return $this->rol;
     }
 }
+
 
 ?>
