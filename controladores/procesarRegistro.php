@@ -16,6 +16,6 @@ $repoUsuarios = new RepoUsuarios();
 $usuarioGuardado = $repoUsuarios->guardar($usuario);
 
 if ($usuarioGuardado) {
-    echo "Usuario registrado exitosamente.";
+    echo "Usuario registrado con exito.";
 } 
 ?>
