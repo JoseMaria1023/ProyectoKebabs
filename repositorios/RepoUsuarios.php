@@ -7,25 +7,32 @@ class RepoUsuarios {
         $this->conexion = Conexion::getConection();
     }
 
-    // Guardar un nuevo usuario
-    public function guardar(Usuario $usuario) {
-        $stmt = $this->conexion->prepare("INSERT INTO usuarios (nombre, email, direccion, rol) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$usuario->nombre, $usuario->email, $usuario->direccion, $usuario->rol]);
-        $usuario->id = $this->conexion->lastInsertId();
+    public function guardar(Usuarios $usuario) {
+        $stmt = $this->conexion->prepare("INSERT INTO usuarios (nombre, contraseña, email, direccion, rol) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([
+            $usuario->getNombre(), 
+            $usuario->getContrasenia(),  
+            $usuario->getEmail(), 
+            $usuario->getDireccion(), 
+            $usuario->getRol()
+        ]);
+
         return $usuario;
     }
 
-    public function actualizar(Usuario $usuario) {
+    public function actualizar(Usuarios $usuario) {
         $stmt = $this->conexion->prepare("UPDATE usuarios SET nombre = ?, email = ?, direccion = ?, rol = ? WHERE id = ?");
-        $stmt->execute([$usuario->nombre, $usuario->email, $usuario->direccion, $usuario->rol, $usuario->id]);
+        return $stmt->execute([
+            $usuario->getNombre(), 
+            $usuario->getEmail(), 
+            $usuario->getDireccion(), 
+            $usuario->getRol(), 
+        ]);
     }
 
-    // Eliminar un usuario
     public function eliminar($id) {
         $stmt = $this->conexion->prepare("DELETE FROM usuarios WHERE id = ?");
-        $stmt->execute([$id]);
+        return $stmt->execute([$id]);
     }
-
 }
-
 ?>
