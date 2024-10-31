@@ -23,8 +23,6 @@
         <label for="direccion">Dirección:</label>
         <input type="text" id="direccion" name="direccion" required>
 
-        <input type="hidden" name="rol" value="usuario">
-
         <button type="submit">Registrarse</button>
     </form>
 </body>
