@@ -1,9 +1,6 @@
 <!-- index.php -->
-<?php include './vistas/header.php'; ?>
+<?php include './vistas_generales/header.php'; ?>
 
-<main>
-    <h2>Bienvenido a nuestra Tienda de Kebabs</h2>
+<?php include './vistas_admin/AñadirIngredientes.php'; ?>
 
-</main>
-
-<?php include './vistas/footer.php'; ?>
+<?php include './vistas_generales/footer.php'; ?>
