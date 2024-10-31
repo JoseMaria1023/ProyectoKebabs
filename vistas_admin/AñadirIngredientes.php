@@ -13,10 +13,10 @@
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div>
-                    <label for="description">Descripción:</label>
-                    <textarea id="description" name="description" required></textarea>
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" required></textarea>
                 </div>
-                <div class="additional-info">
+                <div class="infoadicional">
                     <div>
                         <label for="alergenos">Alergenos:</label>
                         <input type="text" id="alergenos" name="alergenos">
