@@ -10,7 +10,6 @@ class Kebab {
         $this->precioBase = $precioBase;
     }
 
-    // Getters
     public function getId() {
         return $this->id;
     }

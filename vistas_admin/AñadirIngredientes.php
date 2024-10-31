@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Gestión de Ingredientes</h1>
-    <form action="procesarIngrediente.php" method="POST" enctype="multipart/form-data">
+    <form action="procesarIngrediente.php" method="POST">
         <label for="nombre">Nombre del Ingrediente:</label>
         <input type="text" id="nombre" name="nombre" required>
 
