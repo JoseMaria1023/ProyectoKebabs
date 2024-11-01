@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="./css/inicioSesion.css">
 <form action="./controladores/procesarInicioSesion.php" method="POST">
     <input type="email" name="email" placeholder="Email" required>
     <input type="password" name="password" placeholder="Contraseña" required>
