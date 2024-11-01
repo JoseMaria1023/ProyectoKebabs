@@ -1,5 +1,8 @@
 <?php
 
+include_once '../repositorios/Conexion.php';
+
+
 class RepoIngredientes{
     private $conexion;
 

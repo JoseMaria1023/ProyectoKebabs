@@ -1,11 +1,11 @@
 <?php
 
-class Ingrendiente{
+class Ingrendientes{
     private $nombre;
     private $precio;
     private $alergeno;
 
-    public function __construct($nombre,$precio,$alergeno){
+    public function __construct($nombre="",$precio="",$alergeno=""){
         $this->nombre = $nombre;
         $this->precio = $precio;
         $this->alergeno = $alergeno;

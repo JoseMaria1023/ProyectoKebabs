@@ -2,7 +2,7 @@
 <div class="gestion-ingredientes">
     <div class="container">
         <h1>Gestionar Ingredientes</h1>
-        <form>
+        <form action="./controladores/procesarIngredientes.php" method="post" >
             <div class="foto">
                 <label for="foto">Foto del Ingrediente:</label>
                 <input type="file" id="foto" name="foto" required>
