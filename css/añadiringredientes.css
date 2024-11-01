@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f0f0f0; 
+    margin: 0;
+    padding: 0; 
+    padding-top: 80px; 
+    margin-bottom: 100px;
+}
+
+.gestion-ingredientes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    min-height: 80vh; 
+    background-color: #f4f4f9; 
+    color: #333;
+}
+
+.gestion-ingredientes .container {
+    background-color: #ffffff; 
+    width: 90%; 
+    max-width: 900px; 
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    text-align: left; 
+    margin: 2rem auto; 
+    margin-top: 20px; 
+}
+
+.gestion-ingredientes h1 {
+    font-size: 2rem; 
+    color: #e76f51; 
+    margin-bottom: 1.5rem;
+    text-align: center; 
+}
+
+.foto {
+    flex: 1 1 300px; 
+    margin-right: 1rem; 
+}
+.gestion-ingredientes form input[type="file"] {
+    width: 100%; 
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.image-preview {
+    margin-top: 10px;
+    display: none; 
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.gestion-ingredientes form {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1rem; 
+}
+
+.infomarcion-container {
+    flex: 2; 
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1rem; 
+}
+
+.gestion-ingredientes form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.gestion-ingredientes form input[type="text"],
+.gestion-ingredientes form textarea,
+.gestion-ingredientes form input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+.gestion-ingredientes form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.additional-info {
+    display: flex;
+    gap: 1rem; 
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+.gestion-ingredientes button[type="submit"] {
+    background-color: #e76f51; 
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    display: block;
+    width: 100%; 
+}
+
+.gestion-ingredientes button[type="submit"]:hover {
+    background-color: #d05a4d; 
+}
+
+
+
