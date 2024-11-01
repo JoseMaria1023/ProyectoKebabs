@@ -39,7 +39,6 @@ body {
     flex: 1 1 300px; 
     margin-right: 1rem; 
 }
-
 .gestion-ingredientes form input[type="file"] {
     width: 100%; 
     padding: 0.75rem;

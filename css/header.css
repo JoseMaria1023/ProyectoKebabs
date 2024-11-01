@@ -15,7 +15,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
     border-bottom: 2px solid #e74c3c;
 }
-
 .logo img {
     height: 50px; 
     transition: opacity 0.3s; 
