@@ -17,24 +17,24 @@ body {
     padding: 20px;
     text-align: center;
 }
-.kebab-container {
+.container {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-.kebab-options, .ingredients-selection, .selected-ingredients {
+.kebab-opciones, .Seleccion-ingredientes, .ingredientes-seleccionados {
     margin-bottom: 2rem;
 }
 
-.kebab-options h2, .ingredients-selection h2, .selected-ingredients h2 {
+.kebab-opciones h2, .Seleccion-ingredientes h2, .ingredientes-seleccionados h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #333;
 }
 
-.kebab-button {
+.kebab-boton {
     background-color: #e76f51;
     color: white;
     border: none;
@@ -45,17 +45,17 @@ body {
     cursor: pointer;
 }
 
-.kebab-button:hover {
+.kebab-boton:hover {
     background-color: #d05a4d;
 }
 
-.ingredients-list {
+.lista-ingredientes {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
 
-.ingredient {
+.ingrediente {
     background-color: #21867a;
     color: white;
     padding: 10px 15px;
@@ -66,11 +66,11 @@ body {
     text-transform: capitalize;
 }
 
-.ingredient:hover {
+.ingrediente:hover {
     background-color: #1b6a5d;
 }
 
-.selected-ingredients .drop-area {
+.lista-ingredientes .drop-area {
     background-color: #ddd;
     padding: 20px;
     border: 2px dashed #333;
@@ -85,7 +85,7 @@ body {
     color: #555;
 }
 
-.selected-ingredients .drop-area .ingredient {
+.lista-ingredientes .drop-area .ingredient {
     background-color: #333;
     color: white;
 }
