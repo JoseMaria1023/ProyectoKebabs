@@ -1,10 +1,7 @@
 <?php
 
-require_once '../repositorios/Conexion.php';
+include_once '../cargadores/autocargador.php';
 
-require_once '../repositorios/RepoIngredientes.php';
-
-require_once '../entidades/Ingredientes.php';
 
 $nombre = $_POST['nombre'];
 $precio = $_POST['precio'];

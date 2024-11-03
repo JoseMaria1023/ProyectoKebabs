@@ -1,6 +1,6 @@
 <?php
-require_once '../repositorios/RepoUsuarios.php';
-require_once '../Metodos/FuncionLogin.php';
+include_once '../cargadores/autocargador.php';
+
 
 $email = $_POST['email'];
 $password = $_POST['password']; 

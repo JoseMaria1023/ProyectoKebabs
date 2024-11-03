@@ -1,9 +1,5 @@
 <?php
-require_once '../repositorios/Conexion.php';
-
-require_once '../repositorios/RepoUsuarios.php';
-
-require_once '../entidades/Usuarios.php';
+include_once '../cargadores/autocargador.php';
 
 $username = $_POST['username'];
 $password = $_POST['contrasenia'];
