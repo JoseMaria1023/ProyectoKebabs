@@ -1,6 +1,6 @@
 <?php
 
-include_once '../repositorios/Conexion.php';
+include_once '../cargadores/autocargador.php';
 
 
 class RepoIngredientes{
