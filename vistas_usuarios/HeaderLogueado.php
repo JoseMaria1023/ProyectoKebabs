@@ -1,4 +1,3 @@
-<!-- header-logged.php -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,9 +18,11 @@
                 <li><a href="pedidos.php">Mis Pedidos</a></li>
                 <li><a href="contacto.php">Contacto</a></li>
                 <li><a href="saldo.php">Saldo: €<span id="saldo-usuario">100.00</span></a></li> 
+                <li><a href="carrito.php">Carrito 🛒</a></li>
                 <li><a href="logout.php" class="button">Cerrar Sesión</a></li> 
             </ul>
         </nav>
     </header>
 </body>
 </html>
+
