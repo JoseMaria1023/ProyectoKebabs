@@ -22,8 +22,8 @@ class RepoIngredientes{
         return $ingredientes;
     }
 
-    public function actualizar(Usuarios $usuario) {
-        $stmt = $this->conexion->prepare("UPDATE usuarios SET nombre = ?, email = ?, direccion = ?, rol = ? WHERE id = ?");
+    public function actualizar(Ingredientes $ingredientes) {
+        $stmt = $this->conexion->prepare("UPDATE ingredientes SET nombre = ?, email = ?, direccion = ?, rol = ? WHERE id = ?");
         return $stmt->execute([
             $usuario->getNombre(), 
             $usuario->getEmail(), 
@@ -33,7 +33,7 @@ class RepoIngredientes{
     }
 
     public function eliminar($id) {
-        $stmt = $this->conexion->prepare("DELETE FROM usuarios WHERE id = ?");
+        $stmt = $this->conexion->prepare("DELETE FROM ingredientes WHERE id = ?");
         return $stmt->execute([$id]);
     }
 
