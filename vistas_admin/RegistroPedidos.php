@@ -17,8 +17,7 @@
                     <th>Precio Total (€)</th>
                 </tr>
             </thead>
-            <tbody id="tbody-ventas">
-                
+            <tbody id="tbody-ventas">              
             </tbody>
         </table>
     </section>

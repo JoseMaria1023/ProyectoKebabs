@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="./css/registro.css">
-    <h2>Registro de Usuario</h2>
     <form action="./controladores/procesarRegistro.php" method="post">
         <label for="username">Nombre de usuario:</label>
         <input type="text" id="username" name="username" required>
