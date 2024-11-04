@@ -73,9 +73,7 @@ body {
     color: #333;
 }
 
-.gestion-ingredientes form input[type="text"],
-.gestion-ingredientes form textarea,
-.gestion-ingredientes form input[type="number"] {
+.gestion-ingredientes form input[type="text"],.gestion-ingredientes form textarea,.gestion-ingredientes form input[type="number"] {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ccc;
@@ -109,7 +107,6 @@ body {
     display: block;
     width: 100%; 
 }
-
 .gestion-ingredientes button[type="submit"]:hover {
     background-color: #d05a4d; 
 }

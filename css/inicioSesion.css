@@ -7,8 +7,7 @@ form {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-form input[type="email"],
-form input[type="password"] {
+form input[type="email"],form input[type="password"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -34,9 +33,7 @@ form button {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
-
 form button:hover {
     background-color: #d05a4d;
 }

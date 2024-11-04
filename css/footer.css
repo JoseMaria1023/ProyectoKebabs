@@ -3,12 +3,12 @@ footer {
     color: #fff; 
     text-align: center; 
     padding: 20px;
-    position: fixed; /* Cambia a fixed */
+    position: fixed; 
     bottom: 0; 
-    left: 0; /* Asegúrate de que esté alineado a la izquierda */
+    left: 0; 
     width: 100%; 
     font-family: 'Arial', sans-serif; 
-    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+    z-index: 1000;
 }
 
 footer p {
