@@ -1,6 +1,6 @@
 <?php
 
-include_once '../cargadores/autocargador.php';
+include_once '../cargadores/autocargadores.php';
 
 
 class RepoIngredientes{
@@ -12,9 +12,10 @@ class RepoIngredientes{
 
   
     public function guardarIngredientes(Ingredientes $ingredientes) {
-        $stmt = $this->conexion->prepare("INSERT INTO ingredientes (nombre, precio, alergeno) VALUES (?, ?, ?)");
+        $stmt = $this->conexion->prepare("INSERT INTO ingredientes (nombre, descripcion, precio, alergeno) VALUES (?, ?, ?, ?)");
         $stmt->execute([
             $ingredientes->getNombre(), 
+            $ingredientes->getDescripcion(), 
             $ingredientes->getPrecio(),  
             $ingredientes->getAlergeno(), 
         ]);
@@ -22,7 +23,7 @@ class RepoIngredientes{
         return $ingredientes;
     }
 
-    public function actualizar(Ingredientes $ingredientes) {
+    public function actualizarIngredientes(Ingredientes $ingredientes) {
         $stmt = $this->conexion->prepare("UPDATE ingredientes SET nombre = ?, email = ?, direccion = ?, rol = ? WHERE id = ?");
         return $stmt->execute([
             $usuario->getNombre(), 
@@ -32,7 +33,7 @@ class RepoIngredientes{
         ]);
     }
 
-    public function eliminar($id) {
+    public function eliminarIngredientes($id) {
         $stmt = $this->conexion->prepare("DELETE FROM ingredientes WHERE id = ?");
         return $stmt->execute([$id]);
     }

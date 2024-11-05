@@ -1,6 +1,6 @@
 <?php
 
-include_once '../cargadores/autocargador.php';
+include_once '../cargadores/autocargadores.php';
 
 class RepoUsuarios {
     private $conexion;
