@@ -3,7 +3,10 @@ spl_autoload_register(function ($class_name) {
     $carpetas = [
         __DIR__ . '/../entidades/',
         __DIR__ . '/../repositorios/',
-        __DIR__ . '/../Metodos/'
+        __DIR__ . '/../Metodos/',
+        __DIR__ . '/../vistas_admin/',
+        __DIR__ . '/../vistas_generales/',
+        __DIR__ . '/../vistas_usuarios/',
     ];
 
     foreach ($carpetas as $carpeta) {
@@ -15,3 +18,13 @@ spl_autoload_register(function ($class_name) {
         }
     }
 });
+
+function cargarCSS(...$nombres_css) {
+    foreach ($nombres_css as $nombre_css) {
+        $ruta_css = __DIR__ . '/../css/' . $nombre_css . '.css';
+        if (file_exists($ruta_css)) {
+            echo '<link rel="stylesheet" href="../css/' . $nombre_css . '.css">';
+        } 
+    }
+}
+?>
