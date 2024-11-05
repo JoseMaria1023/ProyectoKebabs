@@ -1,5 +1,5 @@
-<?php
-include_once '../cargadores/autocargador.php';
+ <?php
+include_once '../cargadores/autocargadores.php';
 
 
 $email = $_POST['email'];
@@ -10,8 +10,8 @@ $usuario = $repo->obtenerPorEmail($email);
 
 if ($usuario) {
     if ($usuario['contraseña'] === $password) { 
-        entralogin($usuario);
-        header("Location: ../vistas/footer.php");
+        FuncionLogin::entralogin($usuario);
+        header("Location: ../vistas_admin/AñadirIngredientes.php");
         exit();
     } else {
         echo "Email o contraseña incorrectas"; 

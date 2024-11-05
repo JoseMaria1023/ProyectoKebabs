@@ -1,16 +1,17 @@
 <?php
 
-include_once '../cargadores/autocargador.php';
+include_once '../cargadores/autocargadores.php';
 
 
 $nombre = $_POST['nombre'];
+$descripcion = $_POST['descripcion'];
 $precio = $_POST['precio'];
-$alergeno = $_POST['alergeno'];
+$alergeno = $_POST['alergenos'];
 
-$ingredientes = new Ingredientes($nombre, $precio, $alergeno);
+$ingredientes = new Ingredientes($nombre,$descripcion, $precio, $alergeno);
 
 $repoIngredientes = new RepoIngredientes();
-$GuardarIngrediente=$RepoIngredientes->guardarIngredientes($ingredientes);
+$GuardarIngrediente=$repoIngredientes->guardarIngredientes($ingredientes);
 
 if ($GuardarIngrediente) {
     echo "Nuevo Ingrediente registrado.";
