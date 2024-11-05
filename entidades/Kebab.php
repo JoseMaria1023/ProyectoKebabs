@@ -1,17 +1,11 @@
 <?php
 class Kebab {
-    private $id;
     private $nombre;
     private $precioBase;
 
-    public function __construct($nombre, $precioBase, $id = null) {
-        $this->id = $id;
+    public function __construct($nombre, $precioBase) {
         $this->nombre = $nombre;
         $this->precioBase = $precioBase;
-    }
-
-    public function getId() {
-        return $this->id;
     }
 
     public function getNombre() {
