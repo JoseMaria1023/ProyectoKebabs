@@ -6,13 +6,15 @@ class Usuarios {
     private $email;
     private $direccion;
     private $rol;
+    private $foto;
     
-    public function __construct($nombre = "", $contrasenia = "", $email = "",  $direccion = "", $rol = "") {
+    public function __construct($nombre = "", $contrasenia = "", $email = "",  $direccion = "", $rol = "", $foto= "") {
         $this->nombre = $nombre;
         $this->contrasenia = $contrasenia;
         $this->email = $email;
         $this->direccion = $direccion;
         $this->rol = $rol;
+        $this->foto = $foto;
     }
 
     public function getNombre() {
@@ -33,6 +35,9 @@ class Usuarios {
 
     public function getRol() {
         return $this->rol;
+    }
+    public function getFoto() {
+        return $this->foto;
     }
 }
 
