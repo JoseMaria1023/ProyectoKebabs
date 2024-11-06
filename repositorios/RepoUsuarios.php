@@ -10,13 +10,14 @@ class RepoUsuarios {
     }
 
     public function guardar(Usuarios $usuario) {
-        $stmt = $this->conexion->prepare("INSERT INTO usuarios (nombre, contraseña, email, direccion, rol) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $this->conexion->prepare("INSERT INTO usuarios (nombre, contraseña, email, direccion, rol, foto) VALUES (?, ?, ?, ?, ?,?)");
         $stmt->execute([
             $usuario->getNombre(), 
             $usuario->getContrasenia(),  
             $usuario->getEmail(), 
             $usuario->getDireccion(), 
-            $usuario->getRol()
+            $usuario->getRol(),
+            $usuario->getFoto()
         ]);
 
         return $usuario;

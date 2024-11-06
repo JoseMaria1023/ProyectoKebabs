@@ -12,12 +12,13 @@ class RepoIngredientes{
 
   
     public function guardarIngredientes(Ingredientes $ingredientes) {
-        $stmt = $this->conexion->prepare("INSERT INTO ingredientes (nombre, descripcion, precio, alergeno) VALUES (?, ?, ?, ?)");
+        $stmt = $this->conexion->prepare("INSERT INTO ingredientes (nombre, descripcion, precio, alergeno, foto) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([
             $ingredientes->getNombre(), 
             $ingredientes->getDescripcion(), 
             $ingredientes->getPrecio(),  
             $ingredientes->getAlergeno(), 
+            $ingredientes->getFoto()
         ]);
 
         return $ingredientes;
