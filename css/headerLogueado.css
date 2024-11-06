@@ -1,3 +1,4 @@
+
 header { 
     background-color: #333; 
     color: white; 
@@ -20,14 +21,17 @@ header {
 nav {
     margin-left: auto; 
 }
+
 nav ul {
     list-style: none; 
     display: flex;
     align-items: center; 
 }
+
 nav ul li {
     margin: 0 15px; 
 }
+
 nav ul li a {
     color: white;
     text-decoration: none; 
@@ -35,16 +39,17 @@ nav ul li a {
     border-radius: 5px; 
     font-weight: bold; 
 }
+
 nav ul li a:hover {
     background-color: #e74c3c;
-    transform: scale(1.05); 
 }
+
 nav ul li a.button {
     background-color: #e76f51;
     padding: 10px 20px; 
 }
 nav ul li a.button:hover {
     background-color: #d05a4d; 
-    transform: scale(1.05); 
 }
+
 

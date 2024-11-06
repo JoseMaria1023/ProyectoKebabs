@@ -1,3 +1,10 @@
+
+body{
+    background-image: url("../imagenes/durum-d-beef.jpg");
+    background-repeat: no-repeat;
+    background-size: 120%;
+}
+
 form {
     max-width: 350px;
     margin: 50px auto;
