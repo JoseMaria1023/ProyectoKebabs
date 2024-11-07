@@ -7,6 +7,24 @@ body {
     margin-bottom: 100px;
 }
 
+#preview-container { 
+    margin-top: 10px;
+    height: 200px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+#preview {
+    max-width: 300%;
+    max-height: 300%;
+    object-fit: cover; 
+}
+
 .gestion-ingredientes {
     display: flex;
     justify-content: center;
@@ -39,20 +57,22 @@ body {
     flex: 1 1 300px; 
     margin-right: 1rem; 
 }
+
 .gestion-ingredientes form input[type="file"] {
     width: 100%; 
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #f9f9f9;
+    margin-bottom: 10px; 
 }
+
 
 .image-preview {
     margin-top: 10px;
     display: none; 
     max-width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+
 }
 
 .gestion-ingredientes form {
@@ -87,7 +107,7 @@ body {
     height: 100px;
 }
 
-.additional-info {
+.infoadicional {
     display: flex;
     gap: 1rem; 
     flex-wrap: wrap; 
@@ -106,9 +126,23 @@ body {
     display: block;
     width: 100%; 
 }
+
 .gestion-ingredientes button[type="submit"]:hover {
     background-color: #d05a4d; 
 }
 
+.gestion-ingredientes form .foto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; 
+}
 
+.gestion-ingredientes form .foto input[type="file"] {
+    margin-bottom: 10px; 
+}
+
+.gestion-ingredientes form .foto #preview-container {
+    margin-top: 10px; 
+}
 
