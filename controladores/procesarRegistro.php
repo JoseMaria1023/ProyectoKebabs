@@ -1,30 +1,37 @@
 <?php
 include_once '../cargadores/autocargadores.php';
 
-$directorio = '../imagenes/';
+class ProcesarRegistro {
 
+    public function procesarRegistro() {
+        $directorio = '../imagenes/';
 
-$username = $_POST['username'];
-$password = $_POST['contrasenia'];
-$email = $_POST['email'];
-$direccion = $_POST['direccion'];
+        $username = $_POST['username'];
+        $password = $_POST['contrasenia'];
+        $email = $_POST['email'];
+        $direccion = $_POST['direccion'];
 
-$foto = null;
+        $foto = null;
+        $Archivo = $_FILES['foto']['name'];
+        $rutaArchivo = $directorio . $Archivo;
 
-$Archivo = $_FILES['foto']['name'];
+            if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaArchivo)) {
+                $contenidoBinario = file_get_contents($rutaArchivo);
+                $foto = base64_encode($contenidoBinario);
+            } 
 
-$rutaArchivo = $directorio . $Archivo;
+        $usuario = new Usuarios($username, $password, $email, $direccion, "usuario", $foto);
 
-if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaArchivo)) {
-    $contenidoBinario = file_get_contents($rutaArchivo);
-    $foto = base64_encode($contenidoBinario);
+        $repoUsuarios = new RepoUsuarios();
+        $usuarioGuardado = $repoUsuarios->guardar($usuario);
+
+        if ($usuarioGuardado) {
+            echo "Usuario registrado con éxito.";
+        } 
+    }
 }
-$usuario = new Usuarios($username, $password, $email, $direccion, "usuario", $foto);
+$procesarRegistro = new ProcesarRegistro();
 
-$repoUsuarios = new RepoUsuarios();
-$usuarioGuardado = $repoUsuarios->guardar($usuario);
+$procesarRegistro->procesarRegistro();
 
-if ($usuarioGuardado) {
-    echo "Usuario registrado con exito.";
-} 
 ?>

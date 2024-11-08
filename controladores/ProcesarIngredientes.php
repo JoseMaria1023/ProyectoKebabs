@@ -2,30 +2,54 @@
 
 include_once '../cargadores/autocargadores.php';
 
-$directorio = '../imagenes/';
+class ProcesarIngredientes {
+
+    public function guardarIngrediente() {
+        $directorio = '../imagenes/';
+
+        $nombre = $_POST['nombre'];
+        $descripcion = $_POST['descripcion'];
+        $precio = $_POST['precio'];
+        $alergeno = $_POST['alergenos'];
+
+        $foto = null;
+        $Archivo = $_FILES['foto']['name'];
+        $rutaArchivo = $directorio . $Archivo;
 
 
-$nombre = $_POST['nombre'];
-$descripcion = $_POST['descripcion'];
-$precio = $_POST['precio'];
-$alergeno = $_POST['alergenos'];
+        if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaArchivo)) {
+            $contenidoBinario = file_get_contents($rutaArchivo);
+            $foto = base64_encode($contenidoBinario);
+        }
 
-$foto = null;
+        $ingredientes = new Ingredientes($nombre, $descripcion, $precio, $alergeno, $foto);
 
-$Archivo = $_FILES['foto']['name'];
+        $repoIngredientes = new RepoIngredientes();
+        $GuardarIngrediente = $repoIngredientes->guardarIngredientes($ingredientes);
 
-$rutaArchivo = $directorio . $Archivo;
+        if ($GuardarIngrediente) {
+            echo "Nuevo Ingrediente registrado.";
+        }
+    }
 
-if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaArchivo)) {
-    $contenidoBinario = file_get_contents($rutaArchivo);
-    $foto = base64_encode($contenidoBinario);
+    public static function TraerIngredientesAJson() {
+        $repoIngredientes = new RepoIngredientes();
+        $ingredientes = $repoIngredientes->TraerIngredientesDesdeBD();
+
+        $resultado = [];
+        foreach ($ingredientes as $ingrediente) {
+            $resultado[] = [
+                'nombre' => $ingrediente->getNombre(),
+                'precio' => $ingrediente->getPrecio(),
+                'alergeno' => $ingrediente->getAlergeno(),
+                'foto' => $ingrediente->getFoto() 
+            ];
+        }
+
+        echo json_encode($resultado);
+    }
 }
-$ingredientes = new Ingredientes($nombre,$descripcion, $precio, $alergeno, $foto);
 
-$repoIngredientes = new RepoIngredientes();
-$GuardarIngrediente=$repoIngredientes->guardarIngredientes($ingredientes);
+ProcesarIngredientes::TraerIngredientesAJson();
 
-if ($GuardarIngrediente) {
-    echo "Nuevo Ingrediente registrado.";
-} 
 ?>
