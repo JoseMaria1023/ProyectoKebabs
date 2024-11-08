@@ -9,8 +9,10 @@ cargarCSS('headerLogueado', 'añadiringredientes', 'footer');
         <h1>Gestionar Ingredientes</h1>
         <form action="../controladores/ProcesarIngredientes.php" method="POST" enctype="multipart/form-data">
         <div class="foto">
+
         <label for="foto">Seleccionar Imagen</label>
         <input type="file" name="foto" id="foto" />
+        
         <div id="preview-container" class="image-preview">
             <img id="preview" src="">
         </div>
@@ -27,7 +29,7 @@ cargarCSS('headerLogueado', 'añadiringredientes', 'footer');
                 <div class="infoadicional">
                     <div>
                         <label for="precio">Precio:</label>
-                        <input type="number" id="precio" name="precio" required>
+                        <input type="number" id="precio" name="precio" step="0.01" min="0" required>
                     </div>
                     <div>
                         <label for="alergenos">Alergenos:</label>
@@ -35,7 +37,7 @@ cargarCSS('headerLogueado', 'añadiringredientes', 'footer');
                     </div>
                 </div>
             </div>
-            <button type="submit">Agregar Ingrediente</button>
+            <button type="submit">Añadir Ingrediente</button>
         </form>
     </div>
 </div>

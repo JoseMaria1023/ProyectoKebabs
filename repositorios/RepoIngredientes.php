@@ -39,5 +39,24 @@ class RepoIngredientes{
         return $stmt->execute([$id]);
     }
 
+    public static function TraerIngredientesDesdeBD() {
+        $stmt = $this->conexion->prepare("SELECT nombre, precio, alergeno, foto FROM ingredientes");
+        $stmt->execute();
+        
+        $ingredientes = [];
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $ingrediente = new Ingrediente(
+                $row['nombre'],
+                $row['precio'],
+                $row['alergeno'],
+                $row['foto']
+            );
+            $ingredientes[] = $ingrediente;
+        }
+        return $ingredientes;
+    }
+    
+
+       
 
 }
