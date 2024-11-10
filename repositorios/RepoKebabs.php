@@ -29,4 +29,15 @@ class RepoKebabs {
         $stmt = $this->conexion->prepare("DELETE FROM Kebabs WHERE id = ?");
         return $stmt->execute([$id]);
     }
+
+    public function TraerTodosLosKebabs() {
+        $stmt = $this->conexion->prepare("SELECT * FROM kebabs");
+        
+        $stmt = $conexion->prepare($sql);
+        $stmt->execute();
+        
+        $kebabs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $kebabs;
+    }
 }

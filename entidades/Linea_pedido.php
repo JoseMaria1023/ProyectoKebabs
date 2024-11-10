@@ -3,10 +3,10 @@
 class LineaDePedido {
     private Pedido $pedido;   
     private Kebab $kebab;     
-    private int $cantidad;
-    private float $precioUnitario;
+    private $cantidad;
+    private  $precioUnitario;
 
-    public function __construct(Pedido $pedido, Kebab $kebab, int $cantidad = 1, float $precioUnitario) {
+    public function __construct(Pedido $pedido, Kebab $kebab, $cantidad,  $precioUnitario) {
         $this->pedido = $pedido;
         $this->kebab = $kebab;
         $this->cantidad = $cantidad;

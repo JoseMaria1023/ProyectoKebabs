@@ -2,13 +2,13 @@
 
 class IngredienteLineaPedido
 {
-    private int $id;
+    private $id;
     private LineaDePedido $lineaPedido;   
     private Ingrediente $ingrediente;     
-    private int $cantidad;
-    private float $precioUnitario;
+    private $cantidad;
+    private $precioUnitario;
 
-    public function __construct(LineaDePedido $lineaPedido, Ingrediente $ingrediente, int $cantidad, float $precioUnitario)
+    public function __construct(LineaDePedido $lineaPedido, Ingrediente $ingrediente, $cantidad, $precioUnitario)
     {
         $this->lineaPedido = $lineaPedido;
         $this->ingrediente = $ingrediente;
@@ -16,7 +16,7 @@ class IngredienteLineaPedido
         $this->precioUnitario = $precioUnitario;
     }
 
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -41,12 +41,12 @@ class IngredienteLineaPedido
         $this->ingrediente = $ingrediente;
     }
 
-    public function getCantidad(): int
+    public function getCantidad()
     {
         return $this->cantidad;
     }
 
-    public function setCantidad(int $cantidad): void
+    public function setCantidad($cantidad): void
     {
         $this->cantidad = $cantidad;
     }

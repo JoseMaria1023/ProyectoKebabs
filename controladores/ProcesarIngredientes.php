@@ -45,11 +45,9 @@ class ProcesarIngredientes {
                 'foto' => $ingrediente->getFoto() 
             ];
         }
-
         echo json_encode($resultado);
     }
 }
-
 ProcesarIngredientes::TraerIngredientesAJson();
 
 ?>
