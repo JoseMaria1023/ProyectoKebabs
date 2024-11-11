@@ -4,7 +4,7 @@ cargarCSS('header', 'registro', 'footer');
 ?>
 <?php include '../vistas_generales/Header.php'; ?>
 <link rel="stylesheet" href="./css/registro.css">
-    <form action="../controladores/procesarRegistro.php" method="post" enctype="multipart/form-data">
+    <form action="../APIS/ApiUsuarios.php" method="post" enctype="multipart/form-data">
         <label for="username">Nombre de usuario:</label>
         <input type="text" id="username" name="username" required>
         
