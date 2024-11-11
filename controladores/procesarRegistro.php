@@ -3,11 +3,11 @@ include_once '../cargadores/autocargadores.php';
 
 class ProcesarRegistro {
 
-    public function procesarRegistro() {
+    public function procesarRegistroUsuario() {
         $directorio = '../imagenes/';
 
-        $username = $_POST['username'];
-        $password = $_POST['contrasenia'];
+        $nombre = $_POST['username'];
+        $contrasenia = $_POST['contrasenia'];
         $email = $_POST['email'];
         $direccion = $_POST['direccion'];
 
@@ -20,18 +20,17 @@ class ProcesarRegistro {
                 $foto = base64_encode($contenidoBinario);
             } 
 
-        $usuario = new Usuarios($username, $password, $email, $direccion, "usuario", $foto);
+        $usuario = new Usuarios($nombre, $contrasenia, $email, $direccion, "usuario", $foto);
 
         $repoUsuarios = new RepoUsuarios();
         $usuarioGuardado = $repoUsuarios->guardar($usuario);
 
-        if ($usuarioGuardado) {
-            echo "Usuario registrado con éxito.";
-        } 
-    }
-}
-$procesarRegistro = new ProcesarRegistro();
+        
 
-$procesarRegistro->procesarRegistro();
+    }
+
+
+}
+
 
 ?>

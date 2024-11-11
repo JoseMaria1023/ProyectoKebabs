@@ -4,6 +4,7 @@ spl_autoload_register(function ($class_name) {
         __DIR__ . '/../entidades/',
         __DIR__ . '/../repositorios/',
         __DIR__ . '/../Metodos/',
+        __DIR__ . '/../controladores/',
         __DIR__ . '/../vistas_admin/',
         __DIR__ . '/../vistas_generales/',
         __DIR__ . '/../vistas_usuarios/',
