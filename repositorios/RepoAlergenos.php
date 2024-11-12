@@ -1,7 +1,5 @@
 <?php
-
-
-include_once '../cargadores/autocargador.php';
+include_once '../cargadores/autocargadores.php';
 
 class RepoAlergenos {
     private $conexion;
@@ -13,24 +11,30 @@ class RepoAlergenos {
     public function guardarAlergeno(Alergeno $Alergeno) {
         $stmt = $this->conexion->prepare("INSERT INTO alergenos (nombre, descripcion) VALUES (?, ?)");
         $stmt->execute([
-            $alergeno->getNombre(), 
-            $alergeno->getDescripcion(),  
+            $Alergeno->getNombre(), 
+            $Alergeno->getDescripcion(),  
         ]);
-
-        return $alergeno;
+        return $Alergeno;
     }
 
     public function actualizarAlergeno(Alergeno $Alergeno) {
         $stmt = $this->conexion->prepare("UPDATE alergenos SET nombre = ?, descripcion = ? WHERE id = ?");
         return $stmt->execute([
-            $alergeno->getNombre(), 
-            $alergeno->getDescripcion(),  
+            $Alergeno->getNombre(), 
+            $Alergeno->getDescripcion(),  
+            $Alergeno->getId(),  
         ]);
     }
 
     public function eliminarAlergeno($id) {
         $stmt = $this->conexion->prepare("DELETE FROM alergenos WHERE id = ?");
         return $stmt->execute([$id]);
+    }
+
+    public function getAlergenos() {
+        $stmt = $this->conexion->prepare("SELECT id, nombre FROM alergenos");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 ?>

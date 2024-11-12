@@ -12,7 +12,7 @@ class RepoIngredientesAlergenos{
 
   
     public function guardarIngredientesAlergenos(Ingredientes $ingredientes) {
-        $stmt = $this->conexion->prepare("INSERT INTO ingrediente_alergenos (nombre, descripcion, precio, alergeno) VALUES (?, ?, ?, ?)");
+        $stmt = $this->conexion->prepare("INSERT INTO ingrediente_alergenos (ingrediente_id, alergeno_id) VALUES (?, ?)");
         $stmt->execute([
             $ingredientes->getNombre(), 
             $ingredientes->getDescripcion(), 
