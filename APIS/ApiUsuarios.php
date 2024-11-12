@@ -1,5 +1,4 @@
 <?php
-
 include_once '../cargadores/autocargadores.php';
 
 class ApiUsuarios {
@@ -27,16 +26,56 @@ class ApiUsuarios {
     }
 
     private function registrarUsuario() {
-        $procesarRegistro = new ProcesarRegistro();
-        $procesarRegistro->procesarRegistroUsuario();
+        $directorio = '../imagenes/';
+        $nombre = $_POST['username'];
+        $contrasenia = $_POST['contrasenia'];
+        $email = $_POST['email'];
+        $direccion = $_POST['direccion'];
+        
+        $foto = null;
+        $archivo = $_FILES['foto']['name'];
+        $rutaArchivo = $directorio . $archivo;
+
+        if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaArchivo)) {
+            $contenidoBinario = file_get_contents($rutaArchivo);
+            $foto = base64_encode($contenidoBinario);
+        }
+
+        $usuario = new Usuarios($nombre, $contrasenia, $email, $direccion, "usuario", $foto);
+        $repoUsuarios = new RepoUsuarios();
+        $usuarioGuardado = $repoUsuarios->guardar($usuario);
+
+        if ($usuarioGuardado) {
+            $datosUsuario = [
+                "Nombre" => $usuario->getNombre(),
+                "Contrasenia" => $usuario->getContrasenia(),
+                "email" => $usuario->getEmail(),
+                "direccion" => $usuario->getDireccion(),
+                "rol" => $usuario->getRol(),
+                "foto" => $usuario->getFoto()
+            ];
+
+            $archivoJson = '../datos/usuarios.json';
+            file_put_contents($archivoJson, json_encode($datosUsuario, JSON_PRETTY_PRINT));
+
+            $this->sendResponse(201, ["success" => true, "message" => "Usuario registrado con éxito"]);
+        } else {
+            $this->sendResponse(500, ["success" => false, "message" => "Error al registrar el usuario"]);
+        }
     }
 
     private function actualizarUsuario() {
     }
-    private function eliminarUsuario() {
 
+    private function eliminarUsuario() {
+    }
+
+    private function sendResponse($status, $data) {
+        header("Content-Type: application/json");
+        http_response_code($status);
+        echo json_encode($data);
     }
 }
+
 $apiUsuarios = new ApiUsuarios();
 $apiUsuarios->RespuestaUsuario();
-?>
