@@ -1,22 +1,21 @@
 function obtenerAlergenos() {
     fetch('../APIS/ApiAlergenos.php')
-        .then(response => {
-            if (!response.ok) {
+        .then(respuesta => {
+            if (!respuesta.ok) {
                 throw new Error('Error en la respuesta de la API');
             }
-            return response.text(); 
+            return respuesta.text(); 
         })
-        .then(text => {
-            console.log(text); 
-            return JSON.parse(text); 
+        .then(texto => {
+            return JSON.parse(texto); 
         })
         .then(alergenos => {
             const selectAlergenos = document.getElementById('alergenos');
             alergenos.forEach(alergeno => {
-                const option = document.createElement('option');
-                option.value = alergeno.id;
-                option.textContent = alergeno.nombre;
-                selectAlergenos.appendChild(option);
+                const opcion = document.createElement('option');
+                opcion.value = alergeno.id;
+                opcion.textContent = alergeno.nombre;
+                selectAlergenos.appendChild(opcion);
             });
         })
 }

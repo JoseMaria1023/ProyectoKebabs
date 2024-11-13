@@ -7,20 +7,14 @@ document.getElementById('loginForm').onsubmit = function(event) {
     fetch('../APIS/ApiSesion.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: 'email=' + email + '&password=' + password
+        body: 'email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password)
     })
-    .then(function(response) {
-        return response.text(); 
+    .then(function(respuesta) {
+        return respuesta.json(); 
     })
-    .then(function(text) {
-        console.log("Respuesta del servidor:", text);  
-        var data = JSON.parse(text); 
-        if (data.success) {
-            if (data.rol === 'administrador') {
-                window.location.href = '../vistas_admin/AñadirIngredientes.php';
-            } else {
-                window.location.href = '../vistas_usuarios/monedero.php';
-            }
-        }
-    });
+    .then(function(datos) {
+        if (datos.success) {
+            window.location.href = (datos.rol === 'administrador') ? '../vistas_admin/AñadirIngredientes.php' : '../vistas_usuarios/monedero.php';
+        } 
+    })
 };
