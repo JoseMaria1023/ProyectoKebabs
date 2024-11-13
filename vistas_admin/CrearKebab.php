@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="./css/CrearKebab.css">
 <main class="contenedor-administracion">
     <h2>Crear Kebab de la Casa</h2>
@@ -6,19 +7,11 @@
         <h3>Selecciona los Ingredientes</h3>
         <div class="ingredientes-disponibles" id="ingredientes-disponibles">
         </div>
-        <table id="ingredientes-disponibles">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Alergeno</th>
-            <th>Foto</th>
-        </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-</table>
+        <div>
+            <label for="ingredientes">Ingredientes:</label>
+            <select id="ingredientes" name="ingredientesArray" multiple required>
+            </select>
+        </div>
     </section>
 
     <section class="ingredientes-seleccionados">
@@ -37,4 +30,4 @@
         <button id="boton-guardar-kebab">Guardar Kebab de la Casa</button>
     </section>
 </main>
-<script src="/proyecto_kebabs/ProyectoKebabs/Js/MostrarIngredientes.js"></script>
+<script src="../Js/MostrarIngredientes.js"></script>

@@ -22,9 +22,6 @@ cargarCSS('headerLogueado', 'añadiringredientes', 'footer');
                 <input type="text" name="nombre" required>
             </div>
             <div>
-                <label for="descripcion">Descripción:</label>
-                <textarea id="descripcion" name="descripcion" required></textarea>
-            </div>
             <div class="infoadicional">
                 <div>
                     <label for="precio">Precio:</label>
@@ -32,7 +29,7 @@ cargarCSS('headerLogueado', 'añadiringredientes', 'footer');
                 </div>
                 <div>
                     <label for="alergenos">Alergenos:</label>
-                    <select id="alergenos" name="alergenosArray[]" multiple required>
+                    <select id="alergenos" name="alergenosArray" multiple required>
                     </select>
                 </div>
             </div>
