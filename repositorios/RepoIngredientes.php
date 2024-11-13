@@ -12,16 +12,27 @@ class RepoIngredientes{
 
   
     public function guardarIngredientes(Ingredientes $ingredientes) {
-        $stmt = $this->conexion->prepare("INSERT INTO ingredientes (nombre, descripcion, precio, alergeno, foto) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $this->conexion->prepare("INSERT INTO ingredientes (nombre, precio, foto) VALUES (?, ?, ?)");
         $stmt->execute([
-            $ingredientes->getNombre(), 
-            $ingredientes->getDescripcion(), 
-            $ingredientes->getPrecio(),  
-            $ingredientes->getAlergeno(), 
+            $ingredientes->getNombre(),
+            $ingredientes->getPrecio(),
             $ingredientes->getFoto()
         ]);
 
         return $ingredientes;
+    }
+
+    public function getUltimoId() {
+        return $this->conexion->lastInsertId();
+    }
+
+    public function guardarAlergenosIngrediente($idIngrediente, $alergenos) {
+
+            foreach ($alergenos as $idAlergeno) {
+                $stmt = $this->conexion->prepare("INSERT INTO ingrediente_alergenos (ingrediente_id, alergeno_id) VALUES (?, ?)");
+                $stmt->execute([$idIngrediente, $idAlergeno]);
+            }
+            return true; 
     }
 
     public function actualizarIngredientes(Ingredientes $ingredientes) {

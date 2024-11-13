@@ -30,14 +30,9 @@ class RepoKebabs {
         return $stmt->execute([$id]);
     }
 
-    public function TraerTodosLosKebabs() {
-        $stmt = $this->conexion->prepare("SELECT * FROM kebabs");
-        
-        $stmt = $conexion->prepare($sql);
+    public function getKebabs() {
+        $stmt = $this->conexion->prepare("SELECT id, nombre, descripcion, precio base FROM kebabs");
         $stmt->execute();
-        
-        $kebabs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        return $kebabs;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
