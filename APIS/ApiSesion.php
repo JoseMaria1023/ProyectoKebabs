@@ -1,8 +1,8 @@
 <?php
 include_once '../cargadores/autocargadores.php';
 
-class ApiAuth {
-    public function RespuestaAuth() {
+class ApiSesion {
+    public function RespuestaSesion() {
         $method = $_SERVER['REQUEST_METHOD'];
 
         switch ($method) {
@@ -11,9 +11,6 @@ class ApiAuth {
                 break;
             case 'DELETE':
                 $this->cerrarSesion();
-                break;
-            default:
-                $this->sendResponse(405, ["message" => "Método no permitido"]);
                 break;
         }
     }
@@ -27,28 +24,24 @@ class ApiAuth {
     
         if ($usuario && $usuario['contraseña'] === $password) {
             FuncionLogin::entralogin($usuario);
-    
-            // Respuesta JSON
-            $this->sendResponse(200, ["success" => true, "rol" => $usuario['rol']]);
-        } else {
-            $this->sendResponse(401, ["success" => false, "message" => "Email o contraseña incorrectos"]);
+            $this->enviarrespuesta(200, ["success" => true, "rol" => $usuario['rol']]);
+        
         }
     }
     
 
     private function cerrarSesion() {
         FuncionLogin::cierraSesion();
-        $this->sendResponse(200, ["success" => true, "message" => "Sesión cerrada exitosamente"]);
     }
 
-    private function sendResponse($status, $data) {
+    private function enviarrespuesta($status, $data) {
         header("Content-Type: application/json");
         http_response_code($status);
         echo json_encode($data);
     }
 }
 
-$apiAuth = new ApiAuth();
-$apiAuth->RespuestaAuth();
+$apiSesion = new ApiSesion();
+$apiSesion->RespuestaSesion();
 
 ?>

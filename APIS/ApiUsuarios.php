@@ -23,7 +23,14 @@ class ApiUsuarios {
     }
 
     private function getUsuario() {
-    }
+        $repoUsuarios = new RepoUsuarios();
+        $usuarios = $repoUsuario->getUsuario(); 
+
+        if ($usuarios) {
+            $this->enviarrespuesta(201, $ingredientes); 
+        
+        }
+        }
 
     private function registrarUsuario() {
         $directorio = '../imagenes/';
@@ -58,9 +65,6 @@ class ApiUsuarios {
             $archivoJson = '../datos/usuarios.json';
             file_put_contents($archivoJson, json_encode($datosUsuario, JSON_PRETTY_PRINT));
 
-            $this->sendResponse(201, ["success" => true, "message" => "Usuario registrado con éxito"]);
-        } else {
-            $this->sendResponse(500, ["success" => false, "message" => "Error al registrar el usuario"]);
         }
     }
 
@@ -70,7 +74,7 @@ class ApiUsuarios {
     private function eliminarUsuario() {
     }
 
-    private function sendResponse($status, $data) {
+    private function enviarrespuesta($status, $data) {
         header("Content-Type: application/json");
         http_response_code($status);
         echo json_encode($data);

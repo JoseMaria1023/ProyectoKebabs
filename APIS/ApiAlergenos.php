@@ -30,9 +30,8 @@ class ApiAlergenos {
         $alergenos = $repoAlergenos->getAlergenos(); 
 
         if ($alergenos) {
-            $this->sendResponse(200, $alergenos); 
-        } else {
-            $this->sendResponse(404, ["message" => "No se han encontrado alergenos"]);
+            $this->enviarrespuesta(200, $alergenos); 
+        
         }
     }
 
@@ -45,7 +44,7 @@ class ApiAlergenos {
     private function eliminarAlergenos() {
     }
 
-    private function sendResponse($status, $data) {
+    private function enviarrespuesta($status, $data) {
         header("Content-Type: application/json");
         http_response_code($status); 
         echo json_encode($data);
