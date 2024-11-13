@@ -1,3 +1,8 @@
+<?php 
+include_once '../cargadores/autocargadores.php'; 
+cargarCSS('header', 'monedero', 'footer');
+?>
+<?php include '../vistas_generales/Header.php'; ?>
 <link rel="stylesheet" href="./css/SeleccionarKebab.css">
 
 <main>
