@@ -8,6 +8,8 @@ spl_autoload_register(function ($class_name) {
         __DIR__ . '/../vistas_admin/',
         __DIR__ . '/../vistas_generales/',
         __DIR__ . '/../vistas_usuarios/',
+        __DIR__ . '/../css/'
+
     ];
 
     foreach ($carpetas as $carpeta) {

@@ -2,8 +2,7 @@
 include_once '../cargadores/autocargadores.php'; 
 cargarCSS('header', 'registro', 'footer');
 ?>
-<?php include '../vistas_generales/Header.php'; ?>
-<link rel="stylesheet" href="./css/registro.css">
+<?php include '../vistas_generales/header.php'; ?>
     <form action="../APIS/ApiUsuarios.php" method="post" enctype="multipart/form-data">
         <label for="username">Nombre de usuario:</label>
         <input type="text" id="username" name="username" required>

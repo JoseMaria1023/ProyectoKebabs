@@ -13,7 +13,6 @@ class LineaDePedido {
         $this->precioUnitario = $precioUnitario;
     }
 
-    // Getters
     public function getPedido(): Pedido {
         return $this->pedido;
     }

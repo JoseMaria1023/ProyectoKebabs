@@ -24,13 +24,12 @@ class ApiUsuarios {
 
     private function getUsuario() {
         $repoUsuarios = new RepoUsuarios();
-        $usuarios = $repoUsuario->getUsuario(); 
+        $usuarios = $repoUsuarios->getUsuarios(); 
 
         if ($usuarios) {
-            $this->enviarrespuesta(201, $ingredientes); 
-        
-        }
-        }
+            $this->enviarrespuesta(200, $usuarios);
+        } 
+    }
 
     private function registrarUsuario() {
         $directorio = '../imagenes/';

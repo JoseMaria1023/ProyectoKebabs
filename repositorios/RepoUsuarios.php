@@ -44,7 +44,7 @@ class RepoUsuarios {
         return $stmt->fetch(PDO::FETCH_ASSOC); 
     }
     public function getUsuarios() {
-        $stmt = $this->conexion->prepare("SELECT id, nombre ,direccion, email, rol FROM usuarios");
+        $stmt = $this->conexion->prepare("SELECT id, nombre ,direccion, email, rol, foto FROM usuarios");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
