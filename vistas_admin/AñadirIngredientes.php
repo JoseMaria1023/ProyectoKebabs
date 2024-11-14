@@ -38,7 +38,7 @@ cargarCSS('headerLogueado', 'añadiringredientes', 'footer');
         </form>
     </div>
 </div>
+<?php include '../vistas_generales/footer.php'; ?>
 <script src="../Js/MostrarAlergenos.js"></script>
 
-<?php include '../vistas_generales/footer.php'; ?>
 

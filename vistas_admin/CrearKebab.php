@@ -1,5 +1,8 @@
-
-<link rel="stylesheet" href="./css/CrearKebab.css">
+<?php 
+include_once '../cargadores/autocargadores.php'; 
+cargarCSS('headerLogueado', 'CrearKebab', 'footer');
+?>
+<?php include '../vistas_admin/HeaderAdmin.php'; ?>
 <main class="contenedor-administracion">
     <h2>Crear Kebab de la Casa</h2>
 
@@ -30,4 +33,5 @@
         <button id="boton-guardar-kebab">Guardar Kebab de la Casa</button>
     </section>
 </main>
+<?php include '../vistas_generales/footer.php'; ?>
 <script src="../Js/MostrarIngredientes.js"></script>
