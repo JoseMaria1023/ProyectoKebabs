@@ -8,7 +8,6 @@ cargarCSS('headerLogueado', 'CrearKebab', 'footer');
 
     <form id="form-crear-kebab">
         <div class="formulario-contenedor">
-            <!-- Columna izquierda: Foto, Precio y Descripción -->
             <div class="columna izquierda">
                 <section class="foto-kebab">
                     <h3>Selecciona la Foto</h3>
