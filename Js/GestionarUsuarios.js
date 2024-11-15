@@ -34,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 var celdaAcciones = document.createElement('td');
                 var botonEditar = document.createElement('button');
                 botonEditar.textContent = 'Editar';
+                botonEditar.addEventListener('click', function() {
+                    editarUsuario(usuario);
+                });
                 celdaAcciones.appendChild(botonEditar);
 
                 var botonEliminar = document.createElement('button');
@@ -46,10 +49,9 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 });
-function editarUsuario() {
-
+function editarUsuario(usuario) {
+   
 }
-
 function eliminarUsuario() {
 
 }
