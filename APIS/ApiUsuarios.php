@@ -66,8 +66,8 @@ class ApiUsuarios {
 
         }
     }
-
     private function actualizarUsuario() {
+        
     }
 
     private function eliminarUsuario() {
