@@ -8,13 +8,20 @@ class RepoKebabs {
     }
 
     public function guardarKebab(Kebab $Kebab) {
-        $stmt = $this->conexion->prepare("INSERT INTO kebabs (nombre, descripcion, PrecioBase) VALUES (?, ?, ?)");
+        $stmt = $this->conexion->prepare("INSERT INTO kebabs (nombre, descripcion, precio_base, foto) VALUES (?, ?, ?, ?)");
         $stmt->execute([
             $Kebab->getNombre(), 
+            $Kebab->getDescripcion(), 
             $Kebab->getPrecioBase(),  
+            $Kebab->getFoto(), 
+
         ]);
 
         return $Kebab;
+    }
+
+    public function getUltimoId() {
+        return $this->conexion->lastInsertId();
     }
 
     public function actualizarKebab(Kebab $Kebab) {
@@ -31,7 +38,7 @@ class RepoKebabs {
     }
 
     public function getKebabs() {
-        $stmt = $this->conexion->prepare("SELECT id, nombre, descripcion, precio base FROM kebabs");
+        $stmt = $this->conexion->prepare("SELECT id, nombre, descripcion, precio base, foto FROM kebabs");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

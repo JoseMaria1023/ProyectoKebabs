@@ -26,14 +26,6 @@ class RepoIngredientes{
         return $this->conexion->lastInsertId();
     }
 
-    public function guardarAlergenosIngrediente($idIngrediente, $alergenos) {
-
-            foreach ($alergenos as $idAlergeno) {
-                $stmt = $this->conexion->prepare("INSERT INTO ingrediente_alergenos (ingrediente_id, alergeno_id) VALUES (?, ?)");
-                $stmt->execute([$idIngrediente, $idAlergeno]);
-            }
-            return true; 
-    }
 
     public function actualizarIngredientes(Ingredientes $ingredientes) {
         $stmt = $this->conexion->prepare("UPDATE ingredientes SET nombre = ?, email = ?, direccion = ?, rol = ? WHERE id = ?");

@@ -11,17 +11,15 @@ class RepoIngredientesAlergenos{
     }
 
   
-    public function guardarIngredientesAlergenos(Ingredientes $ingredientes) {
-        $stmt = $this->conexion->prepare("INSERT INTO ingrediente_alergenos (ingrediente_id, alergeno_id) VALUES (?, ?)");
-        $stmt->execute([
-            $ingredientes->getNombre(), 
-            $ingredientes->getDescripcion(), 
-            $ingredientes->getPrecio(),  
-            $ingredientes->getAlergeno(), 
-        ]);
+    public function guardarAlergenosIngrediente($idIngrediente, $alergenos) {
 
-        return $ingredientes;
-    }
+        foreach ($alergenos as $idAlergeno) {
+            $stmt = $this->conexion->prepare("INSERT INTO ingrediente_alergenos (ingrediente_id, alergeno_id) VALUES (?, ?)");
+            $stmt->execute([$idIngrediente, $idAlergeno]);
+        }
+        return true; 
+}
+
 
     public function actualizarIngredientesAlergenos(Ingredientes $ingredientes) {
         $stmt = $this->conexion->prepare("UPDATE ingrediente_alergenos SET nombre = ?, email = ?, direccion = ?, rol = ? WHERE id = ?");

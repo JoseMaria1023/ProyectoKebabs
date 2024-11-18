@@ -24,24 +24,22 @@ class ApiKebab {
     }
 
     private function getKebab() {
-        $repoKebabs = new RepoKebabs();
-        $kebab = $repoKebabs->(); 
 
-        if ($ingredientes) {
-            
-        } else {
-        }
     }
 
-    private function registrarIngredientes() {
+    private function registrarKebab() {
         $directorio = '../imagenes/';
 
         $nombre = $_POST['nombre'];
         $descripcion = $_POST['descripcion'];
         $precio = $_POST['precio'];
 
-        $alergenos = isset($_POST['alergenosArray']) ? $_POST['alergenosArray'] : [];
-        $alergenosString = implode(",", $alergenos);  
+        $ingredientes = isset($_POST['ingredientesArray']) ? $_POST['ingredientesArray'] : [];
+        if (!is_array($ingredientes)) {
+            $ingredientes = explode(",", $ingredientes);
+        }
+        
+        $ingredientesString = implode(",", $ingredientes);  
 
         $foto = null;
         if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
@@ -54,32 +52,37 @@ class ApiKebab {
             }
         }
 
-        $ingredientes = new Ingredientes($nombre, $descripcion, $precio, $alergenosString, $foto);
+        $Kebabs = new Kebab($nombre, $descripcion, $precio, $foto);
 
-        $repoIngredientes = new RepoIngredientes();
-        $GuardarIngrediente = $repoIngredientes->guardarIngredientes($ingredientes);
+        $repoKebab = new RepoKebabs();
+        $repoKebabIngredientes = new RepoKebabIngredientes();
 
-        if ($GuardarIngrediente) {
-            $this->sendResponse(200, ["message" => "Nuevo ingrediente registrado"]);
-        } else {
-            $this->sendResponse(500, ["message" => "Error al registrar el ingrediente"]);
-        }
+        $GuardarKebab = $repoKebab->guardarKebab($Kebabs);
+
+        if ($GuardarKebab) {
+            $idKebab = $repoKebab->getUltimoId();
+    
+            if (!empty($ingredientes)) {
+                $repoKebabIngredientes->guardarKebabIngrediente($idKebab, $ingredientes);
+            }
+            $this->enviarrespuesta(200, ["message" => "Nuevo Kebab registrado"]);
+        } 
     }
 
-    private function actualizarIngredientes() {
+    private function actualizarKebabs() {
     }
 
-    private function eliminarIngredientes() {
+    private function eliminarKebabs() {
     }
 
-    private function sendResponse($status, $data) {
+    private function enviarrespuesta($status, $data) {
         header("Content-Type: application/json");
         http_response_code($status);
         echo json_encode($data);
     }
 }
 
-$apiIngredientes = new ApiIngredientes();
-$apiIngredientes->RespuestaIngredientes();
+$apiKebab = new ApiKebab();
+$apiKebab->RespuestaKebab();
 
 ?>

@@ -11,17 +11,14 @@ class RepoKebabIngredientes{
     }
 
   
-    public function guardarKebabIngredientes(Ingredientes $ingredientes) {
-        $stmt = $this->conexion->prepare("INSERT INTO kebab_ingredientes (nombre, descripcion, precio, alergeno) VALUES (?, ?, ?, ?)");
-        $stmt->execute([
-            $ingredientes->getNombre(), 
-            $ingredientes->getDescripcion(), 
-            $ingredientes->getPrecio(),  
-            $ingredientes->getAlergeno(), 
-        ]);
+    public function guardarKebabIngrediente($idKebab, $ingredientes) {
 
-        return $ingredientes;
-    }
+        foreach ($ingredientes as $idIngrediente) {
+            $stmt = $this->conexion->prepare("INSERT INTO kebab_ingredientes (kebab_id, ingrediente_id) VALUES (?, ?)");
+            $stmt->execute([$idKebab, $idIngrediente]);
+        }
+        return true; 
+}
 
     public function actualizarKebabIngredientes(Ingredientes $ingredientes) {
         $stmt = $this->conexion->prepare("UPDATE kebab_ingredientes SET nombre = ?, email = ?, direccion = ?, rol = ? WHERE id = ?");

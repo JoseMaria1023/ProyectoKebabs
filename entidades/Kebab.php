@@ -3,12 +3,14 @@ class Kebab {
     private $nombre;
     private $descripcion;
     private $precioBase;
-    private $ingredientes = [];
     private $foto;
 
-    public function __construct($nombre, $descripcion, $precioBase,$ingredientes,$foto) {
+    public function __construct($nombre, $descripcion, $precioBase,$foto) {
         $this->nombre = $nombre;
+        $this->descripcion = $descripcion;
         $this->precioBase = $precioBase;
+        $this->foto = $foto;
+
     }
 
     public function getNombre() {
@@ -21,10 +23,7 @@ class Kebab {
     public function getPrecioBase() {
         return $this->precioBase;
     }
-    public function AñadirIngrediente(Ingrediente $ingrediente) {
-        $this->ingredientes[] = $ingrediente;
-    }
-    
+
     public function getFoto() {
         return $this->foto;
     }
