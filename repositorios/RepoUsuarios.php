@@ -29,9 +29,12 @@ class RepoUsuarios {
             $usuario->getNombre(), 
             $usuario->getEmail(), 
             $usuario->getDireccion(), 
-            $usuario->getRol(), 
+            $usuario->getRol(),
+            $usuario->getId() 
         ]);
     }
+    
+    
 
     public function eliminar($id) {
         $stmt = $this->conexion->prepare("DELETE FROM usuarios WHERE id = ?");

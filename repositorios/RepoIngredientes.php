@@ -47,6 +47,16 @@ class RepoIngredientes{
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function obtenerNombreIngredientePorId($idIngrediente) {
+        $stmt = $this->conexion->prepare("SELECT nombre FROM ingredientes WHERE id = ?");
+        
+        $stmt->execute([$idIngrediente]);
+    
+        $ingrediente = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+        return $ingrediente;
+    }
     
 
        
