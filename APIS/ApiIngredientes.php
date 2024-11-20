@@ -1,6 +1,8 @@
 <?php
 
 include_once '../cargadores/autocargadores.php';
+require_once '../repositorios/RepoIngredienteAlergenos.php';
+
 
 class ApiIngredientes {
 
@@ -60,6 +62,9 @@ class ApiIngredientes {
         $ingredientes = new Ingredientes($nombre, $precio, $foto);
     
         $repoIngredientes = new RepoIngredientes();
+
+        $repoIngreAlergenos = new RepoIngredientesAlergenos();
+
     
         $GuardarIngrediente = $repoIngredientes->guardarIngredientes($ingredientes);
     
@@ -67,7 +72,7 @@ class ApiIngredientes {
             $idIngrediente = $repoIngredientes->getUltimoId();
     
             if (!empty($alergenos)) {
-                $repoIngredientes->guardarAlergenosIngrediente($idIngrediente, $alergenos);
+                $repoIngreAlergenos->guardarAlergenosIngrediente($idIngrediente, $alergenos);
             }
             $this->enviarrespuesta(200, ["message" => "Nuevo ingrediente registrado"]);
         } 

@@ -67,12 +67,38 @@ class ApiUsuarios {
         }
     }
     private function actualizarUsuario() {
-        
+        $datos = json_decode(file_get_contents("php://input"), true);
+    
+        if (isset($datos['id'], $datos['nombre'], $datos['email'], $datos['direccion'], $datos['rol'])) {
+            $id = $datos['id'];
+            $nombre = $datos['nombre'];
+            $email = $datos['email'];
+            $direccion = $datos['direccion'];
+            $rol = $datos['rol'];
+    
+            $usuario = new Usuarios($nombre, null, $email, $direccion, $rol, null);
+            $usuario->setId($id); 
+    
+            $repoUsuarios = new RepoUsuarios();
+            $resultado = $repoUsuarios->actualizar($usuario);
+    
+            if ($resultado) {
+                $this->enviarrespuesta(200, ["mensaje" => "Usuario actualizado correctamente"]);
+            } 
+        }
     }
-
     private function eliminarUsuario() {
-    }
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
 
+            $repoUsuarios = new RepoUsuarios();
+            $resultado = $repoUsuarios->eliminar($id);
+
+            if ($resultado) {
+                $this->enviarrespuesta(200, ["mensaje" => "Usuario eliminado correctamente"]);
+            } 
+        }
+    }
     private function enviarrespuesta($status, $data) {
         header("Content-Type: application/json");
         http_response_code($status);

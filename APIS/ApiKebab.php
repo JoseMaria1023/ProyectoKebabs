@@ -25,34 +25,12 @@ class ApiKebab {
 
     private function getKebabs() {
         $repoKebab = new RepoKebabs();
-        $kebabs = $repoKebab->getKebabs();
-    
-        foreach ($kebabs as &$kebab) {
-            if (!empty($kebab['foto'])) {
-                // Comprimir el contenido base64 sin usar librerías externas
-                $kebab['foto'] = $this->comprimirBase64($kebab['foto']);
-            }
-        }
-    
-        $this->enviarrespuesta(200, $kebabs);
-    }
+        $kebabs = $repoKebab->getKebabs(); 
 
-    private function comprimirBase64($base64, $factorCompresion = 0.5) {
-        // Decodificar el contenido base64
-        $binario = base64_decode($base64);
-        if (!$binario) {
-            return $base64; // Si falla, devolvemos la imagen original
+        if ($kebabs) {
+            $this->enviarrespuesta(201, $kebabs); 
+        
         }
-    
-        // Comprimir reduciendo los datos binarios
-        $tamanioOriginal = strlen($binario);
-        $tamanioReducido = intval($tamanioOriginal * $factorCompresion);
-    
-        // Truncar o reducir el binario directamente
-        $binarioComprimido = substr($binario, 0, $tamanioReducido);
-    
-        // Codificar nuevamente a base64
-        return base64_encode($binarioComprimido);
     }
 
     private function registrarKebab() {
