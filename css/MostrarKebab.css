@@ -21,7 +21,7 @@ h1 {
     padding: 20px;
 }
 
-.kebab-card {
+.ContieneKebabs {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -30,18 +30,18 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.kebab-card img {
-    max-width: 100%;
-    height: auto;
+.ContieneKebabs img {
+    max-width: 40%;
+    height: 70%;
     border-radius: 5px;
 }
 
-.kebab-card h3 {
+.ContieneKebabs h3 {
     margin: 10px 0;
     color: #444;
 }
 
-.kebab-card p {
+.ContieneKebabs p {
     margin: 5px 0;
     color: #666;
 }
