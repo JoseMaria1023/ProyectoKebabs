@@ -20,7 +20,7 @@ cargarCSS('headerLogueado', 'CrearKebab', 'footer');
                 </section>
 
                 <section>
-                <label for="nombre">Nombre del Ingrediente:</label>
+                <label for="nombre">Nombre del Kebab:</label>
                 <input type="text" name="nombre" require>
 
                 </section>
