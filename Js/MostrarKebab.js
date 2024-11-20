@@ -7,7 +7,6 @@ function obtenerKebabs() {
             return respuesta.text();
         })
         .then(texto => {
-            console.log('Respuesta de la API: ', texto);
             
             const kebabs = JSON.parse(texto);
 
@@ -15,29 +14,34 @@ function obtenerKebabs() {
                 const contenedorKebabs = document.getElementById('kebab-container');
                 
                 kebabs.forEach(kebab => {
-                    const kebabCard = document.createElement('div');
-                    kebabCard.className = 'kebab-card';
+                    const ContieneKebabs = document.createElement('div');
+                    ContieneKebabs.className = 'ContieneKebabs';
 
                     const h3 = document.createElement('h3');
                     h3.textContent = kebab.nombre;
-                    kebabCard.appendChild(h3);
+                    ContieneKebabs.appendChild(h3);
 
                     const ingredientes = document.createElement('p');
-                    ingredientes.innerHTML = `<strong>Ingredientes:</strong> ${kebab.descripcion}`;
-                    kebabCard.appendChild(ingredientes);
+                    ingredientes.innerHTML = `Ingredientes ${kebab.ingredientes}`;
+                    ContieneKebabs.appendChild(ingredientes);
+
+                    const Descripcion = document.createElement('p');
+                    Descripcion.innerHTML = `Descripcion ${kebab.descripcion}`; 
+                    ContieneKebabs.appendChild(Descripcion);
+
 
                     const precio = document.createElement('p');
-                    precio.innerHTML = `<strong>Precio:</strong> ${kebab.precio_base}€`;
-                    kebabCard.appendChild(precio);
+                    precio.innerHTML = `Precio ${kebab.precio_base}€`;
+                    ContieneKebabs.appendChild(precio);
 
                     const imagenSrc = kebab.foto ? 'data:image/jpeg;base64,' + kebab.foto : '../imagenes/64572.png';
                     const img = document.createElement('img');
                     img.src = imagenSrc;
                     img.alt = kebab.nombre;
                     img.className = 'kebab-image';
-                    kebabCard.appendChild(img);
+                    ContieneKebabs.appendChild(img);
 
-                    contenedorKebabs.appendChild(kebabCard);
+                    contenedorKebabs.appendChild(ContieneKebabs);
                 });
             }
         });
