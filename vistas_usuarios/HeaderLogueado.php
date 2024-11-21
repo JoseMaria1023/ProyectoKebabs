@@ -1,3 +1,7 @@
+<?php 
+include_once '../Metodos/Sesion.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +10,6 @@
     <title>Tienda Online de Kebabs</title>
     <link rel="stylesheet" href="./css/header.css">
     <script src="../Js/MostrarSaldo.js"></script> 
-
 </head>
 <body>
     <header>
@@ -19,7 +22,7 @@
                 <li><a href="menu.php">Menú</a></li>
                 <li><a href="pedidos.php">Mis Pedidos</a></li>
                 <li><a href="contacto.php">Contacto</a></li>
-                <li><a href="saldo.php">Saldo: €<span id="saldo-usuario">100.00</span></a></li> 
+                <li><a href="saldo.php">Saldo: €<span id="saldo-usuario"><?= $saldoUsuario ?></span></a></li> 
                 <li><a href="carrito.php">Carrito</a></li>
                 <li><a href="logout.php" class="button">Cerrar Sesión</a></li> 
             </ul>
@@ -27,4 +30,3 @@
     </header>
 </body>
 </html>
-

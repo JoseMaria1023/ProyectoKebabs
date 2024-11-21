@@ -52,5 +52,12 @@ class RepoUsuarios {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function obtenerSaldo($email) {
+        $stmt = $this->conexion->prepare("SELECT saldo FROM usuarios WHERE email = ?");
+        $stmt->execute([$email]);
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $resultado ? $resultado['saldo'] : null;
+    }
 }
 ?>

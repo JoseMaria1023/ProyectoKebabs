@@ -24,10 +24,11 @@ class ApiSesion {
     
         if ($usuario && $usuario['contraseña'] === $password) {
             FuncionLogin::entralogin($usuario);
+            $_SESSION['user']['saldo'] = $usuario['saldo'];  
             $this->enviarrespuesta(200, ["success" => true, "rol" => $usuario['rol']]);
-        
         }
     }
+    
     
 
     private function cerrarSesion() {
