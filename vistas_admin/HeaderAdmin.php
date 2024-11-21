@@ -12,9 +12,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="gestion-usuarios.php">Gestión de Usuarios</a></li>
-                <li><a href="gestion-pedidos.php">Pedidos</a></li>
-                <li><a href="gestion-ingredientes.php">Gestionar Ingredientes</a></li>
+                <li><a href="GestionarUsuarios.php">Gestión de Usuarios</a></li>
+                <li><a href="GestionarKebabs.php">Gestionar Kebabs</a></li>
+                <li><a href="GestionarIngredientes.php">Gestionar Ingredientes</a></li>
                 <li><a href="logout.php" class="button">Cerrar Sesión</a></li> 
             </ul>
         </nav>
