@@ -1,5 +1,6 @@
 <?php
 class Kebab {
+    private $id;
     private $nombre;
     private $descripcion;
     private $precioBase;
@@ -11,6 +12,10 @@ class Kebab {
         $this->precioBase = $precioBase;
         $this->foto = $foto;
 
+    }
+
+    public function getId() {
+        return $this->id;
     }
 
     public function getNombre() {
@@ -26,6 +31,10 @@ class Kebab {
 
     public function getFoto() {
         return $this->foto;
+    }
+    
+    public function setId($id) {
+        $this->id = $id;
     }
 }
 ?>

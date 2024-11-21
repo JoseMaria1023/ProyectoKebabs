@@ -26,11 +26,11 @@ class ApiIngredientes {
     }
 
     private function getIngredientes() {
-        $repoIngredientes = new RepoIngredientes();
-        $ingredientes = $repoIngredientes->getIngredientes(); 
+        $repoIngrediente = new RepoIngredientes();
+        $ingredientes = $repoIngrediente->getIngredientes(); 
 
         if ($ingredientes) {
-            $this->enviarrespuesta(201, $ingredientes); 
+            $this->enviarrespuesta(200, $ingredientes); 
         
         }
     }

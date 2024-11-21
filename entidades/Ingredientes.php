@@ -1,6 +1,7 @@
 <?php
 
 class Ingredientes {
+    private $id;
     private $nombre;
     private $precio;
     private $foto;  
@@ -9,6 +10,10 @@ class Ingredientes {
         $this->nombre = $nombre;
         $this->precio = $precio;
         $this->foto = $foto;  
+    }
+
+    public function getId() {
+        return $this->id;
     }
 
     public function getNombre() {

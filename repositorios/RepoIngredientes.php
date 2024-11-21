@@ -43,7 +43,7 @@ class RepoIngredientes{
     }
 
     public function getIngredientes() {
-        $stmt = $this->conexion->prepare("SELECT id, nombre , precio FROM ingredientes");
+        $stmt = $this->conexion->prepare("SELECT id, nombre , precio, foto FROM ingredientes");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

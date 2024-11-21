@@ -33,7 +33,7 @@ class RepoKebabs {
     }
 
     public function eliminarKebab($id) {
-        $stmt = $this->conexion->prepare("DELETE FROM Kebabs WHERE id = ?");
+        $stmt = $this->conexion->prepare("DELETE FROM kebabs WHERE id = ?");
         return $stmt->execute([$id]);
     }
 
