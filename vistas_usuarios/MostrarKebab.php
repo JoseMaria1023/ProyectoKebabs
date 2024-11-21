@@ -12,7 +12,7 @@ cargarCSS('headerLogueado', 'MostrarKebab', 'footer');
     <link rel="stylesheet" href="../css/MostrarKebab.css">
 </head>
 <body>
-    <h1>Lista de Ingredientes de Kebabs</h1>
+    <h1>Lista de Kebabs</h1>
     <div class="container" id="kebab-container"></div>
     <script src="../Js/MostrarKebab.js"></script>
 </body>
