@@ -22,16 +22,16 @@ function obtenerKebabs() {
                     ContieneKebabs.appendChild(h3);
 
                     const ingredientes = document.createElement('p');
-                    ingredientes.innerHTML = `Ingredientes ${kebab.ingredientes}`;
+                    ingredientes.innerHTML = `${kebab.ingredientes}`;
                     ContieneKebabs.appendChild(ingredientes);
 
                     const Descripcion = document.createElement('p');
-                    Descripcion.innerHTML = `Descripcion ${kebab.descripcion}`; 
+                    Descripcion.innerHTML = `${kebab.descripcion}`; 
                     ContieneKebabs.appendChild(Descripcion);
 
 
                     const precio = document.createElement('p');
-                    precio.innerHTML = `Precio ${kebab.precio_base}€`;
+                     precio.innerHTML = `${kebab.precio_base}€`;
                     ContieneKebabs.appendChild(precio);
 
                     const imagenSrc = kebab.foto ? 'data:image/jpeg;base64,' + kebab.foto : '../imagenes/64572.png';

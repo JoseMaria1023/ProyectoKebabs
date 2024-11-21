@@ -1,32 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('../APIS/ApiUsuarios.php')
+    fetch('../APIS/ApiKebab.php')
         .then(respuesta => respuesta.json())
         .then(data => {
-            const tablaUsuarios = document.getElementById('tabla-usuarios');
-            tablaUsuarios.innerHTML = '';
+            const tablaKebab = document.getElementById('tabla-Kebabs');
+            tablaKebab.innerHTML = '';
 
-            data.forEach(usuario => {
+            data.forEach(kebab => {
                 const fila = document.createElement('tr');
 
                 const celdaNombre = document.createElement('td');
-                celdaNombre.textContent = usuario.nombre;
+                celdaNombre.textContent = kebab.nombre;
                 fila.appendChild(celdaNombre);
 
-                const celdaEmail = document.createElement('td');
-                celdaEmail.textContent = usuario.email;
-                fila.appendChild(celdaEmail);
+                const celdaDescripcion = document.createElement('td');
+                celdaDescripcion.textContent = kebab.descripcion;
+                fila.appendChild(celdaDescripcion);
 
-                const celdaDireccion = document.createElement('td');
-                celdaDireccion.textContent = usuario.direccion;
-                fila.appendChild(celdaDireccion);
-
-                const celdaRol = document.createElement('td');
-                celdaRol.textContent = usuario.rol;
-                fila.appendChild(celdaRol);
+                const celdaPrecio = document.createElement('td');
+                celdaPrecio.textContent = kebab.PrecioBase;
+                fila.appendChild(celdaPrecio);
 
                 const celdaFoto = document.createElement('td');
                 const imagen = document.createElement('img');
-                imagen.src = usuario.foto ? 'data:image/jpeg;base64,' + usuario.foto : '../imagenes/64572.png';
+                imagen.src = kebab.foto ? 'data:image/jpeg;base64,' + kebab.foto : '../imagenes/64572.png';
                 imagen.className = 'user-photo';
                 celdaFoto.appendChild(imagen);
                 fila.appendChild(celdaFoto);
@@ -36,31 +32,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 const botonEditar = document.createElement('button');
                 botonEditar.textContent = 'Editar';
                 botonEditar.addEventListener('click', () => {
-                    editarUsuario(usuario);
+                    editarKebab(kebab);
                 });
 
                 const botonEliminar = document.createElement('button');
                 botonEliminar.textContent = 'Eliminar';
                 botonEliminar.addEventListener('click', () => {
-                    eliminarUsuario(usuario.id);
+                    eliminarKebab(kebab.id);
                 });
 
                 celdaAcciones.appendChild(botonEditar);
                 celdaAcciones.appendChild(botonEliminar);
                 fila.appendChild(celdaAcciones);
 
-                tablaUsuarios.appendChild(fila);
+                tablaKebab.appendChild(fila);
             });
         });
 });
 
-function editarUsuario(usuario) {
-
-}
-
-
-function eliminarUsuario(id) {
-    fetch('../APIS/ApiUsuarios.php?id=' + id, {
+function eliminarKebab(id) {
+    fetch('../APIS/ApiKebab.php?id=' + id, {
         method: 'DELETE',
     })
     .then(function(respuesta) {

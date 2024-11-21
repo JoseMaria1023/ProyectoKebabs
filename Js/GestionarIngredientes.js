@@ -1,32 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('../APIS/ApiUsuarios.php')
+    fetch('../APIS/ApiIngredientes.php')
         .then(respuesta => respuesta.json())
         .then(data => {
-            const tablaUsuarios = document.getElementById('tabla-usuarios');
-            tablaUsuarios.innerHTML = '';
+            const tablaIngredientes = document.getElementById('tabla-ingredientes');
+            tablaIngredientes.innerHTML = '';
 
-            data.forEach(usuario => {
+            data.forEach(ingredientes => {
                 const fila = document.createElement('tr');
 
                 const celdaNombre = document.createElement('td');
-                celdaNombre.textContent = usuario.nombre;
+                celdaNombre.textContent = ingredientes.nombre;
                 fila.appendChild(celdaNombre);
 
-                const celdaEmail = document.createElement('td');
-                celdaEmail.textContent = usuario.email;
-                fila.appendChild(celdaEmail);
-
-                const celdaDireccion = document.createElement('td');
-                celdaDireccion.textContent = usuario.direccion;
-                fila.appendChild(celdaDireccion);
-
-                const celdaRol = document.createElement('td');
-                celdaRol.textContent = usuario.rol;
-                fila.appendChild(celdaRol);
+                const celdaPrecio = document.createElement('td');
+                celdaPrecio.textContent = ingredientes.precio;
+                fila.appendChild(celdaPrecio);
 
                 const celdaFoto = document.createElement('td');
                 const imagen = document.createElement('img');
-                imagen.src = usuario.foto ? 'data:image/jpeg;base64,' + usuario.foto : '../imagenes/64572.png';
+                imagen.src = ingredientes.foto ? 'data:image/jpeg;base64,' + ingredientes.foto : '../imagenes/64572.png';
                 imagen.className = 'user-photo';
                 celdaFoto.appendChild(imagen);
                 fila.appendChild(celdaFoto);
@@ -36,31 +28,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 const botonEditar = document.createElement('button');
                 botonEditar.textContent = 'Editar';
                 botonEditar.addEventListener('click', () => {
-                    editarUsuario(usuario);
+                    editarKebab(ingredientes);
                 });
 
                 const botonEliminar = document.createElement('button');
                 botonEliminar.textContent = 'Eliminar';
                 botonEliminar.addEventListener('click', () => {
-                    eliminarUsuario(usuario.id);
+                    eliminarKebab(ingredientes.id);
                 });
 
                 celdaAcciones.appendChild(botonEditar);
                 celdaAcciones.appendChild(botonEliminar);
                 fila.appendChild(celdaAcciones);
 
-                tablaUsuarios.appendChild(fila);
+                tablaIngredientes.appendChild(fila);
             });
         });
 });
 
-function editarUsuario(usuario) {
-
-}
-
-
-function eliminarUsuario(id) {
-    fetch('../APIS/ApiUsuarios.php?id=' + id, {
+function eliminarIngredientes(id) {
+    fetch('../APIS/ApiIngredientes.php?id=' + id, {
         method: 'DELETE',
     })
     .then(function(respuesta) {

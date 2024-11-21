@@ -14,7 +14,7 @@ document.getElementById('loginForm').onsubmit = function(event) {
     })
     .then(function(datos) {
         if (datos.success) {
-            window.location.href = (datos.rol === 'administrador') ? '../vistas_admin/CrearKebab.php' : '../vistas_usuarios/MostrarKebab.php';
+            window.location.href = (datos.rol === 'administrador') ? '../vistas_admin/GestionarIngredientes.php' : '../vistas_usuarios/MostrarKebab.php';
         } 
     })
 };
