@@ -16,7 +16,7 @@ h1 {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
 }
@@ -28,12 +28,17 @@ h1 {
     padding: 15px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
 }
 
 .ContieneKebabs img {
-    max-width: 40%;
-    height: 70%;
+    max-width: 40%; 
+    height: auto; 
     border-radius: 5px;
+    margin-bottom: 15px; 
 }
 
 .ContieneKebabs h3 {
@@ -44,4 +49,44 @@ h1 {
 .ContieneKebabs p {
     margin: 5px 0;
     color: #666;
+}
+
+.boton-pedir {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width:70% ; 
+    max-width: 200px; 
+}
+
+.boton-personalizar{
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width:70% ; 
+    max-width: 200px; 
+
+}
+
+.ContieneKebabs .botones {
+    margin-top: 15px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%; 
+    align-items: center;
 }
