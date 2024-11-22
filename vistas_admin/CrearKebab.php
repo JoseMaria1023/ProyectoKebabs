@@ -1,6 +1,6 @@
 <?php 
 include_once '../cargadores/autocargadores.php'; 
-cargarCSS('headerLogueado', 'CrearKebab', 'footer');
+cargarCSS('headerAdmin', 'CrearKebab', 'footer');
 ?>
 <?php include '../vistas_admin/HeaderAdmin.php'; ?>
 <main class="contenedor-administracion">

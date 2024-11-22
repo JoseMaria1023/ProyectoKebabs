@@ -14,19 +14,22 @@
             <ul>
                 <li>
                 <a href="GestionarUsuarios.php">Gestión de Usuarios</a>
-                    <ul>
-                        <li><a href="EditarUsuario.php">Editar Usuarios</a></li>
-                    </ul>
                 </li>
                 
                 <li>
                     <a href="GestionarKebabs.php">Gestionar Kebabs</a>
                     <ul>
                         <li><a href="CrearKebab.php">Insertar Kebabs</a></li>
-                        <li><a href="EditarKebab.php">Editar Kebabs</a></li>
                     </ul>
                 </li>
-                <li><a href="GestionarIngredientes.php">Gestionar Ingredientes</a></li>
+                <li>
+                    <a href="GestionarIngredientes.php">Gestionar Ingredientes</a>
+                    <ul>
+                    <li><a href="AñadirIngredientes.php">Insertar Ingredientes</a></li>
+                    </ul>
+                
+                </li>
+
                 <li><a href="logout.php" class="button">Cerrar Sesión</a></li>
             </ul>
         </nav>

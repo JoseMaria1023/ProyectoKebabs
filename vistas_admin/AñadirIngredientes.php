@@ -1,8 +1,8 @@
 <?php 
 include_once '../cargadores/autocargadores.php'; 
-cargarCSS('headerLogueado', 'añadiringredientes', 'footer');
+cargarCSS('HeaderAdmin', 'añadiringredientes', 'footer');
 ?>
-<?php include '../vistas_usuarios/HeaderLogueado.php'; ?>
+<?php include '../vistas_admin/HeaderAdmin.php'; ?>
 <script src="../Js/PreviewImagen.js"></script>
 <div class="gestion-ingredientes">
     <div class="container">

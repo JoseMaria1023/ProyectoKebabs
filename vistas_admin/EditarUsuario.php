@@ -3,7 +3,6 @@ include_once '../cargadores/autocargadores.php';
 cargarCSS('HeaderAdmin', 'EditarUsuario', 'footer');
 ?>
 <?php include '../vistas_admin/HeaderAdmin.php'; ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,11 +32,6 @@ cargarCSS('HeaderAdmin', 'EditarUsuario', 'footer');
             <option value="admin">Administrador</option>
         </select>
         <br>
-
-        <label for="foto">Foto:</label>
-        <input type="file" id="foto" name="foto" accept="image/*">
-        <br>
-        
         <input type="hidden" id="id-usuario" name="id_usuario" value="">
 
         <button type="submit">Guardar Cambios</button>
