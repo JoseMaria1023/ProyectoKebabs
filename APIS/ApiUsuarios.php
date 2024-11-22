@@ -83,7 +83,7 @@ class ApiUsuarios {
             $resultado = $repoUsuarios->actualizar($usuario);
     
             if ($resultado) {
-                $this->enviarrespuesta(200, ["mensaje" => "Usuario actualizado correctamente"]);
+                $this->enviarrespuesta(200);
             } 
         }
     }
@@ -95,7 +95,7 @@ class ApiUsuarios {
             $resultado = $repoUsuarios->eliminar($id);
 
             if ($resultado) {
-                $this->enviarrespuesta(200, ["mensaje" => "Usuario eliminado correctamente"]);
+                $this->enviarrespuesta(200);
             } 
         }
     }
