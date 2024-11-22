@@ -5,8 +5,11 @@ include_once '../cargadores/autocargadores.php';
 
 class FuncionLogin {
     public static function iniciaSesion() {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
     }
+    
 
     public static function cierraSesion() {
         session_destroy(); 
@@ -18,7 +21,7 @@ class FuncionLogin {
             $_SESSION['user'] = $usuario;
         }
     }
-
+    
     public static function estalogeado() {
         self::iniciaSesion();
         return isset($_SESSION['user']);
