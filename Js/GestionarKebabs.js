@@ -50,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
+function editarKebab(kebab) {
+    localStorage.setItem('kebabParaEditar', JSON.stringify(kebab));
+    window.location.href = '../vistas_admin/EditarKebab.php';
+}
+
+
 function eliminarKebab(id) {
     fetch('../APIS/ApiKebab.php?id=' + id, {
         method: 'DELETE',

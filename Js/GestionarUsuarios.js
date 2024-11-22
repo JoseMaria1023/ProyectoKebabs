@@ -55,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function editarUsuario(usuario) {
-
+    localStorage.setItem('usuarioParaEditar', JSON.stringify(usuario));
+    window.location.href = '../vistas_admin/EditarUsuario.php';
 }
 
 

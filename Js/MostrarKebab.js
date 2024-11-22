@@ -7,7 +7,6 @@ function obtenerKebabs() {
             return respuesta.text();
         })
         .then(texto => {
-            
             const kebabs = JSON.parse(texto);
 
             if (kebabs.length > 0) {
@@ -29,9 +28,8 @@ function obtenerKebabs() {
                     Descripcion.innerHTML = `${kebab.descripcion}`; 
                     ContieneKebabs.appendChild(Descripcion);
 
-
                     const precio = document.createElement('p');
-                     precio.innerHTML = `${kebab.precio_base}€`;
+                    precio.innerHTML = `${kebab.precio_base}€`;
                     ContieneKebabs.appendChild(precio);
 
                     const imagenSrc = kebab.foto ? 'data:image/jpeg;base64,' + kebab.foto : '../imagenes/64572.png';
@@ -41,10 +39,21 @@ function obtenerKebabs() {
                     img.className = 'kebab-image';
                     ContieneKebabs.appendChild(img);
 
+                    const botonPedir = document.createElement('button');
+                    botonPedir.textContent = 'Pedir';
+                    botonPedir.className = 'boton-pedir';
+                    ContieneKebabs.appendChild(botonPedir);
+
+                    const botonPersonalizar = document.createElement('button');
+                    botonPersonalizar.textContent = 'Personalizar';
+                    botonPersonalizar.className = 'boton-personalizar';
+                    ContieneKebabs.appendChild(botonPersonalizar);
+
                     contenedorKebabs.appendChild(ContieneKebabs);
                 });
             }
-        });
+        })
+        .catch(error => console.error('Error:', error));
 }
 
 obtenerKebabs();
