@@ -1,4 +1,3 @@
-/* Estilos globales */
 * {
     margin: 0;
     padding: 0;
@@ -7,30 +6,27 @@
 }
 
 body {
-    background-color: #f8f9fa; /* Fondo claro */
-    color: #333; /* Texto oscuro */
+    background-color: #f8f9fa; 
+    color: #333; 
     line-height: 1.6;
 }
 
-/* Contenedor principal */
 .contenedor-administracion {
     width: 90%;
     margin: 20px auto;
     padding: 30px;
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff; 
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Título principal */
 h2 {
     text-align: center;
-    color: #e74c3c; /* Rojo vibrante */
+    color: #e74c3c; 
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-/* Estructura de las columnas */
 .formulario-contenedor {
     display: flex;
     justify-content: space-between;
@@ -38,32 +34,27 @@ h2 {
     flex-wrap: wrap;
 }
 
-/* Columnas individuales */
 .columna {
     flex: 1;
     min-width: 280px;
-    background-color: #fefefe; /* Fondo blanco */
+    background-color: #fefefe; 
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Secciones de cada columna */
 .columna section {
     margin-bottom: 20px;
 }
 
 .columna h3 {
-    color: #e76f51; /* Naranja */
+    color: #e76f51;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-/* Inputs y selects */
-input,
-textarea,
-select {
+input,textarea,select {
     width: 100%;
     padding: 12px;
     margin-top: 10px;
@@ -78,7 +69,6 @@ textarea {
     resize: vertical;
 }
 
-/* Botón principal */
 .guardar-kebab {
     text-align: center;
     margin-top: 20px;
@@ -97,7 +87,6 @@ textarea {
     box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
 }
 
-/* Esquema de las columnas */
 .izquierda {
     display: flex;
     flex-direction: column;
@@ -110,7 +99,6 @@ textarea {
     gap: 20px;
 }
 
-/* Filtros en la derecha */
 .filtros {
     display: flex;
     flex-direction: column;
