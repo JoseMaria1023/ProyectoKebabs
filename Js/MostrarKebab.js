@@ -40,8 +40,11 @@ function obtenerKebabs() {
                     ContieneKebabs.appendChild(img);
 
                     const botonPedir = document.createElement('button');
-                    botonPedir.textContent = 'Pedir';
+                    botonPedir.textContent = 'Añadir al Carrito';
                     botonPedir.className = 'boton-pedir';
+                    botonPedir.addEventListener('click', () => {
+                        AñadirAlCarrito(kebab);
+                    });
                     ContieneKebabs.appendChild(botonPedir);
 
                     const botonPersonalizar = document.createElement('button');
@@ -53,7 +56,17 @@ function obtenerKebabs() {
                 });
             }
         })
-        .catch(error => console.error('Error:', error));
+}
+
+function AñadirAlCarrito(kebab) {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.push({
+        id: kebab.id,
+        nombre: kebab.nombre,
+        precio: kebab.precio_base
+    });
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    alert(`Se ha añadido ${kebab.nombre} al carrito.`);
 }
 
 obtenerKebabs();
