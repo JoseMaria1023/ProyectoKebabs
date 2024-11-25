@@ -59,5 +59,19 @@ class RepoUsuarios {
 
         return $resultado ? $resultado['saldo'] : null;
     }
+    public function obtenerPorId($id) {
+        $stmt = $this->conexion->prepare("SELECT * FROM usuarios WHERE id = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC); 
+    }
+    
+    public function actualizarSaldo($usuarioId, $nuevoSaldo) {
+        $stmt = $this->conexion->prepare("UPDATE usuarios SET saldo = ? WHERE id = ?");
+
+        return $stmt->execute([
+            $nuevoSaldo,
+            $usuarioId
+        ]);
+    }
 }
 ?>
