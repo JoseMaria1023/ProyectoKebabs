@@ -12,6 +12,9 @@ class ApiSesion {
             case 'DELETE':
                 $this->cerrarSesion();
                 break;
+            case 'GET':
+                $this->obtenerSesion(); 
+                break;
         }
     }
 
@@ -24,15 +27,24 @@ class ApiSesion {
     
         if ($usuario && $usuario['contraseña'] === $password) {
             FuncionLogin::entralogin($usuario);
+            $_SESSION['user']['id'] = $usuario['id'];  
             $_SESSION['user']['saldo'] = $usuario['saldo'];  
             $this->enviarrespuesta(200, ["success" => true, "rol" => $usuario['rol']]);
-        }
+        } 
     }
     
-    
-
     private function cerrarSesion() {
-        FuncionLogin::cierraSesion();
+        if (isset($_SESSION['user'])) {
+            FuncionLogin::cierraSesion();
+            $this->enviarrespuesta(200, ["success" => true, "mensaje" => "Sesión cerrada correctamente"]);
+        } 
+    }
+    private function obtenerSesion() {
+        session_start();
+    
+        if (isset($_SESSION['user']['id'])) {
+            $this->enviarrespuesta(200, ["success" => true, "usuarioId" => $_SESSION['user']['id']]);
+        } 
     }
 
     private function enviarrespuesta($status, $data) {
@@ -44,5 +56,3 @@ class ApiSesion {
 
 $apiSesion = new ApiSesion();
 $apiSesion->RespuestaSesion();
-
-?>

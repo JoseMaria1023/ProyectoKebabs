@@ -18,17 +18,17 @@ class ApiKebab {
                 $this->actualizarKebab();
                 break;
             case 'DELETE':
-                $this->eliminarKebabs();
+                $this->eliminarKebab();
                 break;
         }
     }
 
     private function getKebabs() {
         $repoKebab = new RepoKebabs();
-        $kebabs = $repoKebab->getKebabs(); 
+        $Kebabs = $repoKebab->getKebabs(); 
 
-        if ($kebabs) {
-            $this->enviarrespuesta(200, $kebabs); 
+        if ($Kebabs) {
+            $this->enviarrespuesta(201, $Kebabs); 
         
         }
     }
@@ -71,7 +71,7 @@ class ApiKebab {
             if (!empty($ingredientes)) {
                 $repoKebabIngredientes->guardarKebabIngrediente($idKebab, $ingredientes);
             }
-            $this->enviarrespuesta(200);
+            $this->enviarrespuesta(200, ["message" => "Nuevo Kebab registrado"]);
         } 
     }
 
@@ -97,17 +97,6 @@ class ApiKebab {
     }
 
     private function eliminarKebabs() {
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-
-            $repoKebab = new RepoKebabs();
-            $resultado = $repoKebab->eliminarKebab($id);
-
-            if ($resultado) {
-                $this->enviarrespuesta(200);
-            } 
-        }
-    
     }
 
     private function enviarrespuesta($status, $data) {
