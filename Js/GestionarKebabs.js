@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 fila.appendChild(celdaDescripcion);
 
                 const celdaPrecio = document.createElement('td');
-                celdaPrecio.textContent = kebab.PrecioBase;
+                celdaPrecio.textContent = kebab.precio_base;
                 fila.appendChild(celdaPrecio);
 
                 const celdaFoto = document.createElement('td');
@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 });
-
 function editarKebab(kebab) {
     localStorage.setItem('kebabParaEditar', JSON.stringify(kebab));
     window.location.href = '../vistas_admin/EditarKebab.php';

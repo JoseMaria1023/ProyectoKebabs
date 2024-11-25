@@ -4,27 +4,26 @@ document.addEventListener("DOMContentLoaded", function () {
     if (kebabParaEditar) {
         document.getElementById('nombre').value = kebabParaEditar.nombre;
         document.getElementById('descripcion').value = kebabParaEditar.descripcion;
-        document.getElementById('precio').value =kebabParaEditar.precioBase;
-
+        document.getElementById('precio_base').value = kebabParaEditar.precio_base;
+        document.getElementById('id-kebab').value = kebabParaEditar.id;
     }
 });
 
 document.getElementById('form-editar-kebab').addEventListener('submit', function (event) {
-    event.preventDefault(); 
-
+    event.preventDefault();  
     const kebab = {
         id: document.getElementById('id-kebab').value,
         nombre: document.getElementById('nombre').value,
         descripcion: document.getElementById('descripcion').value,
-        precioBase: document.getElementById('precio').value,
+        precio_base: parseFloat(document.getElementById('precio_base').value),  
     };
 
     fetch('../APIS/ApiKebab.php', {
-        method: 'PUT', 
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(kebab),
+        body: JSON.stringify(kebab),  
     })
     .then(respuesta => {
         if (respuesta.ok) {
@@ -32,3 +31,4 @@ document.getElementById('form-editar-kebab').addEventListener('submit', function
         } 
     });
 });
+

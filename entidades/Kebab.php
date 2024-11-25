@@ -3,13 +3,13 @@ class Kebab {
     private $id;
     private $nombre;
     private $descripcion;
-    private $precioBase;
+    private $precio_base;
     private $foto;
 
-    public function __construct($nombre, $descripcion, $precioBase,$foto) {
+    public function __construct($nombre, $descripcion, $precio_base,$foto) {
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
-        $this->precioBase = $precioBase;
+        $this->precio_base = $precio_base;
         $this->foto = $foto;
 
     }
@@ -25,8 +25,8 @@ class Kebab {
     public function getDescripcion() {
         return $this->descripcion;
     }
-    public function getPrecioBase() {
-        return $this->precioBase;
+    public function getPrecio_Base() {
+        return $this->precio_base;
     }
 
     public function getFoto() {
@@ -36,5 +36,18 @@ class Kebab {
     public function setId($id) {
         $this->id = $id;
     }
+
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+    
+    public function setDescripcion($descripcion) {
+        $this->descripcion = $descripcion;
+    }
+    
+    public function setPrecio_Base($precio_base) {
+        $this->precio_base = $precio_base;
+    }
+    
 }
 ?>

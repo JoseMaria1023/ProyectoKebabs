@@ -25,10 +25,12 @@ class RepoKebabs {
     }
 
     public function actualizarKebab(Kebab $Kebab) {
-        $stmt = $this->conexion->prepare("UPDATE Kebabs SET nombre = ?, descripcion = ? WHERE id = ?");
+        $stmt = $this->conexion->prepare("UPDATE Kebabs SET nombre = ?, descripcion = ?, precio_base = ?  WHERE id = ?");
         return $stmt->execute([
             $Kebab->getNombre(), 
             $Kebab->getDescripcion(),  
+            $Kebab->getPrecio_Base(),
+            $Kebab->getId()
         ]);
     }
 
