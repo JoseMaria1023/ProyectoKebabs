@@ -29,7 +29,6 @@ class ApiKebab {
 
         if ($Kebabs) {
             $this->enviarrespuesta(201, $Kebabs); 
-        
         }
     }
 
@@ -38,13 +37,13 @@ class ApiKebab {
 
         $nombre = $_POST['nombre'];
         $descripcion = $_POST['descripcion'];
-        $precio = $_POST['precio'];
+        $precio_base = $_POST['precio'];
 
         $ingredientes = isset($_POST['ingredientesArray']) ? $_POST['ingredientesArray'] : [];
         if (!is_array($ingredientes)) {
             $ingredientes = explode(",", $ingredientes);
         }
-        
+
         $ingredientesString = implode(",", $ingredientes);  
 
         $foto = null;
@@ -58,7 +57,7 @@ class ApiKebab {
             }
         }
 
-        $Kebabs = new Kebab($nombre, $descripcion, $precio, $foto);
+        $Kebabs = new Kebab($nombre, $descripcion, $precio_base, $foto);
 
         $repoKebab = new RepoKebabs();
         $repoKebabIngredientes = new RepoKebabIngredientes();
@@ -67,7 +66,7 @@ class ApiKebab {
 
         if ($GuardarKebab) {
             $idKebab = $repoKebab->getUltimoId();
-    
+
             if (!empty($ingredientes)) {
                 $repoKebabIngredientes->guardarKebabIngrediente($idKebab, $ingredientes);
             }
@@ -75,25 +74,25 @@ class ApiKebab {
         } 
     }
 
-    private function actualizarKebabs() {
+    private function actualizarKebab() {
         $datos = json_decode(file_get_contents("php://input"), true);
-    
-        if (isset($datos['id'], $datos['nombre'], $datos['descripcion'], $datos['precio'])) {
+
+        if (isset($datos['id'], $datos['nombre'], $datos['descripcion'], $datos['precio_base'])) {
             $id = $datos['id'];
             $nombre = $datos['nombre'];
             $descripcion = $datos['descripcion'];
-            $precio = $datos['precio'];
-    
-            $kebab = new Kebab($nombre, $descripcion, $precioBase);
+            $precio_base = $datos['precio_base'];
+
+            $kebab = new Kebab($nombre, $descripcion, $precio_base, null);
             $kebab->setId($id); 
-    
+
             $repoKebabs = new RepoKebabs();
-            $resultado = $repoKebabs-> actualizarKebab($kebab);
-    
+            $resultado = $repoKebabs->actualizarKebab($kebab);
+
             if ($resultado) {
-                $this->enviarrespuesta(200);
+                $this->enviarRespuesta(200, ["message" => "Kebab actualizado correctamente."]);
             } 
-        }
+        } 
     }
 
     private function eliminarKebabs() {
