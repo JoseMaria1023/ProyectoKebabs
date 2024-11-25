@@ -1,31 +1,32 @@
 <?php
 
-Class pedido{
-    private $usuario_id;
+class Pedido {
+    private $usuarioId;
     private $fecha;
-    private $estado;
     private $total;
+    private $estado;
 
-    public function __construct($usuario_id, $fecha, $estado, $total) {
-        $this->usuario_id = $usuario_id;
+    public function __construct($usuarioId, $fecha,  $estado = 'Recibido',$total) {
+        $this->usuarioId = $usuarioId;
         $this->fecha = $fecha;
         $this->estado = $estado;
         $this->total = $total;
-
     }
-    public function getUsuario_id() {
-        return $this->usuario_id;
+
+    public function getUsuarioId() {
+        return $this->usuarioId;
     }
 
     public function getFecha() {
         return $this->fecha;
     }
 
-    public function getEstado(){
-        return $this->estado;
-    }
-    public function getTotal(){
+    public function getTotal() {
         return $this->total;
+    }
+
+    public function getEstado() {
+        return $this->estado;
     }
 
    
