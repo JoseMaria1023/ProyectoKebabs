@@ -15,6 +15,12 @@
                 <li>
                 <a href="GestionarUsuarios.php">Gestión de Usuarios</a>
                 </li>
+
+                <ul>
+                <li>
+                <a href="GestionarPedidos.php">Gestión Pedidos</a>
+                </li>
+                
                 
                 <li>
                     <a href="GestionarKebabs.php">Gestionar Kebabs</a>
