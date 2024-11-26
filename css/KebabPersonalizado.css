@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f0f0f0; 
+    margin: 0;
+    padding: 0; 
+    padding-top: 80px; 
+    margin-bottom: 100px;
+    background-image: url("../imagenes/durum-d-beef.jpg");
+    background-repeat: no-repeat;
+    background-size: 120%;
+}
+
+#preview-container { 
+    margin-top: 10px;
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+#preview {
+    max-width: 300%;
+    max-height: 200%;
+    object-fit: cover; 
+}
+
+.gestion-ingredientes {
+    display: flex;
+    justify-content: center;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 120px;
+    max-width: 1300px; 
+    margin-left: 280px;
+
+
+
+}
+.gestion-ingredientes .container {
+    width: 90%; 
+    max-width: 900px; 
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    text-align: left; 
+    margin: 2rem auto; 
+    margin-top: 20px; 
+}
+
+.gestion-ingredientes h1 {
+    font-size: 2rem; 
+    color: #e76f51; 
+    margin-bottom: 1.5rem;
+    text-align: center; 
+}
+
+.foto {
+    flex: 1 1 300px; 
+    margin-right: 1rem; 
+}
+
+.gestion-ingredientes form input[type="file"] {
+    width: 100%; 
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px; 
+}
+
+
+.image-preview {
+    margin-top: 10px;
+    display: none; 
+    max-width: 100%;
+
+}
+
+.gestion-ingredientes form {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1rem; 
+}
+
+.infomarcion-container {
+    flex: 2; 
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1rem; 
+}
+
+.gestion-ingredientes form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.gestion-ingredientes form input[type="text"],.gestion-ingredientes form textarea,.gestion-ingredientes form input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.gestion-ingredientes form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.infoadicional {
+    display: flex;
+    gap: 1rem; 
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+.gestion-ingredientes button[type="submit"] {
+    background-color: #e76f51; 
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: block;
+    width: 100%; 
+}
+
+.gestion-ingredientes button[type="submit"]:hover {
+    background-color: #d05a4d; 
+}
+
+.gestion-ingredientes form .foto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; 
+}
+
+.gestion-ingredientes form .foto input[type="file"] {
+    margin-bottom: 10px; 
+}
+
+.gestion-ingredientes form .foto #preview-container {
+    margin-top: 10px; 
+}
+

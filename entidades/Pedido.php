@@ -29,7 +29,21 @@ class Pedido {
         return $this->estado;
     }
 
-   
+    public function setUsuarioId($usuarioId) {
+        $this->usuarioId = $usuarioId;
+    }
+
+    public function setFecha($fecha) {
+        $this->fecha = $fecha;
+    }
+
+    public function setTotal($total) {
+        $this->total = $total;
+    }
+
+    public function setEstado($estado) {
+        $this->estado = $estado;
+    }
 }
 
 ?>

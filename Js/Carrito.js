@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('realizar-pedido').addEventListener('click', realizarPedido);
 });
 
+
 function mostrarCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const contenedorCarrito = document.getElementById('carrito-container');

@@ -1,4 +1,3 @@
-
 header { 
     background-color: #333; 
     color: white; 
@@ -14,6 +13,7 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
     border-bottom: 2px solid #e74c3c;
 }
+
 .logo img {
     height: 50px; 
 }
@@ -30,6 +30,7 @@ nav ul {
 
 nav ul li {
     margin: 0 15px; 
+    position: relative; /* Necesario para el submenú */
 }
 
 nav ul li a {
@@ -48,9 +49,48 @@ nav ul li a.button {
     background-color: #e76f51;
     padding: 10px 20px; 
 }
+
 nav ul li a.button:hover {
     background-color: #d05a4d; 
 }
-h1{
+
+nav ul li ul {
+    display: none; /* Ocultar submenú por defecto */
+    position: absolute;
+    top: 100%; /* Debajo del enlace principal */
+    left: 0;
+    background-color: #444; /* Fondo del submenú */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px; /* Ancho mínimo del submenú */
+    z-index: 2000;
+}
+
+nav ul li ul li a {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    font-weight: normal;
+    border-bottom: 1px solid #555;
+}
+
+nav ul li ul li a:hover {
+    background-color: #e74c3c;
+}
+
+nav ul li:hover > ul {
+    display: block; /* Mostrar el submenú al pasar el ratón */
+}
+
+/* Estilo para eliminar el borde inferior del último elemento */
+nav ul li ul li:last-child a {
+    border-bottom: none;
+}
+
+h1 {
     font-size: 90%;
 }

@@ -15,7 +15,12 @@
         <nav>
             <ul>
                 <li><a href="index.php">Inicio</a></li>
-                <li><a href="menu.php">Menú</a></li>
+                <li>
+                    <a href="menu.php">Menú</a>
+                    <ul>
+                        <li><a href="vistas_usuarios/KebabPersonalizado.php">Kebab Personalizado</a></li>
+                    </ul>
+                </li>           
                 <li><a href="pedidos.php">Mis Pedidos</a></li>
                 <li><a href="contacto.php">Contacto</a></li>
                 <li><a href="monedero.php">Saldo: €<span id="saldo-usuario"><?= $saldoUsuario ?></span></a></li> 

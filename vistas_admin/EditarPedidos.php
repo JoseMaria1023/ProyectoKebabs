@@ -13,9 +13,7 @@ cargarCSS('HeaderAdmin', 'EditarPedido', 'footer');
 <body>
     <h1>Editar Pedido</h1>
     
-    <form id="form-editar-Pedido">
-        <input type="hidden" id="PedidoId" name="PedidoId"> 
-        
+    <form id="form-editar-Pedido">        
         <label for="Estado">Estado:</label>
         <select id="Estado" name="Estado" required>
             <option value="Recibido">Recibido</option>
@@ -24,6 +22,8 @@ cargarCSS('HeaderAdmin', 'EditarPedido', 'footer');
             <option value="Enviado">Enviado</option>
         </select>
         <br>
+
+        <input type="hidden" id="id-Pedido" name="id-Pedido" value="">
 
         <button type="submit">Guardar Cambios</button>
     </form>

@@ -12,7 +12,7 @@ class RepoKebabs {
         $stmt->execute([
             $Kebab->getNombre(), 
             $Kebab->getDescripcion(), 
-            $Kebab->getPrecioBase(),  
+            $Kebab->getPrecio_Base(),  
             $Kebab->getFoto(), 
 
         ]);
