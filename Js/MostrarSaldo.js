@@ -6,9 +6,9 @@ function obtenerSaldo() {
             }
         })
         .then(response => response.json())
-        .then(data => {
-            if (data.saldo) {
-                document.getElementById('saldo-usuario').textContent = data.saldo;
+        .then(datos => {
+            if (datos.saldo) {
+                document.getElementById('saldo-usuario').textContent = datos.saldo;
             } 
         })
     }

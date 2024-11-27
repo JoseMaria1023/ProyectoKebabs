@@ -19,6 +19,7 @@ cargarCSS('HeaderAdmin', 'GestionarKebab', 'footer');
                 <th>Descripcion</th>
                 <th>Precio</th>
                 <th>Foto</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>

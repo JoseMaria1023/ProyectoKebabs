@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Online de Kebabs</title>
     <link rel="stylesheet" href="./css/header.css">
+
 </head>
 <body>
     <header>
@@ -15,7 +16,7 @@
             <ul>
                 <li><a href="index.php">Inicio</a></li>
                 <li>
-                    <a href="menu.php">Menú</a>
+                    <a href="./vistas_usuarios/MostrarKebab.php">Menú</a>
                     <ul>
                         <li><a href="vistas_usuarios/KebabPersonalizado.php">Kebab Personalizado</a></li>
                     </ul>

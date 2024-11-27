@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(respuesta => respuesta.json())
         .then(data => {
             const tablaUsuarios = document.getElementById('tabla-usuarios');
-            tablaUsuarios.innerHTML = '';
 
             data.forEach(usuario => {
                 const fila = document.createElement('tr');

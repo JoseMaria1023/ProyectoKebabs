@@ -16,9 +16,9 @@ cargarCSS('HeaderAdmin', 'GestionarIngredientes', 'footer');
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Descripcion</th>
                 <th>Precio</th>
                 <th>Foto</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>

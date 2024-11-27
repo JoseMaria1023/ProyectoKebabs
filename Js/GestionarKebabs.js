@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(respuesta => respuesta.json())
         .then(data => {
             const tablaKebab = document.getElementById('tabla-Kebabs');
-            tablaKebab.innerHTML = '';
 
             data.forEach(kebab => {
                 const fila = document.createElement('tr');

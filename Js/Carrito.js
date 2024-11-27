@@ -1,42 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     mostrarCarrito();
-    document.getElementById('realizar-pedido').addEventListener('click', realizarPedido);
+    document.getElementById('realizar-pedido').onclick = realizarPedido;
 });
-
 
 function mostrarCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const contenedorCarrito = document.getElementById('carrito-container');
-    const totalPrecio = document.getElementById('total-price');
+    const totalPrecio = document.getElementById('Precio-Total'); 
     let total = 0;
 
-    contenedorCarrito.innerHTML = '';
+    contenedorCarrito.innerHTML = ''; 
 
     carrito.forEach((item, index) => {
-        const div = document.createElement('div');
-        div.className = 'producto-carrito';
+        const productoDiv = document.createElement('div');
+        productoDiv.className = 'producto-carrito';
 
         const nombre = document.createElement('h3');
         nombre.textContent = item.nombre;
-        div.appendChild(nombre);
+        productoDiv.appendChild(nombre);
 
         const precio = document.createElement('p');
-        precio.textContent = `${item.precio}€`;
-        div.appendChild(precio);
+        precio.textContent = item.precio + '€';
+        productoDiv.appendChild(precio);
 
         const botonEliminar = document.createElement('button');
         botonEliminar.textContent = 'Eliminar';
         botonEliminar.className = 'boton-eliminar';
+        botonEliminar.onclick = () => eliminarProducto(index);
+        productoDiv.appendChild(botonEliminar);
 
-        botonEliminar.addEventListener('click', () => eliminarProducto(index));
-        div.appendChild(botonEliminar);
+        contenedorCarrito.appendChild(productoDiv);
 
         total += parseFloat(item.precio);
-
-        contenedorCarrito.appendChild(div);
     });
 
-    totalPrecio.textContent = total.toFixed(2); 
+        totalPrecio.textContent = total.toFixed(2);
+
 }
 
 function eliminarProducto(index) {
@@ -51,19 +50,17 @@ function eliminarProducto(index) {
 
 function realizarPedido() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    const totalPrecio = document.getElementById('total-price').textContent;
+    const totalPrecio = document.getElementById('Precio-Total')?.textContent 
 
     fetch('../APIS/ApiSesion.php', {
         method: 'GET',
     })
     .then(response => {
-        if (!response.ok) {
-        }
         return response.json();
     })
-    .then(data => {
-        if (data.success && data.usuarioId) {
-            const usuarioId = data.usuarioId;
+    .then(datos => {
+        if (datos.success && datos.usuarioId) {
+            const usuarioId = datos.usuarioId;
 
             return fetch('../APIS/ApiPedido.php', {
                 method: 'POST',
@@ -82,6 +79,4 @@ function realizarPedido() {
             alert('Pedido realizado con éxito'); 
         } 
     })
-    
 }
-

@@ -22,12 +22,17 @@ spl_autoload_register(function ($class_name) {
     }
 });
 
-function cargarCSS(...$nombres_css) {
-    foreach ($nombres_css as $nombre_css) {
-        $ruta_css = __DIR__ . '/../css/' . $nombre_css . '.css';
-        if (file_exists($ruta_css)) {
-            echo '<link rel="stylesheet" href="../css/' . $nombre_css . '.css">';
-        } 
+function cargarCSS() {
+    $css = [
+        'inicio' => '/css/inicio.css',
+        'login' => '/css/login.css',
+        'registro' => '/css/registro.css',
+        'menu' => '/css/menu.css',
+        'contacto' => '/css/contacto.css',
+    ];
+
+    if (isset($_GET['header']) && array_key_exists($_GET['header'], $css)) {
+        echo '<link rel="stylesheet" href="' . $css[$_GET['header']] . '">';
     }
 }
 ?>

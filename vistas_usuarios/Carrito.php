@@ -17,7 +17,7 @@ cargarCSS('headerLogueado', 'Carrito', 'footer');
     </div>
 
     <div id="total">
-        <p>Total: <span id="total-price">0</span>€</p>
+        <p>Total: <span id="Precio-Total">0</span>€</p>
     </div>
 
     <button id="realizar-pedido">Realizar Pedido</button>

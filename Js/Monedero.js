@@ -6,9 +6,9 @@ function obtenerSaldo() {
         }
     })
     .then(response => response.json())
-    .then(data => {
-        if (data.saldo) {
-            const saldo = parseFloat(data.saldo);
+    .then(datos => {
+        if (datos.saldo) {
+            const saldo = parseFloat(datos.saldo);
             if (!isNaN(saldo)) {
                 document.getElementById('saldo-actual').textContent = saldo.toFixed(2);
                 document.getElementById('saldo-usuario').textContent = saldo.toFixed(2);
@@ -31,9 +31,9 @@ document.getElementById("formulario-añadir-fondos").addEventListener("submit", 
         body: JSON.stringify({ cantidad: cantidad })
     })
     .then(response => response.json())
-    .then(data => {
-        if (data.nuevoSaldo) {
-            const nuevoSaldo = parseFloat(data.nuevoSaldo);
+    .then(datos => {
+        if (datos.nuevoSaldo) {
+            const nuevoSaldo = parseFloat(datos.nuevoSaldo);
             if (!isNaN(nuevoSaldo)) {
                 document.getElementById("saldo-actual").textContent = nuevoSaldo.toFixed(2);
                 document.getElementById("saldo-usuario").textContent = nuevoSaldo.toFixed(2);

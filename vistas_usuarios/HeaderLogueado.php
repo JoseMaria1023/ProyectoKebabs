@@ -14,9 +14,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.php">Inicio</a></li>
+                <li><a href="../vistas_usuarios/InicioUsuario.php">Inicio</a></li>
                 <li>
-                    <a href="menu.php">Menú</a>
+                    <a href="../vistas_usuarios/MostrarKebab.php">Menú</a>
                     <ul>
                         <li><a href="vistas_usuarios/KebabPersonalizado.php">Kebab Personalizado</a></li>
                     </ul>

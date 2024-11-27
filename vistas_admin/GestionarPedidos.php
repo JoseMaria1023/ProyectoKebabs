@@ -19,6 +19,8 @@ cargarCSS('HeaderAdmin', 'GestionarPedidos', 'footer');
                 <th>Fecha</th>
                 <th>Estado</th>
                 <th>Total</th>
+                <th>Acciones</th>
+
             </tr>
         </thead>
         <tbody>
