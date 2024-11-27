@@ -54,9 +54,7 @@ function obtenerKebabs() {
 
                     contenedorKebabs.appendChild(ContieneKebabs);
                 });
-                .catch(() => {
-                    return fetch('APIS/ApiIngredientes.php');
-                })
+                
             }
           
         
