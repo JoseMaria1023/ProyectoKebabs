@@ -29,6 +29,9 @@ document.getElementById('form-editar-kebab').addEventListener('submit', function
         if (respuesta.ok) {
             window.location.href = '../vistas_admin/GestionarKebabs.php'; 
         } 
+    })
+    .catch(() => {
+        return fetch('APIS/ApiKebab.php');
     });
 });
 

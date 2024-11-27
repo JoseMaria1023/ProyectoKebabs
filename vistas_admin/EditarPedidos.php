@@ -1,8 +1,5 @@
-<?php 
-include_once '../cargadores/autocargadores.php'; 
-cargarCSS('HeaderAdmin', 'EditarPedido', 'footer');
-?>
-<?php include '../vistas_admin/HeaderAdmin.php'; ?>
+<link rel="stylesheet" href="../css/GestionarPedidos.css">
+<link rel="stylesheet" href="css/GestionarPedidos.css">
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,7 +26,8 @@ cargarCSS('HeaderAdmin', 'EditarPedido', 'footer');
     </form>
 
     <script src="../Js/EditarPedido.js"></script>
+    <script src="Js/EditarPedido.js"></script>
+
 </body>
 </html>
 
-<?php include '../vistas_generales/footer.php'; ?>

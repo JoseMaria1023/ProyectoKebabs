@@ -1,12 +1,7 @@
-<?php 
-include_once '../cargadores/autocargadores.php'; 
-cargarCSS('header', 'registro', 'footer');
-?>
-<?php include '../vistas_generales/header.php'; ?>
-
+<link rel="stylesheet" href="css/registro.css">
 <div class="gestion-ingredientes">
     <div class="container">
-        <form action="../APIS/ApiUsuarios.php" method="post" enctype="multipart/form-data">
+        <form action="APIS/ApiUsuarios.php" method="post" enctype="multipart/form-data">
             <div class="foto">
                 <label for="foto">Seleccionar Imagen</label>
                 <input type="file" name="foto" id="foto" />
@@ -46,6 +41,4 @@ cargarCSS('header', 'registro', 'footer');
         </form>
     </div>
 </div>
-
-<?php include '../vistas_generales/footer.php'; ?>
-<script src="../Js/PreviewImagen.js"></script>
+<script src="Js/PreviewImagen.js"></script>

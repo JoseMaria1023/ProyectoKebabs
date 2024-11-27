@@ -1,9 +1,7 @@
-<?php 
-include_once '../cargadores/autocargadores.php'; 
-cargarCSS('HeaderAdmin', 'añadiringredientes', 'footer');
-?>
-<?php include '../vistas_admin/HeaderAdmin.php'; ?>
+<link rel="stylesheet" href="../css/añadiringredientes.css">
+<link rel="stylesheet" href="css/añadiringredientes.css">
 <script src="../Js/PreviewImagen.js"></script>
+<script src="Js/PreviewImagen.js"></script>
 <div class="gestion-ingredientes">
     <div class="container">
         <h1>Gestionar Ingredientes</h1>
@@ -38,7 +36,7 @@ cargarCSS('HeaderAdmin', 'añadiringredientes', 'footer');
         </form>
     </div>
 </div>
-<?php include '../vistas_generales/footer.php'; ?>
 <script src="../Js/MostrarAlergenos.js"></script>
+<script src="Js/MostrarAlergenos.js"></script>
 
 

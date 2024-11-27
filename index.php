@@ -1,10 +1,13 @@
-<!-- index.php -->
-<?php include_once './cargadores/autocargadores.php'; ?>
+<?php
 
+class Principal{
 
-<?php include './vistas_generales/header.php'; ?>
+public static function main(){
+    require_once './cargadores/autocargadores.php';
+    require_once './vistas_generales/layoutnologueado.php';
 
-<?php include './vistas_usuarios/InicioUsuario.php'; ?>
+}
+}
 
-
-<?php include './vistas_generales/footer.php'; ?>
+Principal::main();
+?>

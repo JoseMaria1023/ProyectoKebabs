@@ -49,7 +49,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 fila.appendChild(celdaAcciones);
 
                 tablaUsuarios.appendChild(fila);
+                
             });
+        })
+        .catch(() => {
+            return fetch('APIS/ApiUsuarios.php');
         });
 });
 
@@ -57,7 +61,6 @@ function editarUsuario(usuario) {
     localStorage.setItem('usuarioParaEditar', JSON.stringify(usuario));
     window.location.href = '../vistas_admin/EditarUsuario.php';
 }
-
 
 function eliminarUsuario(id) {
     fetch('../APIS/ApiUsuarios.php?id=' + id, {
@@ -67,5 +70,8 @@ function eliminarUsuario(id) {
         if (respuesta.ok) {
             window.location.reload();
         } 
+    })
+    .catch(() => {
+        return fetch('APIS/ApiUsuarios.php');
     });
 }

@@ -43,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 tablaPedidos.appendChild(fila);
             });
+        })
+        .catch(() => {
+            return fetch('APIS/ApiPedido.php');
         });
 });
 

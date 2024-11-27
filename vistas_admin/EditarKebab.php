@@ -1,8 +1,5 @@
-<?php 
-include_once '../cargadores/autocargadores.php'; 
-cargarCSS('HeaderAdmin', 'EditarKebab', 'footer');
-?>
-<?php include '../vistas_admin/HeaderAdmin.php'; ?>
+<link rel="stylesheet" href="../css/EditarKebab.css">
+<link rel="stylesheet" href="css/EditarKebab.css">
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,6 +29,8 @@ cargarCSS('HeaderAdmin', 'EditarKebab', 'footer');
 </form>
 
     <script src="../Js/EditarKebab.js"></script>
+    <script src="Js/EditarKebab.js"></script>
+
 </body>
 </html>
 

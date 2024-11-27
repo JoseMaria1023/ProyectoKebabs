@@ -14,20 +14,20 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.php">Inicio</a></li>
+                <li><a href="?menu=inicio">Inicio</a></li>
                 <li>
-                    <a href="./vistas_usuarios/MostrarKebab.php">Menú</a>
+                    <a href="?menu=mostrarkebab">Menú</a>
                     <ul>
-                        <li><a href="vistas_usuarios/KebabPersonalizado.php">Kebab Personalizado</a></li>
+                        <li><a href="?menu=kebabpersonalizado">Kebab Personalizado</a></li>
                     </ul>
                 </li>
                 <li><a href="pedidos.php">Mis Pedidos</a></li>
                 <li><a href="contacto.php">Contacto</a></li>
                 <li>
-                    <a href="vistas_generales/InicioSesion.php">Iniciar Sesión</a>
+                    <a href="?menu=login">Iniciar Sesión</a>
                 </li>
                 <li>
-                    <a href="vistas_generales/registro.php" class="button">Registro</a>
+                    <a href="?menu=registro" class="button">Registro</a>
                 </li> 
             </ul>
         </nav>

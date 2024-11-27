@@ -1,8 +1,5 @@
-<?php 
-include_once '../cargadores/autocargadores.php'; 
-cargarCSS('headerAdmin', 'CrearKebab', 'footer');
-?>
-<?php include '../vistas_admin/HeaderAdmin.php'; ?>
+<link rel="stylesheet" href="../css/CrearKebab.css">
+<link rel="stylesheet" href="css/CrearKebab.css">
 <main class="contenedor-administracion">
     <h2>Crear Kebab de la Casa</h2>
 
@@ -55,5 +52,6 @@ cargarCSS('headerAdmin', 'CrearKebab', 'footer');
     </form>
 </main>
 
-<?php include '../vistas_generales/footer.php'; ?>
 <script src="../Js/MostrarIngredientes.js"></script>
+<script src="Js/MostrarIngredientes.js"></script>
+

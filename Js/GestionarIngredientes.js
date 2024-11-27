@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 tablaIngredientes.appendChild(fila);
             });
+        })
+        .catch(() => {
+            return fetch('APIS/ApiIngredientes.php');
         });
 });
 
@@ -53,5 +56,8 @@ function eliminarIngredientes(id) {
         if (respuesta.ok) {
             window.location.reload();
         } 
+    })
+    .catch(() => {
+        return fetch('APIS/ApiIngredientes.php?id=' + id);
     });
 }

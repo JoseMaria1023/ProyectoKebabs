@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Bienvenido a Kebab Paradise!</title>
-    <link rel="stylesheet" href="./css/InicioUsuario.css">
+    <link rel="stylesheet" href="css/InicioUsuario.css">
+    <link rel="stylesheet" href="../css/InicioUsuario.css">
+
 </head>
 <body>
     <div class="bienvenida-container">

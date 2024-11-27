@@ -32,5 +32,8 @@ document.getElementById('form-editar-usuario').addEventListener('submit', functi
         if (respuesta.ok) {
             window.location.href = '../vistas_admin/GestionarUsuarios.php'; 
         } 
+    })
+    .catch(() => {
+        return fetch('APIS/ApiUsuarios.php');
     });
 });

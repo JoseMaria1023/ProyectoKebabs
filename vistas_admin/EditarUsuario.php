@@ -1,8 +1,6 @@
-<?php 
-include_once '../cargadores/autocargadores.php'; 
-cargarCSS('HeaderAdmin', 'EditarUsuario', 'footer');
-?>
-<?php include '../vistas_admin/HeaderAdmin.php'; ?>
+<link rel="stylesheet" href="../css/EditarUsuario.css">
+<link rel="stylesheet" href="css/EditarUsuario.css">
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -38,7 +36,8 @@ cargarCSS('HeaderAdmin', 'EditarUsuario', 'footer');
     </form>
 
     <script src="../Js/EditarUsuario.js"></script>
+    <script src="Js/EditarUsuario.js"></script>
+
 </body>
 </html>
 
-<?php include '../vistas_generales/footer.php'; ?>

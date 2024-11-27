@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 tablaKebab.appendChild(fila);
             });
+        })
+        .catch(() => {
+            return fetch('APIS/ApiKebab.php');
         });
 });
 function editarKebab(kebab) {
@@ -62,5 +65,8 @@ function eliminarKebab(id) {
         if (respuesta.ok) {
             window.location.reload();
         } 
+    })
+    .catch(() => {
+        return fetch('APIS/ApiKebab.php');
     });
 }

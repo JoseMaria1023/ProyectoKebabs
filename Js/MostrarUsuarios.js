@@ -1,11 +1,12 @@
 function obtenerUsuarios() {
-    fetch('../APIS/ApiUsuarios.php')
+    fetch('APIS/ApiUsuarios.php')
         .then(respuesta => {
             if (!respuesta.ok) {
                 throw new Error('Error en la respuesta de la API');
             }
             return respuesta.text(); 
         })
+        
         .then(texto => {
             return JSON.parse(texto); 
         })
@@ -17,6 +18,10 @@ function obtenerUsuarios() {
                 opcion.textContent = usuarios.nombre;
                 selectUsuarios.appendChild(opcion);
             });
+            
+        })
+        .catch(() => {
+            return fetch('../APIS/ApiUsuarios.php');
         })
 }
 obtenerUsuarios();                                                                                                                                                          

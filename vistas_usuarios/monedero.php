@@ -1,8 +1,16 @@
-<?php 
-include_once '../cargadores/autocargadores.php'; 
-cargarCSS('headerLogueado', 'monedero', 'footer');
-?>
-<?php include '../vistas_usuarios/HeaderLogueado.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/monedero.css">
+    <link rel="stylesheet" href="css/monedero.css">
+
+
+</head>
+<body>
+    
 <main class="contenido-principal">
     <section class="seccion-saldo">
         <h2>Saldo Disponible</h2>
@@ -18,5 +26,9 @@ cargarCSS('headerLogueado', 'monedero', 'footer');
         </form>
     </section>
 </main>
+</body>
+</html>
 <script src="../Js/Monedero.js"></script>
-<?php include '../vistas_generales/footer.php'; ?>
+<script src="Js/Monedero.js"></script>
+
+

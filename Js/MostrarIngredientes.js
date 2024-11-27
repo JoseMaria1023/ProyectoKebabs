@@ -18,5 +18,8 @@ function obtenerIngredientes() {
                 selectIngredientes.appendChild(opcion);
             });
         })
+        .catch(() => {
+            return fetch('APIS/ApiIngredientes.php');
+        })
 }
 obtenerIngredientes();

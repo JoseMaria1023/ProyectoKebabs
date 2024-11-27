@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Online de Kebabs</title>
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="../css/headerLogueado.css">
+    <link rel="stylesheet" href="css/headerLogueado.css">
 </head>
 <body>
     <header>
@@ -14,17 +15,17 @@
         </div>
         <nav>
             <ul>
-                <li><a href="../vistas_usuarios/InicioUsuario.php">Inicio</a></li>
+                <li><a href="?menuLogin=inicio">Inicio</a></li>
                 <li>
-                    <a href="../vistas_usuarios/MostrarKebab.php">Menú</a>
+                    <a href="?menuLogin=mostrarkebab">Menú</a>
                     <ul>
-                        <li><a href="vistas_usuarios/KebabPersonalizado.php">Kebab Personalizado</a></li>
+                        <li><a href="?menuLogin=KebabPersonalizado">Kebab Personalizado</a></li>
                     </ul>
                 </li>           
                 <li><a href="pedidos.php">Mis Pedidos</a></li>
                 <li><a href="contacto.php">Contacto</a></li>
-                <li><a href="monedero.php">Saldo: €<span id="saldo-usuario"><?= $saldoUsuario ?></span></a></li> 
-                <li><a href="carrito.php">Carrito</a></li>
+                <li><a href="?menuLogin=monedero">Saldo: €<span id="saldo-usuario"><?= $saldoUsuario ?></span></a></li> 
+                <li><a href="?menuLogin=carrito">Carrito</a></li>
                 <li><a href="logout.php" class="button">Cerrar Sesión</a></li> 
             </ul>
         </nav>
@@ -32,3 +33,5 @@
 </body>
 </html>
 <script src="../Js/MostrarSaldo.js"></script>
+<script src="Js/MostrarSaldo.js"></script>
+

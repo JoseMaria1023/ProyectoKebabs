@@ -1,22 +1,49 @@
-function obtenerAlergenos() {
-    fetch('../APIS/ApiAlergenos.php')
-        .then(respuesta => {
-            if (!respuesta.ok) {
-                throw new Error('Error en la respuesta de la API');
-            }
-            return respuesta.text(); 
-        })
-        .then(texto => {
-            return JSON.parse(texto); 
-        })
-        .then(alergenos => {
-            const selectAlergenos = document.getElementById('alergenos');
-            alergenos.forEach(alergeno => {
-                const opcion = document.createElement('option');
-                opcion.value = alergeno.id;
-                opcion.textContent = alergeno.nombre;
-                selectAlergenos.appendChild(opcion);
-            });
-        })
+function obtenerSaldo() {
+    fetch('../APIS/ApiSaldo.php', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(datos => {
+        if (datos.saldo) {
+            const saldo = parseFloat(datos.saldo);
+            if (!isNaN(saldo)) {
+                document.getElementById('saldo-actual').textContent = saldo.toFixed(2);
+                document.getElementById('saldo-usuario').textContent = saldo.toFixed(2);
+            } 
+        }
+    })
+    .catch(() => {
+        return fetch('APIS/ApiSaldo.php');
+    });
 }
-obtenerAlergenos();
+
+document.addEventListener("DOMContentLoaded", obtenerSaldo);
+
+document.getElementById("formulario-añadir-fondos").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const cantidad = parseFloat(document.getElementById("cantidad").value);
+    fetch('../APIS/ApiSaldo.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ cantidad: cantidad })
+    })
+    .then(response => response.json())
+    .then(datos => {
+        if (datos.nuevoSaldo) {
+            const nuevoSaldo = parseFloat(datos.nuevoSaldo);
+            if (!isNaN(nuevoSaldo)) {
+                document.getElementById("saldo-actual").textContent = nuevoSaldo.toFixed(2);
+                document.getElementById("saldo-usuario").textContent = nuevoSaldo.toFixed(2);
+            } 
+        }
+    })
+    .catch(() => {
+        return fetch('APIS/ApiSaldo.php');
+    });
+});

@@ -1,8 +1,5 @@
-<?php 
-include_once '../cargadores/autocargadores.php'; 
-cargarCSS('headerLogueado', 'Carrito', 'footer');
-?>
-<?php include '../vistas_usuarios/HeaderLogueado.php'; ?>
+<link rel="stylesheet" href="../css/carrito.css">
+<link rel="stylesheet" href="css/carrito.css">
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,6 +20,7 @@ cargarCSS('headerLogueado', 'Carrito', 'footer');
     <button id="realizar-pedido">Realizar Pedido</button>
 
     <script src="../Js/carrito.js"></script>
+    <script src="Js/carrito.js"></script>
+
 </body>
 </html>
-<?php include '../vistas_generales/footer.php'; ?>

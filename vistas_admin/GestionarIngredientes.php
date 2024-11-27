@@ -1,8 +1,6 @@
-<?php 
-include_once '../cargadores/autocargadores.php'; 
-cargarCSS('HeaderAdmin', 'GestionarIngredientes', 'footer');
-?>
-<?php include '../vistas_admin/HeaderAdmin.php'; ?>
+<link rel="stylesheet" href="../css/GestionarIngredientes.css">
+<link rel="stylesheet" href="css/GestionarIngredientes.css">
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,6 +24,7 @@ cargarCSS('HeaderAdmin', 'GestionarIngredientes', 'footer');
     </table>
 
     <script src="../Js/GestionarIngredientes.js"></script>
+    <script src="Js/GestionarIngredientes.js"></script>
+
 </body>
 </html>
-<?php include '../vistas_generales/footer.php'; ?>

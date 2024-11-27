@@ -13,9 +13,13 @@ function obtenerSaldo() {
                 document.getElementById('saldo-actual').textContent = saldo.toFixed(2);
                 document.getElementById('saldo-usuario').textContent = saldo.toFixed(2);
             } 
+
+            
         }
+        
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", obtenerSaldo);
 
@@ -38,6 +42,10 @@ document.getElementById("formulario-añadir-fondos").addEventListener("submit", 
                 document.getElementById("saldo-actual").textContent = nuevoSaldo.toFixed(2);
                 document.getElementById("saldo-usuario").textContent = nuevoSaldo.toFixed(2);
             } 
+            
         }
+        
     });
+    
 });
+

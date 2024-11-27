@@ -11,6 +11,9 @@ function obtenerSaldo() {
                 document.getElementById('saldo-usuario').textContent = datos.saldo;
             } 
         })
+        .catch(() => {
+            return fetch('APIS/ApiSaldo.php');
+        })
     }
 
     document.addEventListener("DOMContentLoaded", obtenerSaldo);

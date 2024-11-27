@@ -1,9 +1,12 @@
-<?php 
-include_once '../cargadores/autocargadores.php'; 
-cargarCSS('HeaderLogueado', 'KebabPersonalizado', 'footer');
-?>
-<?php include '../vistas_usuarios/HeaderLogueado.php'; ?>
-<script src="../Js/PreviewImagen.js"></script>
+<head>
+<link rel="stylesheet" href="css/KebabPersonalizado.css">
+<link rel="stylesheet" href="../css/KebabPersonalizado.css">
+
+<script src="Js/PreviewImagen.js"></script>
+</head>
+<body>
+    
+
 <div class="gestion-ingredientes">
     <div class="container">
         <h1>Crear Kebab Personalizado</h1>
@@ -42,5 +45,7 @@ cargarCSS('HeaderLogueado', 'KebabPersonalizado', 'footer');
         </form>
     </div>
 </div>
-<?php include '../vistas_generales/footer.php'; ?>
+</body>
+<script src="Js/KebabPersonalizado.js"></script>
 <script src="../Js/KebabPersonalizado.js"></script>
+

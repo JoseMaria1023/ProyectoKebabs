@@ -26,6 +26,9 @@ document.getElementById('form-editar-Pedido').addEventListener('submit', functio
         if (respuesta.ok) {
             window.location.href = '../vistas_admin/GestionarPedidos.php'; 
         } 
+    })
+    .catch(() => {
+        return fetch('APIS/ApiPedido.php');
     });
 });
 

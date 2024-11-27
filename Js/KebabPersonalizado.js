@@ -17,6 +17,10 @@ function obtenerIngredientes() {
                 opcion.textContent = ingredientes.nombre;
                 selectIngredientes.appendChild(opcion);
             });
+            
+        })
+        .catch(() => {
+            return fetch('APIS/ApiIngredientes.php');
         })
 }
 obtenerIngredientes();
