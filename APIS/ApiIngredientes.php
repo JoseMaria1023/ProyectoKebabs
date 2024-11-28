@@ -74,7 +74,7 @@ class ApiIngredientes {
             if (!empty($alergenos)) {
                 $repoIngreAlergenos->guardarAlergenosIngrediente($idIngrediente, $alergenos);
             }
-            $this->enviarrespuesta(200);
+            $this->enviarrespuesta(200,["message" => "Nuevo Ingrediente registrado"]);
         } 
     }
 

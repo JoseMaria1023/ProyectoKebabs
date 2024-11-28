@@ -5,12 +5,11 @@ body {
     background-color: #f9f9f9;
     background-image: url("../imagenes/durum-d-beef.jpg");
     background-repeat: no-repeat;
-    background-size: cover; 
-    background-attachment: fixed; 
-    background-position: center; 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     min-height: 100vh;
 }
-
 
 h1 {
     text-align: center;
@@ -20,8 +19,8 @@ h1 {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reducción del tamaño mínimo */
+    gap: 15px; /* Menor espacio entre los contenedores */
     padding: 20px;
 }
 
@@ -29,54 +28,56 @@ h1 {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 15px;
+    padding: 10px; /* Reducido el padding */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: space-between; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Para que ocupe todo el espacio disponible dentro de la celda */
+    max-width: 250px; /* Ancho máximo reducido */
 }
 
 .ContieneKebabs img {
-    max-width: 100%; 
-    height: auto; 
+    max-width: 100%;
+    height: auto;
     border-radius: 5px;
-    margin-bottom: 15px; 
+    margin-bottom: 10px; /* Menor margen debajo de la imagen */
 }
 
 .ContieneKebabs h3 {
-    margin: 10px 0;
+    margin: 8px 0; /* Reducido margen */
     color: #444;
-    font-size: 1.2rem;
+    font-size: 1rem; /* Reducido el tamaño de la fuente */
 }
 
 .ContieneKebabs p {
     margin: 5px 0;
     color: #666;
-    font-size: 0.9rem; 
+    font-size: 0.85rem;
 }
 
 .boton-pedir, .boton-personalizar {
     display: inline-block;
-    margin: 10px 5px;
-    padding: 8px 16px; 
-    font-size: 12px; 
+    margin: 8px 5px;
+    padding: 8px 16px;
+    font-size: 12px;
     font-weight: bold;
     color: white;
     background-color: #e74c3c;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100px; 
-    max-width: 150px; 
+    width: 90px; 
+    max-width: 130px; 
 }
 
 .ContieneKebabs .botones {
-    margin-top: 15px; 
+    margin-top: 10px; 
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 100%; 
+    gap: 8px; 
+    width: 100%;
     align-items: center;
 }

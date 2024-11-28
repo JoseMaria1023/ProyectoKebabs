@@ -33,5 +33,3 @@
 
 </body>
 </html>
-
-<?php include '../vistas_generales/footer.php'; ?>

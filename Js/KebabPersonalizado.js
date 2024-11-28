@@ -19,9 +19,23 @@ function obtenerIngredientes() {
             });
             
         })
-        .catch(() => {
-            return fetch('APIS/ApiIngredientes.php');
-        })
-}
-obtenerIngredientes();
+        return fetch('APIS/ApiIngredientes.php')
+                .then(respuesta => {
+                    return respuesta.text();
+                })
+                .then(texto => {
+                    return JSON.parse(texto);
+                })
+                .then(ingredientes => {
+                    const selectIngredientes = document.getElementById('ingredientes');
+                    ingredientes.forEach(ingrediente => {
+                        const opcion = document.createElement('option');
+                        opcion.value = ingrediente.id;
+                        opcion.textContent = ingrediente.nombre;
+                        selectIngredientes.appendChild(opcion);
+                    });
+                });
+        };
 
+
+obtenerIngredientes();

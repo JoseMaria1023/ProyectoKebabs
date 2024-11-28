@@ -1,12 +1,9 @@
 <head>
 <link rel="stylesheet" href="css/KebabPersonalizado.css">
 <link rel="stylesheet" href="../css/KebabPersonalizado.css">
-
 <script src="Js/PreviewImagen.js"></script>
 </head>
 <body>
-    
-
 <div class="gestion-ingredientes">
     <div class="container">
         <h1>Crear Kebab Personalizado</h1>

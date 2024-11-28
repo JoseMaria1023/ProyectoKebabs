@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/GestionarPedidos.css">
 </head>
 <body>
-    <h1>Gestión de Pedidos</h1>
     <table id="tabla-Pedidos">
         <thead>
             <tr>

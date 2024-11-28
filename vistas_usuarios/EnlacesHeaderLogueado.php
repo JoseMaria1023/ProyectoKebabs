@@ -24,6 +24,9 @@ if (isset($_GET['menuLogin'])) {
     }
 
 
-
+    if ($_GET['menuLogin'] == "contacto") {
+        require_once '../vistas_usuarios/Contacto.php';
+     
+    }
 
 }?>

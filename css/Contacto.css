@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+#contenedor-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    margin: 80px 40px 40px 40px; 
+}
+
+.contenedor-formulario {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+}
+
+h2 {
+    font-size: 2rem;
+    color: #d35400;
+    margin-bottom: 15px; 
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.Contenidos {
+    margin-bottom: 15px; 
+}
+
+.Contenidos label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.Contenidos input, .Contenidos textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+}
+
+.Contenidos input:focus, .Contenidos textarea:focus {
+    border-color: #e67e22;
+    background-color: #fff;
+    outline: none;
+}
+
+#btn-enviar {
+    width: 100%;
+    padding: 12px; 
+    font-size: 1.1rem;
+    color: white;
+    background-color: #e67e22;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.informacion-contacto {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    text-align: center;
+    margin-top: 20px; 
+}
+
+.informacion-contacto h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px; 
+    color: #d35400;
+    font-weight: bold;
+}
+
+.informacion-contacto p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.informacion-contacto p i {
+    margin-right: 10px;
+    color: #d35400;
+}

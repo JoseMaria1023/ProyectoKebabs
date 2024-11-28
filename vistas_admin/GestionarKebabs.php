@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/GestionarKebab.css">
 </head>
 <body>
-    <h1>Gestión de Kebabs</h1>
     <table id="tabla-Kebabs">
         <thead>
             <tr>

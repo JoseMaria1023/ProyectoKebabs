@@ -19,11 +19,11 @@
                 <li>
                     <a href="?menuLogin=mostrarkebab">Menú</a>
                     <ul>
-                        <li><a href="?menuLogin=KebabPersonalizado">Kebab Personalizado</a></li>
+                        <li><a href="?menuLogin=kebabpersonalizado">Kebab Personalizado</a></li>
                     </ul>
                 </li>           
                 <li><a href="pedidos.php">Mis Pedidos</a></li>
-                <li><a href="contacto.php">Contacto</a></li>
+                <li><a href="?menuLogin=contacto">Contacto</a></li>
                 <li><a href="?menuLogin=monedero">Saldo: €<span id="saldo-usuario"><?= $saldoUsuario ?></span></a></li> 
                 <li><a href="?menuLogin=carrito">Carrito</a></li>
                 <li><a href="logout.php" class="button">Cerrar Sesión</a></li> 

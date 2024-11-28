@@ -23,6 +23,10 @@ if (isset($_GET['menuAdmin'])) {
         require_once '../vistas_admin/AñadirIngredientes.php';
      
     }
+    if ($_GET['menuAdmin'] == "EditarKebab") {
+        require_once '../vistas_admin/EditarKebab.php';
+     
+    }
 
 
 

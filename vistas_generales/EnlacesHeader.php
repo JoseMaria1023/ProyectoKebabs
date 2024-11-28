@@ -19,6 +19,10 @@ if (isset($_GET['menu'])) {
      
     }
 
+    if ($_GET['menu'] == "contacto") {
+        require_once './vistas_usuarios/Contacto.php';
+     
+    }
 
 
 }?>

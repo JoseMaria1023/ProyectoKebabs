@@ -22,7 +22,7 @@
                     </ul>
                 </li>
                 <li><a href="pedidos.php">Mis Pedidos</a></li>
-                <li><a href="contacto.php">Contacto</a></li>
+                <li><a href="?menu=contacto">Contacto</a></li>
                 <li>
                     <a href="?menu=login">Iniciar Sesión</a>
                 </li>

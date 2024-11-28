@@ -10,7 +10,7 @@
 <body>
     <h1>Lista de Kebabs</h1>
     <div class="container" id="kebab-container"></div>
-    <script src="../Js/MostrarKebab.js"></script>
-    <script src="Js/MostrarKebab.js"></script>
 </body>
 </html>
+<script src="../Js/MostrarKebab.js"></script>
+<script src="Js/MostrarKebab.js"></script>

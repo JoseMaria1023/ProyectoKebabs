@@ -11,19 +11,17 @@ class RepoIngredientes{
     }
 
   
-    public function registrarPedido($usuarioId, $fecha, $estado, $total) {
-        $stmt = $this->conexion->prepare("INSERT INTO pedido (usuario_id, fecha, estado, total) VALUES (?, ?, ?, ?)");
-    
+    public function guardarIngredientes(Ingredientes $ingredientes) {
+        $stmt = $this->conexion->prepare("INSERT INTO ingredientes (nombre, precio, foto) VALUES (?, ?, ?)");
         $stmt->execute([
-            $usuarioId,
-            $fecha,
-            $estado,
-            $total
+            $ingredientes->getNombre(), 
+            $ingredientes->getPrecio(), 
+            $ingredientes->getFoto(), 
+
         ]);
-    
-        return $this->conexion->lastInsertId();
+
+        return $ingredientes;
     }
-    
 
     public function getUltimoId() {
         return $this->conexion->lastInsertId();

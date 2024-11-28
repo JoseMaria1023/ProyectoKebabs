@@ -9,7 +9,6 @@
     <title>Gestionar ingredientes</title>
 </head>
 <body>
-    <h1>Gestión de ingredientes</h1>
     <table id="tabla-ingredientes">
         <thead>
             <tr>
