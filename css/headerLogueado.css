@@ -30,7 +30,7 @@ nav ul {
 
 nav ul li {
     margin: 0 15px; 
-    position: relative; /* Necesario para el submenú */
+    position: relative; 
 }
 
 nav ul li a {

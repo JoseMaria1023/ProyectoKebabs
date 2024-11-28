@@ -22,6 +22,10 @@
                     <input type="email" id="correo" name="email" required>
                 </div>
                 <div class="Contenidos">
+                    <label for="asunto">Asunto</label>
+                    <input type="text" id="asunto" name="asunto" required>
+                </div>
+                <div class="Contenidos">
                     <label for="mensaje">Mensaje</label>
                     <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
                 </div>
@@ -30,9 +34,9 @@
         </div>
         <div class="informacion-contacto">
             <h2>Información de contacto</h2>
-            <p>Dirección: Calle Ficticia 123, Ciudad Ejemplo</p>
-            <p>Teléfono: +34 123 456 789</p>
-            <p>Correo electrónico: contacto@ejemplo.com</p>
+            <p>Dirección: Calle Andujar 123, Jaen</p>
+            <p>Teléfono: +34 922 22 22 22</p>
+            <p>Correo electrónico: correo@gmail.com</p>
         </div>
     </div>
 

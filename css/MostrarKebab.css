@@ -19,8 +19,7 @@ h1 {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reducción del tamaño mínimo */
-    gap: 15px; /* Menor espacio entre los contenedores */
+    gap: 15px; 
     padding: 20px;
 }
 
@@ -28,28 +27,28 @@ h1 {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 10px; /* Reducido el padding */
+    padding: 10px; 
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 100%; /* Para que ocupe todo el espacio disponible dentro de la celda */
-    max-width: 250px; /* Ancho máximo reducido */
+    width: 100%; 
+    max-width: 250px; 
 }
 
 .ContieneKebabs img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
-    margin-bottom: 10px; /* Menor margen debajo de la imagen */
+    margin-bottom: 10px; 
 }
 
 .ContieneKebabs h3 {
-    margin: 8px 0; /* Reducido margen */
+    margin: 8px 0; 
     color: #444;
-    font-size: 1rem; /* Reducido el tamaño de la fuente */
+    font-size: 1rem;
 }
 
 .ContieneKebabs p {

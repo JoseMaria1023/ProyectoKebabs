@@ -59,7 +59,6 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.3s ease;
 }
 
 #form-editar-kebab button:hover {
@@ -78,5 +77,4 @@ body::before {
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
-    filter: brightness(0.8);
 }

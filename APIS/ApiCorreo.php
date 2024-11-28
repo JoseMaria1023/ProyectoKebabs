@@ -19,8 +19,8 @@ class ApiCorreo {
             $nombre = $_POST['nombre'];
             $email = $_POST['email'];
             $mensaje = $_POST['mensaje'];
-
-            $asunto = "Nuevo mensaje de contacto";
+            $asunto =  $_POST['asunto'];
+            
             $cuerpo = "Nombre: $nombre\nCorreo: $email\nMensaje:\n$mensaje";
 
             $headers = "From: $email\r\n";
