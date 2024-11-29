@@ -40,5 +40,9 @@
         </div>
     </div>
 
+    <div class="mapa-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6306.748844295171!2d-3.807186387902698!3d37.781264171866894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6dd71774e45867%3A0x99df1e0032930534!2sIES%20Fuentezuelas!5e0!3m2!1ses!2ses!4v1732815208914!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
+
 </body>
 </html>
+

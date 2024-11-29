@@ -1,82 +1,158 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    background-image: url("../imagenes/durum-d-beef.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    min-height: 100vh;
+    background: linear-gradient(to bottom, #f9f3ec, #f4e1c6); /* Fondo degradado cálido */
+    color: #2c3e50; /* Colores neutros y elegantes */
 }
 
 h1 {
     text-align: center;
-    margin: 20px 0;
-    color: #333;
+    margin: 30px 0;
+    color: #e67e22; /* Naranja profesional */
+    font-size: 2.8rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .container {
     display: grid;
-    gap: 15px; 
-    padding: 20px;
+    gap: 30px;
+    padding: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste automático */
+    justify-content: center;
+    align-items: start;
 }
 
 .ContieneKebabs {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px; 
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%; 
-    max-width: 250px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Evita desbordamientos */
+    position: relative;
+}
+
+.ContieneKebabs:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .ContieneKebabs img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px; 
+    width: 100%;
+    height: 350px; /* Imagen más grande */
+    border-radius: 12px;
+    margin-bottom: 15px;
+    object-fit: cover; /* Ajuste perfecto sin distorsión */
 }
 
 .ContieneKebabs h3 {
-    margin: 8px 0; 
-    color: #444;
-    font-size: 1rem;
+    margin: 10px 0;
+    color: #2c3e50; /* Tono oscuro elegante */
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .ContieneKebabs p {
-    margin: 5px 0;
-    color: #666;
-    font-size: 0.85rem;
+    margin: 8px 0;
+    color: #7f8c8d; /* Color neutro para el texto */
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .boton-pedir, .boton-personalizar {
     display: inline-block;
-    margin: 8px 5px;
-    padding: 8px 16px;
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-    background-color: #e74c3c;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: #e74c3c; /* Rojo vibrante */
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    width: 90px; 
-    max-width: 130px; 
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.boton-pedir:hover, .boton-personalizar:hover {
+    background: #c0392b; /* Rojo más oscuro */
+    transform: scale(1.05);
 }
 
 .ContieneKebabs .botones {
-    margin-top: 10px; 
+    margin-top: 20px; /* Mayor separación con el contenido superior */
     display: flex;
-    flex-direction: column;
-    gap: 8px; 
-    width: 100%;
-    align-items: center;
+    flex-direction: row;
+    gap: 60px; /* Más espacio entre los botones */
+    justify-content: center; /* Alineados horizontalmente */
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .container {
+        padding: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste en tabletas */
+    }
+
+    .ContieneKebabs {
+        padding: 15px;
+    }
+
+    .ContieneKebabs img {
+        height: 250px; /* Ajuste del tamaño de la imagen en tabletas */
+    }
+
+    .ContieneKebabs h3 {
+        font-size: 1.1rem;
+    }
+
+    .ContieneKebabs p {
+        font-size: 0.9rem;
+    }
+
+    .boton-pedir, .boton-personalizar {
+        font-size: 0.85rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Para móviles */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+        margin: 20px 0;
+    }
+
+    .container {
+        padding: 10px;
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+
+    .ContieneKebabs {
+        padding: 10px;
+    }
+
+    .ContieneKebabs img {
+        height: 220px; /* Ajuste del tamaño de la imagen en móviles */
+    }
+
+    .ContieneKebabs h3 {
+        font-size: 1rem;
+    }
+
+    .ContieneKebabs p {
+        font-size: 0.85rem;
+    }
+
+    .boton-pedir, .boton-personalizar {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
 }
