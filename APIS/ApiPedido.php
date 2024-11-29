@@ -58,9 +58,12 @@ class ApiPedido {
             if (isset($datos['id'], $datos['estado'])) {
                 $id = $datos['id'];
                 $estado = $datos['estado'];
+
+                $pedido = new Pedido(null, null, $estado, null);
+                $pedido->setId($id); 
         
                 $repoPedidos = new RepoPedido();
-                $resultado = $repoPedidos->actualizarEstadoPedido($id, $estado);
+                $resultado = $repoPedidos->actualizarPedido($pedido);
         
                 if ($resultado) {
                     $this->enviarrespuesta(200);

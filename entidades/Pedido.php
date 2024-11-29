@@ -1,6 +1,7 @@
 <?php
 
 class Pedido {
+    private $id;
     private $usuarioId;
     private $fecha;
     private $total;
@@ -11,6 +12,10 @@ class Pedido {
         $this->fecha = $fecha;
         $this->estado = $estado;
         $this->total = $total;
+    }
+
+    public function getId() {
+        return $this->Id;
     }
 
     public function getUsuarioId() {
@@ -29,6 +34,9 @@ class Pedido {
         return $this->estado;
     }
 
+    public function setId($id) {
+        $this->id = $id;
+    }
     public function setUsuarioId($usuarioId) {
         $this->usuarioId = $usuarioId;
     }

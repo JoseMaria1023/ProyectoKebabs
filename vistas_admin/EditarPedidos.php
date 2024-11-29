@@ -11,8 +11,8 @@
     <h1>Editar Pedido</h1>
     
     <form id="form-editar-Pedido">        
-        <label for="Estado">Estado:</label>
-        <select id="Estado" name="Estado" required>
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado" required>
             <option value="Recibido">Recibido</option>
             <option value="En preparacion">En preparacion</option>
             <option value="Completado">Completado</option>
@@ -20,7 +20,7 @@
         </select>
         <br>
 
-        <input type="hidden" id="id-Pedido" name="id-Pedido" value="">
+        <input type="hidden" id="id-pedido" name="id-pedido" value="">
 
         <button type="submit">Guardar Cambios</button>
     </form>

@@ -2,16 +2,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const PedidoParaEditar = JSON.parse(localStorage.getItem('PedidoParaEditar'));
 
     if (PedidoParaEditar) {
-        document.getElementById('Estado').value = PedidoParaEditar.estado;
-        document.getElementById('id-Pedido').value = PedidoParaEditar.id;
+        document.getElementById('id-pedido').value = PedidoParaEditar.id;
+        document.getElementById('estado').value = PedidoParaEditar.estado;
     }
 });
 
 document.getElementById('form-editar-Pedido').addEventListener('submit', function (event) {
     event.preventDefault();  
     const pedido = {
-        id: document.getElementById('id-Pedido').value,
-        estado: document.getElementById('Estado').value,
+        estado: document.getElementById('estado').value,
+        id: document.getElementById('id-pedido').value,
 
     };
 

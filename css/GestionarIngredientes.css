@@ -1,81 +1,140 @@
+/* Estilo global */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
     color: #333;
     margin: 0;
     padding: 20px;
+    line-height: 1.6;
 }
 
-h1 {
-    text-align: center;
-    color: #ff4500;
-    margin-bottom: 20px;
-}
-
-#tabla-ingredientes {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#tabla-ingredientes th, #tabla-ingredientes td {
-    padding: 70px 45px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-#tabla-ingredientes th {
-    background-color: #ff4500;
-    color: white;
-    font-weight: bold;
-    font-size: 1em;
-}
-
-#tabla-ingredientes td {
-    font-size: 0.9em;
-}
-
-.user-photo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-button {
-    padding: 8px 12px;
-    font-size: 0.9em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.edit-btn {
-    background-color: #ffa500;
-    color: white;
-    margin-right: 5px;
-}
-
-.edit-btn:hover {
-    background-color: #ff8c00;
-}
-
-.delete-btn {
-    background-color: #dc3545;
-    color: white;
-}
-
-.delete-btn:hover {
-    background-color: #c82333;
-}
-
+/* Contenedor */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla de usuarios */
+#tabla-ingredientes {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Cabecera */
+#tabla-ingredientes thead th {
+    padding: 55px 10px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Cuerpo de la tabla */
+#tabla-ingredientes tbody td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Alternar colores */
+#tabla-ingredientes tbody tr:nth-child(odd) {
+    background-color: #f9fafb;
+}
+
+#tabla-ingredientes tbody tr:hover {
+    background-color: #eef2ff;
+    cursor: pointer;
+}
+
+/* Imágenes de usuario */
+.user-photo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #1e3a8a;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones */
+button {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    border: none;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Botón editar */
+.edit-btn {
+    background-color: #4ade80;
+    color: #ffffff;
+}
+
+.edit-btn:hover {
+    background-color: #22c55e;
+    transform: translateY(-2px);
+}
+
+/* Botón eliminar */
+.delete-btn {
+    background-color: #f87171;
+    color: #ffffff;
+}
+
+.delete-btn:hover {
+    background-color: #ef4444;
+    transform: translateY(-2px);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #tabla-ingredientes thead {
+        display: none;
+    }
+
+    #tabla-ingredientes tbody, #tabla-ingredientes tr, #tabla-ingredientes td {
+        display: block;
+        width: 100%;
+    }
+
+    #tabla-ingredientes tbody tr {
+        margin-bottom: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    #tabla-ingredientes td {
+        padding: 10px 15px;
+        text-align: right;
+        position: relative;
+    }
+
+    #tabla-ingredientes td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #555;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }

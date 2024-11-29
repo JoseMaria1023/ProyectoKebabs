@@ -14,7 +14,7 @@
             <tr>
                 <th>usuario_id</th>
                 <th>Fecha</th>
-                <th>Estado</th>
+                <th>estado</th>
                 <th>Total</th>
                 <th>Acciones</th>
 

@@ -25,12 +25,12 @@ class RepoPedido {
         return $resultado;
     }
     
-    public function actualizarEstadoPedido($id, $estado) {
-        $stmt = $this->conexion->prepare("UPDATE pedido SET estado = ? WHERE id = ?" );
-    
-        $resultado = $stmt->execute([$estado, $id]);
-    
-        return $resultado;
+    public function actualizarPedido(Pedido $pedido) {
+        $stmt = $this->conexion->prepare("UPDATE pedido SET estado = ?  WHERE id = ?");
+        return $stmt->execute([
+            $pedido->getEstado(), 
+            $pedido->getId()
+        ]);
     }
     
 
