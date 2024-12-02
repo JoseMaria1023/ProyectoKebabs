@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function mostrarCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const contenedorCarrito = document.getElementById('carrito-container');
-    const totalPrecio = document.getElementById('Precio-Total'); 
+    const totalPrecio = document.getElementById('Precio-Total');
     let total = 0;
 
-    contenedorCarrito.innerHTML = ''; 
+    contenedorCarrito.innerHTML = '';
 
     carrito.forEach((item, index) => {
         const productoDiv = document.createElement('div');
@@ -34,8 +34,7 @@ function mostrarCarrito() {
         total += parseFloat(item.precio);
     });
 
-        totalPrecio.textContent = total.toFixed(2);
-
+    totalPrecio.textContent = total.toFixed(2);
 }
 
 function eliminarProducto(index) {
@@ -50,33 +49,36 @@ function eliminarProducto(index) {
 
 function realizarPedido() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    const totalPrecio = document.getElementById('Precio-Total')?.textContent 
+    const totalPrecio = document.getElementById('Precio-Total')?.textContent;
 
     fetch('../APIS/ApiSesion.php', {
         method: 'GET',
     })
-    .then(response => {
-        return response.json();
-    })
-    .then(datos => {
-        if (datos.success && datos.usuarioId) {
-            const usuarioId = datos.usuarioId;
-
-            return fetch('../APIS/ApiPedido.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    usuarioId: usuarioId,
-                    total: parseFloat(totalPrecio)
-                })
-            });
-        } 
-    })
-    .then(response => {
-        if (response.ok) {
-            alert('Pedido realizado con éxito'); 
-        } 
-    })
+        .then(response => response.json())
+        .then(datos => {
+            if (datos.success && datos.usuarioId) {
+                const usuarioId = datos.usuarioId;
+                let nombreKebab = '';
+                for (let i = 0; i < carrito.length; i++) {
+                    if (i > 0) nombreKebab += ', ';
+                    nombreKebab += carrito[i].nombre;
+                }
+                return fetch('../APIS/ApiPedido.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        usuarioId: usuarioId,
+                        total: parseFloat(totalPrecio),
+                        nombreKebab: nombreKebab
+                    })
+                });
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Pedido realizado con éxito');
+            }
+        });
 }

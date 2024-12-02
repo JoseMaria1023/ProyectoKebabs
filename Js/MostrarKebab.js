@@ -4,10 +4,7 @@ function obtenerKebabs() {
             if (!respuesta.ok) {
                 throw new Error('Error en la respuesta de la API');
             }
-            return respuesta.text(); 
-        })
-        .then(texto => {
-            return JSON.parse(texto); 
+            return respuesta.json(); 
         })
         .then(kebabs => {
             if (kebabs.length > 0) {
@@ -21,11 +18,11 @@ function obtenerKebabs() {
                     ContieneKebabs.appendChild(h3);
 
                     const ingredientes = document.createElement('p');
-                    ingredientes.innerHTML = `${kebab.ingredientes}`;
+                    ingredientes.innerHTML = kebab.ingredientes ? kebab.ingredientes : 'Sin ingredientes';
                     ContieneKebabs.appendChild(ingredientes);
 
                     const Descripcion = document.createElement('p');
-                    Descripcion.innerHTML = `${kebab.descripcion}`;
+                    Descripcion.innerHTML = kebab.descripcion;
                     ContieneKebabs.appendChild(Descripcion);
 
                     const precio = document.createElement('p');
@@ -56,30 +53,32 @@ function obtenerKebabs() {
 
                     contenedorKebabs.appendChild(ContieneKebabs);
                 });
-            } 
+            }
         })
-            
-            fetch('../APIS/ApiKebab.php')
-                .then(respuesta => {
-                    return respuesta.text();
-                })
-                .then(texto => JSON.parse(texto))
-                .then(kebabs => {
-                    if (kebabs.length > 0) {
-                        const contenedorKebabs = document.getElementById('kebab-container');
-                        kebabs.forEach(kebab => {
-                            const ContieneKebabs = document.createElement('div');
-                            ContieneKebabs.className = 'ContieneKebabs';
-                            const h3 = document.createElement('h3');
-                            h3.textContent = kebab.nombre;
-                            ContieneKebabs.appendChild(h3);
+        fetch('../APIS/ApiKebab.php')
+        .then(respuesta => {
+            if (!respuesta.ok) {
+                throw new Error('Error en la respuesta de la API');
+            }
+            return respuesta.json(); 
+        })
+        .then(kebabs => {
+            if (kebabs.length > 0) {
+                const contenedorKebabs = document.getElementById('kebab-container');
+                kebabs.forEach(kebab => {
+                    const ContieneKebabs = document.createElement('div');
+                    ContieneKebabs.className = 'ContieneKebabs';
 
-                            const ingredientes = document.createElement('p');
-                    ingredientes.innerHTML = `${kebab.ingredientes}`;
+                    const h3 = document.createElement('h3');
+                    h3.textContent = kebab.nombre;
+                    ContieneKebabs.appendChild(h3);
+
+                    const ingredientes = document.createElement('p');
+                    ingredientes.innerHTML = kebab.ingredientes ? kebab.ingredientes : 'Sin ingredientes';
                     ContieneKebabs.appendChild(ingredientes);
 
                     const Descripcion = document.createElement('p');
-                    Descripcion.innerHTML = `${kebab.descripcion}`;
+                    Descripcion.innerHTML = kebab.descripcion;
                     ContieneKebabs.appendChild(Descripcion);
 
                     const precio = document.createElement('p');
@@ -109,12 +108,10 @@ function obtenerKebabs() {
                     ContieneKebabs.appendChild(botonPersonalizar);
 
                     contenedorKebabs.appendChild(ContieneKebabs);
-                        });
-                    } 
-                })
-
-}
-
+                });
+            }
+        })
+};
 
 function AñadirAlCarrito(kebab) {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];

@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor-pedidos {
+    width: 80%;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.pedidos-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.foto-perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#nombreUsuario {
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.pedidos-contenido h2 {
+    margin-bottom: 15px;
+}
+
+.lista-pedidos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.pedido {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pedido p {
+    margin: 5px 0;
+}
+
+.pedidos-botones {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.boton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #45a049;
+}

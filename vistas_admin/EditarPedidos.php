@@ -10,20 +10,17 @@
 <body>
     <h1>Editar Pedido</h1>
     
-    <form id="form-editar-Pedido">        
-        <label for="estado">Estado:</label>
-        <select id="estado" name="estado" required>
-            <option value="Recibido">Recibido</option>
-            <option value="En preparacion">En preparacion</option>
-            <option value="Completado">Completado</option>
-            <option value="Enviado">Enviado</option>
-        </select>
-        <br>
-
-        <input type="hidden" id="id-pedido" name="id-pedido" value="">
-
-        <button type="submit">Guardar Cambios</button>
-    </form>
+    <form id="form-editar-Pedido">
+    <input type="hidden" id="id-pedido" name="id">
+    <label for="estado">Estado del pedido:</label>
+    <select id="estado" name="estado">
+        <option value="Recibido">Pendiente</option>
+        <option value="En preparacion">En preparación</option>
+        <option value="Listo">Listo</option>
+        <option value="Enviado">Enviado</option>
+    </select>
+    <button type="submit">Actualizar pedido</button>
+</form>
 
     <script src="../Js/EditarPedido.js"></script>
     <script src="Js/EditarPedido.js"></script>

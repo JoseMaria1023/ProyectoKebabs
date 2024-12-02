@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 celdaTotal.textContent = pedido.total;
                 fila.appendChild(celdaTotal);
 
+                const celdaNombre = document.createElement('td');
+                celdaNombre.textContent = pedido.nombre_kebab;
+                fila.appendChild(celdaTotal);
+
                 const celdaAcciones = document.createElement('td');
 
                 const botonEditar = document.createElement('button');
@@ -34,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const botonEliminar = document.createElement('button');
                 botonEliminar.textContent = 'Eliminar';
                 botonEliminar.addEventListener('click', () => {
-                    eliminarKebab(pedido.id);
+                    eliminarPedido(pedido.id);
                 });
 
                 celdaAcciones.appendChild(botonEditar);
@@ -48,15 +52,14 @@ document.addEventListener("DOMContentLoaded", function () {
             return fetch('APIS/ApiPedido.php');
         });
 });
-
 function editarPedido(pedido) {
     localStorage.setItem('PedidoParaEditar', JSON.stringify(pedido));
     window.location.href = '../vistas_admin/EditarPedidos.php';
 }
 
 
-function eliminarKebab(id) {
-    fetch('../APIS/ApiKebab.php?id=' + id, {
+function eliminarPedido(id) {
+    fetch('../APIS/ApiPedido.php?id=' + id, {
         method: 'DELETE',
     })
     .then(function(respuesta) {

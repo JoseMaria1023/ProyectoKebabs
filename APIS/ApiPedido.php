@@ -3,7 +3,6 @@
 include_once '../cargadores/autocargadores.php';
 
 class ApiPedido {
-
     public function RespuestaPedido() {
         $method = $_SERVER['REQUEST_METHOD'];
 
@@ -25,63 +24,37 @@ class ApiPedido {
 
     private function getPedido() {
         $repoPedidos = new RepoPedido();
-        $pedidos = $repoPedidos->getPedidos(); 
+        $pedidos = $repoPedidos->getPedidos();
 
         if ($pedidos) {
-            $this->enviarrespuesta(201, $pedidos); 
+            $this->enviarrespuesta(201, $pedidos);
         }
-
     }
+
     public function registrarPedido() {
+        $data = json_decode(file_get_contents("php://input"), true);
 
-            $data = json_decode(file_get_contents("php://input"), true);
-                
-            $usuarioId = $data['usuarioId'];
-            $total = $data['total'];
-    
-            $fecha = date('Y-m-d'); 
-            $estado = 'Recibido';
-    
-            $pedido = new Pedido($usuarioId, $fecha, $estado, $total);
-            $repoPedido = new RepoPedido();
-            
-            $resultado = $repoPedido->guardarPedido($pedido);
-            if ($resultado) {
-                $this->enviarrespuesta(200);
-            } 
-        } 
-    
+        $usuarioId = $data['usuarioId'];
+        $total = $data['total'];
+        $nombreKebab = $data['nombreKebab'];
+        $fecha = date('Y-m-d');
+        $estado = 'Recibido';
 
-        private function actualizarPedido() {
-            $datos = json_decode(file_get_contents("php://input"), true);
-        
-            if (isset($datos['id'], $datos['estado'])) {
-                $id = $datos['id'];
-                $estado = $datos['estado'];
+        $pedido = new Pedido($usuarioId, $fecha, $estado, $total, $nombreKebab);
+        $repoPedido = new RepoPedido();
 
-                $pedido = new Pedido(null, null, $estado, null);
-                $pedido->setId($id); 
-        
-                $repoPedidos = new RepoPedido();
-                $resultado = $repoPedidos->actualizarPedido($pedido);
-        
-                if ($resultado) {
-                    $this->enviarrespuesta(200);
-                } 
-            } 
+        $resultado = $repoPedido->guardarPedido($pedido);
+        if ($resultado) {
+            $this->enviarrespuesta(200);
         }
-        
-        
-
-    private function eliminarPedido() {
     }
 
     private function enviarrespuesta($status, $data = null) {
         header("Content-Type: application/json");
         http_response_code($status);
-    
+
         if ($data !== null) {
-            echo json_encode($data); 
+            echo json_encode($data);
         }
     }
 }

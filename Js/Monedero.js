@@ -12,11 +12,8 @@ function obtenerSaldo() {
             if (!isNaN(saldo)) {
                 document.getElementById('saldo-actual').textContent = saldo.toFixed(2);
                 document.getElementById('saldo-usuario').textContent = saldo.toFixed(2);
-            } 
-
-            
-        }
-        
+            }   
+        }   
     });
 }
 

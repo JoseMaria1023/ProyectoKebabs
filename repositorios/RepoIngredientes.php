@@ -29,15 +29,15 @@ class RepoIngredientes{
 
 
     public function actualizarIngredientes(Ingredientes $ingredientes) {
-        $stmt = $this->conexion->prepare("UPDATE ingredientes SET nombre = ?, email = ?, direccion = ?, rol = ? WHERE id = ?");
+        $stmt = $this->conexion->prepare("UPDATE ingredientes SET Precio = ? WHERE id = ?");
         return $stmt->execute([
-            $usuario->getNombre(), 
-            $usuario->getEmail(), 
-            $usuario->getDireccion(), 
-            $usuario->getRol(), 
+            $ingredientes->getPrecio(),
+            $ingredientes->getId()
         ]);
     }
-
+    
+    
+    
     public function eliminarIngredientes($id) {
         $stmt = $this->conexion->prepare("DELETE FROM ingredientes WHERE id = ?");
         return $stmt->execute([$id]);

@@ -147,3 +147,53 @@ body {
     background-color: #f4f4f9; 
     color: #333; 
 }
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Reducir el margen superior en pantallas pequeñas */
+    }
+
+    .gestion-ingredientes {
+        flex-direction: column;
+        margin: 20px;
+        margin-top: 10px;
+    }
+
+    .gestion-ingredientes .container {
+        padding: 1rem;
+    }
+
+    .gestion-ingredientes form {
+        flex-direction: column;
+    }
+
+    .foto,
+    .infomarcion-container {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .gestion-ingredientes form input[type="file"] {
+        padding: 0.5rem;
+    }
+
+    .gestion-ingredientes button[type="submit"] {
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gestion-ingredientes h1 {
+        font-size: 1.5rem;
+    }
+
+    .gestion-ingredientes button[type="submit"] {
+        font-size: 1rem;
+    }
+
+    .gestion-ingredientes form input[type="text"],
+    .gestion-ingredientes form input[type="number"],
+    .gestion-ingredientes form select {
+        font-size: 0.9rem;
+    }
+}

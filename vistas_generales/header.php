@@ -21,7 +21,6 @@
                         <li><a href="?menu=kebabpersonalizado">Kebab Personalizado</a></li>
                     </ul>
                 </li>
-                <li><a href="pedidos.php">Mis Pedidos</a></li>
                 <li><a href="?menu=contacto">Contacto</a></li>
                 <li>
                     <a href="?menu=login">Iniciar Sesión</a>

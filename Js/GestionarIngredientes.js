@@ -27,13 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 const botonEditar = document.createElement('button');
                 botonEditar.textContent = 'Editar';
                 botonEditar.addEventListener('click', () => {
-                    editarKebab(ingredientes);
+                    editarIngredientes(ingredientes);
                 });
 
                 const botonEliminar = document.createElement('button');
                 botonEliminar.textContent = 'Eliminar';
                 botonEliminar.addEventListener('click', () => {
-                    eliminarKebab(ingredientes.id);
+                    eliminarIngredientes(ingredientes.id);
                 });
 
                 celdaAcciones.appendChild(botonEditar);
@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return fetch('APIS/ApiIngredientes.php');
         });
 });
+
+function editarIngredientes(ingredientes) {
+    localStorage.setItem('IngredientesParaEditar', JSON.stringify(ingredientes));
+    window.location.href = '../vistas_admin/EditarIngredientes.php';
+}
+
 
 function eliminarIngredientes(id) {
     fetch('../APIS/ApiIngredientes.php?id=' + id, {

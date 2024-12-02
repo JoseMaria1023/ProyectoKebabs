@@ -7,33 +7,46 @@ class RepoPedido {
         $this->conexion = Conexion::getConection();
     }
 
-    public function guardarPedido(Pedido $pedido) {
-        $stmt = $this->conexion->prepare(
-            "INSERT INTO pedido (usuario_id, fecha, estado, total) VALUES (?, ?, ?, ?)"
-        );
-    
-        $fecha = $pedido->getFecha(); 
-        $estado = $pedido->getEstado() ?: 'Recibido'; 
-    
-        $resultado = $stmt->execute([
-            $pedido->getUsuarioId(),
-            $fecha,
-            $estado,
-            $pedido->getTotal(),
+    public function guardarKebab(Kebab $Kebab, $ingredientes) {
+        $stmt = $this->conexion->prepare("INSERT INTO kebabs (nombre, descripcion, precio_base, foto) VALUES (?, ?, ?, ?)");
+        $stmt->execute([
+            $Kebab->getNombre(),
+            $Kebab->getDescripcion(),
+            $Kebab->getPrecio_Base(),
+            $Kebab->getFoto(),
         ]);
+        
+        $idKebab = $this->conexion->lastInsertId();  
+        
+        if (!empty($ingredientes)) {
+            $repoKebabIngredientes = new RepoKebabIngredientes();
+            
+            foreach ($ingredientes as $ingredienteId) {
+                $nombreIngrediente = $this->getNombreIngredienteById($ingredienteId); 
+                
+                $repoKebabIngredientes->guardarKebabIngrediente($idKebab, $ingredienteId, $nombreIngrediente);
+            }
+        }
+        
+        return $Kebab;
+    }
     
-        return $resultado;
+    private function getNombreIngredienteById($idIngrediente) {
+        $stmt = $this->conexion->prepare("SELECT nombre FROM ingredientes WHERE id = ?");
+        $stmt->execute([$idIngrediente]);
+        $ingrediente = $stmt->fetch();
+        
+        return $ingrediente ? $ingrediente['nombre'] : null;  
     }
     
     public function actualizarPedido(Pedido $pedido) {
-        $stmt = $this->conexion->prepare("UPDATE pedido SET estado = ?  WHERE id = ?");
+        $stmt = $this->conexion->prepare("UPDATE pedido SET estado = ? WHERE id = ?");
         return $stmt->execute([
-            $pedido->getEstado(), 
+            $pedido->getEstado(),
             $pedido->getId()
         ]);
     }
     
-
   
     public function eliminarPedido($id) {
         $stmt = $this->conexion->prepare("DELETE FROM pedido WHERE id = ?");
@@ -48,17 +61,21 @@ class RepoPedido {
         return $resultado ? $resultado['saldo'] : 0;
     }
 
-    public function descontarSaldo($usuarioId, $totalPedido) {
-        $stmt = $this->conexion->prepare("UPDATE usuarios SET saldo = saldo - ? WHERE id = ?");
-        $stmt->execute([$totalPedido, $usuarioId]);
-    
-        return $stmt->rowCount() > 0;
-    }
     public function getPedidos() {
-        $stmt = $this->conexion->prepare("SELECT usuario_id,fecha,estado,total FROM pedido");
+        $stmt = $this->conexion->prepare("SELECT id, usuario_id, fecha, estado, total, nombre_kebab FROM pedido");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-
-}
+    public function getPedidosPorId($usuarioId) {
+        $stmt = $this->conexion->prepare(
+            "SELECT p.id, p.usuario_id, p.fecha, p.estado, p.total, k.nombre AS nombreKebab
+             FROM pedido p
+             JOIN kebabs k ON p.nombre_kebab = k.nombre
+             WHERE p.usuario_id = ?"
+        );
+        $stmt->execute([$usuarioId]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+}    

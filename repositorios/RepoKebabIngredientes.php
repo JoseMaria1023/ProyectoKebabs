@@ -11,20 +11,9 @@ class RepoKebabIngredientes{
     }
 
   
-    public function guardarKebabIngrediente($idKebab, $ingredientes) {
-        $stmtKebab = $this->conexion->prepare("SELECT nombre FROM kebabs WHERE id = ?");
-        $stmtKebab->execute([$idKebab]);
-        $nombreKebab = $stmtKebab->fetchColumn();
-    
-        foreach ($ingredientes as $idIngrediente) {
-            $stmtIngrediente = $this->conexion->prepare("SELECT nombre FROM ingredientes WHERE id = ?");
-            $stmtIngrediente->execute([$idIngrediente]);
-            $nombreIngrediente = $stmtIngrediente->fetchColumn();
-    
-            $stmt = $this->conexion->prepare("INSERT INTO kebab_ingredientes (kebab_id, Nombre_Kebab, ingrediente_id, Ingrediente_nombre) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$idKebab, $nombreKebab, $idIngrediente, $nombreIngrediente]);
-        }
-        return true;
+    public function guardarKebabIngrediente($idKebab, $idIngrediente, $nombreIngrediente) {
+        $stmt = $this->conexion->prepare("INSERT INTO kebab_ingredientes (kebab_id, ingrediente_id, Ingrediente_nombre) VALUES (?, ?, ?)");
+        $stmt->execute([$idKebab, $idIngrediente, $nombreIngrediente]); 
     }
     
     public function actualizarKebabIngredientes(Ingredientes $ingredientes) {

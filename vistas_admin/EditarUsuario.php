@@ -27,7 +27,7 @@
         <label for="rol">Rol:</label>
         <select id="rol" name="rol" required>
             <option value="usuario">Usuario</option>
-            <option value="admin">Administrador</option>
+            <option value="administrador">Administrador</option>
         </select>
         <br>
         <input type="hidden" id="id-usuario" name="id_usuario" value="">

@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById('form-editar-Pedido').addEventListener('submit', function (event) {
     event.preventDefault();  
     const pedido = {
-        estado: document.getElementById('estado').value,
         id: document.getElementById('id-pedido').value,
-
+        estado: document.getElementById('estado').value
     };
 
     fetch('../APIS/ApiPedido.php', {
@@ -22,13 +21,10 @@ document.getElementById('form-editar-Pedido').addEventListener('submit', functio
         },
         body: JSON.stringify(pedido),  
     })
-    .then(respuesta => {
-        if (respuesta.ok) {
-            window.location.href = '../vistas_admin/GestionarPedidos.php'; 
+    .then(respuesta => respuesta.json())  
+    .then(data => {
+        if (data.mensaje === "Pedido actualizado con éxito") {
+            window.location.href = '../vistas_admin/GestionarPedidos.php';  
         } 
     })
-    .catch(() => {
-        return fetch('APIS/ApiPedido.php');
-    });
 });
-

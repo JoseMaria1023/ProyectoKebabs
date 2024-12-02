@@ -27,6 +27,22 @@ class Ingredientes {
     public function getFoto() {
         return $this->foto;
     }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    public function setPrecio($precio) {
+        $this->precio = $precio;
+    }
+
+    public function setFoto($foto) {
+        $this->foto = $foto;
+    }
 }
 
 ?>

@@ -34,46 +34,41 @@ class ApiKebab {
 
     private function registrarKebab() {
         $directorio = '../imagenes/';
-
+        
         $nombre = $_POST['nombre'];
         $descripcion = $_POST['descripcion'];
         $precio_base = $_POST['precio'];
-
+        
         $ingredientes = isset($_POST['ingredientesArray']) ? $_POST['ingredientesArray'] : [];
+        
         if (!is_array($ingredientes)) {
             $ingredientes = explode(",", $ingredientes);
         }
-
+        
         $ingredientesString = implode(",", $ingredientes);  
-
+        
         $foto = null;
         if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
             $Archivo = $_FILES['foto']['name'];
             $rutaArchivo = $directorio . $Archivo;
-
+            
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaArchivo)) {
                 $contenidoBinario = file_get_contents($rutaArchivo);
                 $foto = base64_encode($contenidoBinario);
             }
         }
-
+        
         $Kebabs = new Kebab($nombre, $descripcion, $precio_base, $foto);
-
+        
         $repoKebab = new RepoKebabs();
-        $repoKebabIngredientes = new RepoKebabIngredientes();
-
-        $GuardarKebab = $repoKebab->guardarKebab($Kebabs);
-
+        
+        $GuardarKebab = $repoKebab->guardarKebab($Kebabs, $ingredientes);  
+        
         if ($GuardarKebab) {
-            $idKebab = $repoKebab->getUltimoId();
-
-            if (!empty($ingredientes)) {
-                $repoKebabIngredientes->guardarKebabIngrediente($idKebab, $ingredientes);
-            }
             $this->enviarrespuesta(200, ["message" => "Nuevo Kebab registrado"]);
-        } 
+        }
     }
-
+    
     private function actualizarKebab() {
         $datos = json_decode(file_get_contents("php://input"), true);
 
@@ -96,7 +91,23 @@ class ApiKebab {
     }
 
     private function eliminarKebabs() {
+        $datos = json_decode(file_get_contents("php://input"), true);
+        
+        if (isset($datos['id'])) {
+            $id = $datos['id'];  
+            $repoKebabs = new RepoKebabs();
+            $resultado = $repoKebabs->eliminarKebab($id);  
+    
+            if ($resultado) {
+                $this->enviarrespuesta(200, ["message" => "Kebab eliminado correctamente."]);
+            } else {
+                $this->enviarrespuesta(400, ["message" => "No se pudo eliminar el kebab."]);
+            }
+        } else {
+            $this->enviarrespuesta(400, ["message" => "ID no proporcionado."]);
+        }
     }
+    
 
     private function enviarrespuesta($status, $data) {
         header("Content-Type: application/json");

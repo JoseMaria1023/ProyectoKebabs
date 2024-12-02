@@ -16,6 +16,7 @@
                 <th>Fecha</th>
                 <th>estado</th>
                 <th>Total</th>
+                <th>Nombre Kebab</th>
                 <th>Acciones</th>
 
             </tr>

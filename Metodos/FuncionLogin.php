@@ -12,6 +12,8 @@ class FuncionLogin {
     
 
     public static function cierraSesion() {
+        session_start();
+        session_unset();
         session_destroy(); 
     }
 

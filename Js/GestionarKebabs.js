@@ -58,15 +58,23 @@ function editarKebab(kebab) {
 
 
 function eliminarKebab(id) {
-    fetch('../APIS/ApiKebab.php?id=' + id, {
-        method: 'DELETE',
+    fetch('../APIS/ApiKebab.php', {
+        method: 'DELETE',  
+        headers: {
+            'Content-Type': 'application/json'  
+        },
+        body: JSON.stringify({ id: id })  
     })
     .then(function(respuesta) {
         if (respuesta.ok) {
-            window.location.reload();
-        } 
+            window.location.reload();  
+        } else {
+            console.error("Error al eliminar el kebab");
+        }
     })
-    .catch(() => {
-        return fetch('APIS/ApiKebab.php');
+    .catch(function(error) {
+        console.error("Error al realizar la solicitud DELETE", error);
     });
 }
+
+

@@ -17,7 +17,6 @@ class ApiSesion {
                 break;
         }
     }
-
     private function iniciarSesion() {
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -29,16 +28,28 @@ class ApiSesion {
             FuncionLogin::entralogin($usuario);
             $_SESSION['user']['id'] = $usuario['id'];  
             $_SESSION['user']['saldo'] = $usuario['saldo'];  
-            $this->enviarrespuesta(200, ["success" => true, "rol" => $usuario['rol']]);
-        } 
+            
+            $this->enviarrespuesta(200, [
+                "success" => true,
+                "rol" => $usuario['rol'],
+                "usuarioId" => $usuario['id'] 
+            ]);
+        } else {
+            $this->enviarrespuesta(401, ["error" => "Credenciales incorrectas"]);
+        }
     }
     
+    
     private function cerrarSesion() {
+        session_start();
         if (isset($_SESSION['user'])) {
             FuncionLogin::cierraSesion();
             $this->enviarrespuesta(200, ["success" => true, "mensaje" => "Sesión cerrada correctamente"]);
-        } 
+        } else {
+            $this->enviarrespuesta(400, ["error" => "No hay sesión activa"]);
+        }
     }
+    
     private function obtenerSesion() {
         session_start();
     

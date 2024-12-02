@@ -22,16 +22,18 @@
                         <li><a href="?menuLogin=kebabpersonalizado">Kebab Personalizado</a></li>
                     </ul>
                 </li>           
-                <li><a href="pedidos.php">Mis Pedidos</a></li>
+                <li><a href="?menuLogin=mispedidos">Mis Pedidos</a></li>
                 <li><a href="?menuLogin=contacto">Contacto</a></li>
                 <li><a href="?menuLogin=monedero">Saldo: €<span id="saldo-usuario"><?= $saldoUsuario ?></span></a></li> 
                 <li><a href="?menuLogin=carrito">Carrito</a></li>
-                <li><a href="logout.php" class="button">Cerrar Sesión</a></li> 
-            </ul>
+                <li><a href="?menuLogin=miperfil">Mi Perfil</a></li>
+                <li><a href="#" id="cerrar-sesion" class="button">Cerrar Sesión</a></li>
+                </ul>
         </nav>
     </header>
 </body>
 </html>
+<script src= "../Js/CerrarSesion.js"></script>
 <script src="../Js/MostrarSaldo.js"></script>
 <script src="Js/MostrarSaldo.js"></script>
 

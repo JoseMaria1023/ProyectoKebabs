@@ -78,3 +78,58 @@ body::before {
     background-position: center;
     z-index: -1;
 }
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #form-editar-kebab {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    #form-editar-kebab label {
+        font-size: 16px;
+    }
+
+    #form-editar-kebab input,
+    #form-editar-kebab select {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    #form-editar-kebab button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    #form-editar-kebab {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #form-editar-kebab label {
+        font-size: 14px;
+    }
+
+    #form-editar-kebab input,
+    #form-editar-kebab select {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #form-editar-kebab button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

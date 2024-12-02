@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="../css/CrearKebab.css">
 <link rel="stylesheet" href="css/CrearKebab.css">
+
 <main class="contenedor-administracion">
     <h2>Crear Kebab de la Casa</h2>
 
@@ -17,20 +18,21 @@
                 </section>
 
                 <section>
-                <label for="nombre">Nombre del Kebab:</label>
-                <input type="text" name="nombre" require>
-
+                    <label for="nombre">Nombre del Kebab:</label>
+                    <input type="text" name="nombre" required>
                 </section>
+
                 <section class="descripcion-kebab">
                     <label for="descripcion">Descripción del Kebab:</label>
-                    <textarea id="descripcion-kebab" name="descripcion" ></textarea>
+                    <textarea id="descripcion-kebab" name="descripcion"></textarea>
                 </section>
             </div>
 
             <div class="columna medio">
                 <section class="seleccion-ingredientes">
                     <h3>Selecciona los Ingredientes</h3>
-                    <select id="ingredientes" name="ingredientesArray" multiple required>
+                    <select id="ingredientes" name="ingredientesArray[]" multiple required>
+                        <!-- Ingredientes se llenarán aquí con JavaScript -->
                     </select>
                 </section>
             </div>
@@ -54,4 +56,3 @@
 
 <script src="../Js/MostrarIngredientes.js"></script>
 <script src="Js/MostrarIngredientes.js"></script>
-

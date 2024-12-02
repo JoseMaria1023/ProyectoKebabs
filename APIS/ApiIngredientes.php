@@ -79,10 +79,33 @@ class ApiIngredientes {
     }
 
     private function actualizarIngredientes() {
+        $datos = json_decode(file_get_contents("php://input"), true);
+    
+        $id = $datos['id'];
+        $Precio = $datos['Precio'];
+    
+        $ingredientes = new Ingredientes(null, $Precio, null);
+        $ingredientes->setId($id);
+    
+        $repoIngredientes = new RepoIngredientes();
+        $repoIngredientes->actualizarIngredientes($ingredientes);
+    
+        $this->enviarrespuesta(200, ["message" => "Ingrediente actualizado correctamente."]);
     }
 
     private function eliminarIngredientes() {
-    }
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+    
+                $repoIngredientes = new RepoIngredientes();
+                $resultado = $repoIngredientes->eliminarIngredientes($id);
+    
+                if ($resultado) {
+                    $this->enviarrespuesta(200);
+                } 
+            }
+        }
+    
 
     private function enviarrespuesta($status, $data) {
         header("Content-Type: application/json");
