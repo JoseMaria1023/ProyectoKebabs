@@ -37,47 +37,39 @@ class ApiIngredientes {
 
     private function registrarIngredientes() {
         $directorio = '../imagenes/';
-    
+        
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
+        
+        $alergeno = isset($_POST['alergeno']) ? $_POST['alergeno'] : null;
     
-        $alergenos = isset($_POST['alergenosArray']) ? $_POST['alergenosArray'] : [];
+        $foto = null;
+        $archivo = $_FILES['foto']['name'];
+        $rutaArchivo = $directorio . $archivo;
 
-        if (!is_array($alergenos)) {
-            $alergenos = explode(",", $alergenos);
+         if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaArchivo)) {
+            $contenidoBinario = file_get_contents($rutaArchivo);
+            $foto = base64_encode($contenidoBinario);
         }
         
-        $alergenosString = implode(",", $alergenos);
-        $foto = null;
-        if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
-            $Archivo = $_FILES['foto']['name'];
-            $rutaArchivo = $directorio . $Archivo;
-    
-            if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaArchivo)) {
-                $contenidoBinario = file_get_contents($rutaArchivo);
-                $foto = base64_encode($contenidoBinario);
-            }
-        }
     
         $ingredientes = new Ingredientes($nombre, $precio, $foto);
-    
         $repoIngredientes = new RepoIngredientes();
-
         $repoIngreAlergenos = new RepoIngredientesAlergenos();
-
-    
+        
         $GuardarIngrediente = $repoIngredientes->guardarIngredientes($ingredientes);
-    
+        
         if ($GuardarIngrediente) {
             $idIngrediente = $repoIngredientes->getUltimoId();
-    
-            if (!empty($alergenos)) {
-                $repoIngreAlergenos->guardarAlergenosIngrediente($idIngrediente, $alergenos);
+            
+            if (!empty($alergeno)) {
+                $repoIngreAlergenos->guardarAlergenoIngrediente($idIngrediente, $alergeno);
             }
-            $this->enviarrespuesta(200,["message" => "Nuevo Ingrediente registrado"]);
+            
+            $this->enviarrespuesta(200, ["message" => "Nuevo Ingrediente registrado"]);
         } 
     }
-
+    
     private function actualizarIngredientes() {
         $datos = json_decode(file_get_contents("php://input"), true);
     

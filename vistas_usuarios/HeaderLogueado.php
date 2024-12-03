@@ -27,13 +27,12 @@
                 <li><a href="?menuLogin=monedero">Saldo: €<span id="saldo-usuario"><?= $saldoUsuario ?></span></a></li> 
                 <li><a href="?menuLogin=carrito">Carrito</a></li>
                 <li><a href="?menuLogin=miperfil">Mi Perfil</a></li>
-                <li><a href="#" id="cerrar-sesion" class="button">Cerrar Sesión</a></li>
+                <li><a href="../Metodos/CerrarSesion.php" id="cerrar-sesion" class="button">Cerrar Sesión</a></li>
                 </ul>
         </nav>
     </header>
 </body>
 </html>
-<script src= "../Js/CerrarSesion.js"></script>
 <script src="../Js/MostrarSaldo.js"></script>
 <script src="Js/MostrarSaldo.js"></script>
 

@@ -9,9 +9,6 @@ class ApiSesion {
             case 'POST':
                 $this->iniciarSesion();
                 break;
-            case 'DELETE':
-                $this->cerrarSesion();
-                break;
             case 'GET':
                 $this->obtenerSesion(); 
                 break;
@@ -38,18 +35,6 @@ class ApiSesion {
             $this->enviarrespuesta(401, ["error" => "Credenciales incorrectas"]);
         }
     }
-    
-    
-    private function cerrarSesion() {
-        session_start();
-        if (isset($_SESSION['user'])) {
-            FuncionLogin::cierraSesion();
-            $this->enviarrespuesta(200, ["success" => true, "mensaje" => "Sesión cerrada correctamente"]);
-        } else {
-            $this->enviarrespuesta(400, ["error" => "No hay sesión activa"]);
-        }
-    }
-    
     private function obtenerSesion() {
         session_start();
     

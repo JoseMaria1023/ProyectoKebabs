@@ -37,7 +37,7 @@
                 
                 </li>
 
-                <li><a href="logout.php" class="button">Cerrar Sesión</a></li>
+                <li><a href="../Metodos/CerrarSesion.php" class="button">Cerrar Sesión</a></li>
             </ul>
         </nav>
     </header>

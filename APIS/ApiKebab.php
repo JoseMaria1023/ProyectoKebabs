@@ -40,22 +40,14 @@ class ApiKebab {
         $precio_base = $_POST['precio'];
         
         $ingredientes = isset($_POST['ingredientesArray']) ? $_POST['ingredientesArray'] : [];
-        
-        if (!is_array($ingredientes)) {
-            $ingredientes = explode(",", $ingredientes);
-        }
-        
-        $ingredientesString = implode(",", $ingredientes);  
-        
+                
         $foto = null;
-        if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
-            $Archivo = $_FILES['foto']['name'];
-            $rutaArchivo = $directorio . $Archivo;
-            
-            if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaArchivo)) {
-                $contenidoBinario = file_get_contents($rutaArchivo);
-                $foto = base64_encode($contenidoBinario);
-            }
+        $archivo = $_FILES['foto']['name'];
+        $rutaArchivo = $directorio . $archivo;
+
+        if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaArchivo)) {
+            $contenidoBinario = file_get_contents($rutaArchivo);
+            $foto = base64_encode($contenidoBinario);
         }
         
         $Kebabs = new Kebab($nombre, $descripcion, $precio_base, $foto);

@@ -7,28 +7,20 @@ class RepoPedido {
         $this->conexion = Conexion::getConection();
     }
 
-    public function guardarKebab(Kebab $Kebab, $ingredientes) {
-        $stmt = $this->conexion->prepare("INSERT INTO kebabs (nombre, descripcion, precio_base, foto) VALUES (?, ?, ?, ?)");
-        $stmt->execute([
-            $Kebab->getNombre(),
-            $Kebab->getDescripcion(),
-            $Kebab->getPrecio_Base(),
-            $Kebab->getFoto(),
+    public function guardarPedido(Pedido $pedido) {
+        $stmt = $this->conexion->prepare(
+            "INSERT INTO pedido (usuario_id, fecha, estado, total, nombre_kebab) VALUES (?, ?, ?, ?, ?)"
+        );
+
+        $resultado = $stmt->execute([
+            $pedido->getUsuarioId(),
+            $pedido->getFecha(),
+            $pedido->getEstado(),
+            $pedido->getTotal(),
+            $pedido->getNombreKebab()
         ]);
-        
-        $idKebab = $this->conexion->lastInsertId();  
-        
-        if (!empty($ingredientes)) {
-            $repoKebabIngredientes = new RepoKebabIngredientes();
-            
-            foreach ($ingredientes as $ingredienteId) {
-                $nombreIngrediente = $this->getNombreIngredienteById($ingredienteId); 
-                
-                $repoKebabIngredientes->guardarKebabIngrediente($idKebab, $ingredienteId, $nombreIngrediente);
-            }
-        }
-        
-        return $Kebab;
+
+        return $resultado;
     }
     
     private function getNombreIngredienteById($idIngrediente) {
