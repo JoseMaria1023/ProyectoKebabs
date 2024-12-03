@@ -1,18 +1,18 @@
 document.getElementById('cerrar-sesion').addEventListener('click', function (e) {
     e.preventDefault();
     fetch('../APIS/ApiSesion', {
-        method: 'POST',  // Cambiamos a POST
+        method: 'POST', 
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded', // Definimos el tipo de contenido
+            'Content-Type': 'application/x-www-form-urlencoded', 
         },
         body: new URLSearchParams({
-            'accion': 'cerrarSesion'  // Indicamos que se trata de una acción de cerrar sesión
+            'accion': 'cerrarSesion'  
         })
     })
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            window.location.href = '../index.php'; // Redirige si la sesión se cerró correctamente
+            window.location.href = '../index.php'; 
         }
     })
     .catch(error => console.error('Error:', error));

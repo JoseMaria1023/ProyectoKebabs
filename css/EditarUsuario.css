@@ -15,6 +15,7 @@ h1 {
     color: #e74c3c;
     font-size: 2rem;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 #form-editar-usuario {
@@ -34,7 +35,8 @@ h1 {
     color: #555;
 }
 
-#form-editar-usuario input,#form-editar-usuario select {
+#form-editar-usuario input,
+#form-editar-usuario select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -44,7 +46,8 @@ h1 {
     box-sizing: border-box;
 }
 
-#form-editar-usuario input:focus,#form-editar-usuario select:focus {
+#form-editar-usuario input:focus,
+#form-editar-usuario select:focus {
     border-color: #e74c3c;
     outline: none;
 }
@@ -77,4 +80,57 @@ body::before {
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #form-editar-usuario {
+        padding: 15px 20px;
+        max-width: 90%;
+    }
+
+    #form-editar-usuario label {
+        font-size: 14px;
+    }
+
+    #form-editar-usuario input,
+    #form-editar-usuario select {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    #form-editar-usuario button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    #form-editar-usuario {
+        padding: 10px 15px;
+    }
+
+    #form-editar-usuario label {
+        font-size: 13px;
+    }
+
+    #form-editar-usuario input,
+    #form-editar-usuario select {
+        padding: 7px;
+        font-size: 12px;
+    }
+
+    #form-editar-usuario button {
+        font-size: 13px;
+        padding: 8px;
+    }
 }

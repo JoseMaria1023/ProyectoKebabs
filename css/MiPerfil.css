@@ -67,7 +67,9 @@ body {
 .perfil-botones {
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .boton {
@@ -78,9 +80,60 @@ body {
     cursor: pointer;
     background-color: #007bff;
     color: #ffffff;
-    transition: background-color 0.3s ease;
+    flex: 1 1 calc(50% - 10px); /* Ajusta los botones en pantallas pequeñas */
+    max-width: 200px; /* Evita que los botones sean demasiado anchos */
 }
 
 .boton:hover {
     background-color: #0056b3;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .contenedor-perfil {
+        padding: 15px;
+    }
+
+    #nombreUsuario {
+        font-size: 20px;
+    }
+
+    .perfil-contenido h2 {
+        font-size: 18px;
+    }
+
+    .detalles-usuario {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .boton {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-perfil {
+        width: 95%;
+    }
+
+    .foto-perfil {
+        width: 100px;
+        height: 100px;
+    }
+
+    #nombreUsuario {
+        font-size: 18px;
+    }
+
+    .perfil-contenido h2 {
+        font-size: 16px;
+    }
+
+    .boton {
+        font-size: 14px;
+        flex: 1 1 100%; 
+        max-width: none;
+    }
 }

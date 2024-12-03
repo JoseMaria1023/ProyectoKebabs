@@ -14,7 +14,7 @@
         <div class="bienvenida-content">
             <h1>¡Bienvenido a Kebab Yi!</h1>
             <p>Disfruta de los mejores kebabs y los ingredientes más frescos.</p>
-            <a href="./vistas_usuarios/MostrarKebab.php"><button class="boton-comenzar">Explora el Menú</button></a>
+            <a href="?menu=mostrarkebab"><button class="boton-comenzar">Explora el Menú</button></a>
         </div>
     </div>
 </body>

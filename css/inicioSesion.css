@@ -7,11 +7,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image:url("../imagenes/durum-d-beef.jpg");
+    background-image: url("../imagenes/durum-d-beef.jpg");
     background-repeat: no-repeat;
-    background-size: 120%;
-        
-    
+    background-size: 155%;
 }
 
 form {
@@ -23,7 +21,8 @@ form {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
 }
 
-form input[type="email"],form input[type="password"] {
+form input[type="email"],
+form input[type="password"] {
     width: 100%;
     padding: 15px;
     margin: 15px 0; 
@@ -54,4 +53,50 @@ form button {
 
 form button:hover {
     background-color: #d05a4d;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    body {
+        background-size: cover; /* Ajusta el fondo para dispositivos medianos */
+    }
+
+    form {
+        margin: 120px auto; /* Reduce el margen superior */
+        padding: 20px; /* Menos espacio interno */
+        max-width: 90%; /* Más ancho en pantallas pequeñas */
+    }
+
+    form input[type="email"],
+    form input[type="password"] {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    form button {
+        padding: 12px; 
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        margin: 80px auto; /* Más compacto en móviles */
+        padding: 15px; /* Espacio más reducido */
+    }
+
+    form input[type="email"],
+    form input[type="password"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    form button {
+        padding: 10px; 
+        font-size: 16px;
+    }
+
+    body {
+        background-size: cover; /* Ajusta el fondo para móviles */
+    }
 }

@@ -36,8 +36,6 @@ class RepoIngredientes{
         ]);
     }
     
-    
-    
     public function eliminarIngredientes($id) {
         $stmt = $this->conexion->prepare("DELETE FROM ingredientes WHERE id = ?");
         return $stmt->execute([$id]);

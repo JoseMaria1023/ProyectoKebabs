@@ -150,7 +150,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 60px; /* Reducir el margen superior en pantallas pequeñas */
+        padding-top: 60px; 
     }
 
     .gestion-ingredientes {
@@ -191,9 +191,7 @@ body {
         font-size: 1rem;
     }
 
-    .gestion-ingredientes form input[type="text"],
-    .gestion-ingredientes form input[type="number"],
-    .gestion-ingredientes form select {
+    .gestion-ingredientes form input[type="text"],.gestion-ingredientes form input[type="number"],.gestion-ingredientes form select {
         font-size: 0.9rem;
     }
 }

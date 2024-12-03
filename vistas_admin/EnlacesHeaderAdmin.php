@@ -1,33 +1,31 @@
 <?php
-if (isset($_GET['menuAdmin'])) {
-    if ($_GET['menuAdmin'] == "Usuarios") {
-        require_once '../vistas_admin/GestionarUsuarios.php';
-    }
-    if ($_GET['menuAdmin'] == "Ingredientes") {
-        require_once '../vistas_admin/GestionarIngredientes.php';
-    }
-    if ($_GET['menuAdmin'] == "Kebabs") {
-        require_once '../vistas_admin/GestionarKebabs.php';
-     
-    }
-    if ($_GET['menuAdmin'] == "Pedidos") {
-        require_once '../vistas_admin/GestionarPedidos.php';
-     
-    }
+$menuAdmin = isset($_GET['menuAdmin']) ? $_GET['menuAdmin'] : 'Usuarios';
 
-    if ($_GET['menuAdmin'] == "crearkebab") {
-        require_once '../vistas_admin/CrearKebab.php';
-     
-    }
-    if ($_GET['menuAdmin'] == "añadiringredientes") {
-        require_once '../vistas_admin/AñadirIngredientes.php';
-     
-    }
-    if ($_GET['menuAdmin'] == "EditarKebab") {
-        require_once '../vistas_admin/EditarKebab.php';
-     
-    }
-
-
-
-}?>
+switch ($menuAdmin){
+        case 'Usuarios':
+            require_once '../vistas_admin/GestionarUsuarios.php';
+            break;
+        case 'Ingredientes':
+            require_once '../vistas_admin/GestionarIngredientes.php';
+            break;
+        case 'Kebabs':
+            require_once '../vistas_admin/GestionarKebabs.php';
+            break;
+        case 'Pedidos':
+            require_once '../vistas_admin/GestionarPedidos.php';
+            break;
+        case 'crearkebab':
+            require_once '../vistas_admin/CrearKebab.php';
+            break;
+        case 'añadiringredientes':
+            require_once '../vistas_admin/AñadirIngredientes.php';
+            break;
+        case 'EditarKebab':
+            require_once '../vistas_admin/EditarKebab.php';
+            break;
+        default:
+            require_once '../vistas_admin/GestionarUsuarios.php';
+            break;
+    
+}
+?>

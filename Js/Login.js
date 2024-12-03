@@ -14,7 +14,7 @@ document.getElementById('loginForm').onsubmit = function(event) {
     })
     .then(function(datos) {
         if (datos.success) {
-            window.location.href = (datos.rol === 'administrador') ? 'vistas_admin/layoutAdmin.php' : 'vistas_usuarios/InicioUsuario.php';
+            window.location.href = (datos.rol === 'administrador') ? 'vistas_admin/PrincipalAdmin.php' : 'vistas_usuarios/PrincipalLogueado.php';
         } 
     })
     .catch(() => {

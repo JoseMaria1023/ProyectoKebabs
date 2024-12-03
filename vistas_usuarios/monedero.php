@@ -19,10 +19,10 @@
         </div>
     </section>
     <section class="seccion-acciones">
-        <form id="formulario-añadir-fondos" class="formulario">
-            <label for="cantidad">Añadir Fondos:</label>
+        <form id="formulario-añadir-dinero" class="formulario">
+            <label for="cantidad">Añadir Dinero:</label>
             <input type="number" id="cantidad" name="cantidad" placeholder="Introduce la cantidad" required step="0.01" min="0">
-            <button type="submit" class="boton">Añadir Fondos</button>
+            <button type="submit" class="boton">Añadir Dinero</button>
         </form>
     </section>
 </main>

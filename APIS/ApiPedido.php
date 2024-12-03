@@ -49,6 +49,18 @@ class ApiPedido {
         }
     }
 
+    private function eliminarPedido() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+
+            $repoPedidos = new RepoPedidos();
+            $resultado = $repoPedidos->eliminarPedido($id);
+
+            if ($resultado) {
+                $this->enviarrespuesta(200);
+            } 
+        }
+    }
     private function enviarrespuesta($status, $data = null) {
         header("Content-Type: application/json");
         http_response_code($status);

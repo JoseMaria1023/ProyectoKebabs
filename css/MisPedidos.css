@@ -53,12 +53,6 @@ body {
     margin: 5px 0;
 }
 
-.pedidos-botones {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-}
-
 .boton {
     background-color: #4CAF50;
     color: white;
@@ -70,4 +64,68 @@ body {
 
 .boton:hover {
     background-color: #45a049;
+}
+
+#descargar-pdf {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#descargar-pdf:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .contenedor-pedidos {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    #nombreUsuario {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    .foto-perfil img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .lista-pedidos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-pedidos {
+        padding: 15px;
+    }
+
+    #nombreUsuario {
+        font-size: 18px;
+    }
+
+    .foto-perfil img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .pedido {
+        padding: 10px;
+    }
+
+    .pedido p {
+        font-size: 14px;
+    }
+
+    #descargar-pdf {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
 }

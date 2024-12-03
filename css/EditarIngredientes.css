@@ -17,7 +17,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-#form-editar-Pedido {
+#form-editar-ingredientes {
     background-color: #fff;
     padding: 20px 30px;
     border-radius: 10px;
@@ -27,15 +27,14 @@ h1 {
     box-sizing: border-box;
 }
 
-#form-editar-Pedido label {
+#form-editar-ingredientes label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     color: #555;
 }
 
-#form-editar-Pedido input,
-#form-editar-Pedido select {
+#form-editar-ingredientes input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -45,13 +44,12 @@ h1 {
     box-sizing: border-box;
 }
 
-#form-editar-Pedido input:focus,
-#form-editar-Pedido select:focus {
+#form-editar-ingredientes input[type="number"]:focus {
     border-color: #e74c3c;
     outline: none;
 }
 
-#form-editar-Pedido button {
+#form-editar-ingredientes button {
     background-color: #e74c3c;
     color: #fff;
     padding: 10px 20px;
@@ -63,7 +61,7 @@ h1 {
     width: 100%;
 }
 
-#form-editar-Pedido button:hover {
+#form-editar-ingredientes button:hover {
     background-color: #c0392b;
 }
 
@@ -90,22 +88,21 @@ body::before {
         font-size: 1.8rem;
     }
 
-    #form-editar-Pedido {
+    #form-editar-ingredientes {
         max-width: 100%;
         padding: 15px;
     }
 
-    #form-editar-Pedido label {
+    #form-editar-ingredientes label {
         font-size: 16px;
     }
 
-    #form-editar-Pedido input,
-    #form-editar-Pedido select {
+    #form-editar-ingredientes input[type="number"] {
         padding: 12px;
         font-size: 16px;
     }
 
-    #form-editar-Pedido button {
+    #form-editar-ingredientes button {
         font-size: 14px;
         padding: 12px;
     }
@@ -116,22 +113,21 @@ body::before {
         font-size: 1.6rem;
     }
 
-    #form-editar-Pedido {
+    #form-editar-ingredientes {
         max-width: 100%;
         padding: 10px;
     }
 
-    #form-editar-Pedido label {
+    #form-editar-ingredientes label {
         font-size: 14px;
     }
 
-    #form-editar-Pedido input,
-    #form-editar-Pedido select {
+    #form-editar-ingredientes input[type="number"] {
         padding: 10px;
         font-size: 14px;
     }
 
-    #form-editar-Pedido button {
+    #form-editar-ingredientes button {
         font-size: 14px;
         padding: 10px;
     }

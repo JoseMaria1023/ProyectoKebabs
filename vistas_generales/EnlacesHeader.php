@@ -1,3 +1,4 @@
+
 <?php
 $menu = isset($_GET['menu']) ? $_GET['menu'] : 'inicio';  
 
