@@ -30,10 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
             direccion.textContent = 'Dirección: ' + usuario.direccion;
             detallesUsuario.appendChild(direccion);
             
-            const saldo = document.createElement('p');
-            saldo.textContent = 'Saldo: ' + usuario.saldo + '€';
-            detallesUsuario.appendChild(saldo);
-            
             const rol = document.createElement('p');
             rol.textContent = 'Rol: ' + usuario.rol;
             detallesUsuario.appendChild(rol);
