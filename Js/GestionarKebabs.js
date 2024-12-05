@@ -34,14 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     editarKebab(kebab);
                 });
 
-                const botonEliminar = document.createElement('button');
-                botonEliminar.textContent = 'Eliminar';
-                botonEliminar.addEventListener('click', () => {
-                    eliminarKebab(kebab.id);
-                });
-
                 celdaAcciones.appendChild(botonEditar);
-                celdaAcciones.appendChild(botonEliminar);
                 fila.appendChild(celdaAcciones);
 
                 tablaKebab.appendChild(fila);
@@ -58,23 +51,18 @@ function editarKebab(kebab) {
 
 
 function eliminarKebab(id) {
-    fetch('../APIS/ApiKebab.php', {
-        method: 'DELETE',  
-        headers: {
-            'Content-Type': 'application/json'  
-        },
-        body: JSON.stringify({ id: id })  
+    fetch('../APIS/ApiKebab.php?id=' + id, {
+        method: 'DELETE',
     })
     .then(function(respuesta) {
         if (respuesta.ok) {
-            window.location.reload();  
-        } else {
-            console.error("Error al eliminar el kebab");
-        }
+            window.location.reload();
+        } 
     })
-    .catch(function(error) {
-        console.error("Error al realizar la solicitud DELETE", error);
+    .catch(() => {
+        return fetch('APIS/ApiKebab.php');
     });
+
 }
 
 

@@ -34,6 +34,30 @@ h1 {
     color: #555;
 }
 
+#form-editar-ingredientes label[for="nombre"] {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px; /* Más espacio debajo del label */
+    color: #333;
+    font-size: 16px;
+}
+
+#form-editar-ingredientes input[type="text"]#nombre {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px; /* Más espacio entre los campos */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#form-editar-ingredientes input[type="text"]#nombre:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+
 #form-editar-ingredientes input[type="number"] {
     width: 100%;
     padding: 10px;

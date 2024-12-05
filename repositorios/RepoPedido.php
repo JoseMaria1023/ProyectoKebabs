@@ -42,8 +42,9 @@ class RepoPedido {
   
     public function eliminarPedido($id) {
         $stmt = $this->conexion->prepare("DELETE FROM pedido WHERE id = ?");
-        $stmt->execute([$id]);
+        return $stmt->execute([$id]);
     }
+    
 
     public function obtenerSaldoUsuario($usuarioId) {
         $stmt = $this->conexion->prepare("SELECT saldo FROM usuarios WHERE id = ?");

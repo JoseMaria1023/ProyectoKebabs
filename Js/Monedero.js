@@ -20,7 +20,7 @@ function obtenerSaldo() {
 
 document.addEventListener("DOMContentLoaded", obtenerSaldo);
 
-document.getElementById("formulario-añadir-fondos").addEventListener("submit", function(event) {
+document.getElementById("formulario-añadir-dinero").addEventListener("submit", function(event) {
     event.preventDefault();
     
     const cantidad = parseFloat(document.getElementById("cantidad").value);

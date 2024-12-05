@@ -49,11 +49,28 @@ class ApiPedido {
         }
     }
 
+    private function actualizarPedido() {
+        $datos = json_decode(file_get_contents("php://input"), true);
+    
+        if (isset($datos['id'], $datos['estado'])) {
+            $id = $datos['id'];
+            $estado = $datos['estado'];
+            $pedido = new Pedido(null, null, $estado, null, null);
+            $pedido->setId($id); 
+    
+            $repoPedidos = new RepoPedido();
+            $resultado = $repoPedidos->actualizarPedido($pedido);
+    
+            if ($resultado) {
+                $this->enviarrespuesta(200);
+            } 
+        } 
+    }
     private function eliminarPedido() {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
 
-            $repoPedidos = new RepoPedidos();
+            $repoPedidos = new RepoPedido();
             $resultado = $repoPedidos->eliminarPedido($id);
 
             if ($resultado) {

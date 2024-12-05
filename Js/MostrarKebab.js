@@ -45,12 +45,6 @@ function obtenerKebabs() {
                         AñadirAlCarrito(kebab);
                     });
                     ContieneKebabs.appendChild(botonPedir);
-
-                    const botonPersonalizar = document.createElement('button');
-                    botonPersonalizar.textContent = 'Personalizar';
-                    botonPersonalizar.className = 'boton-personalizar';
-                    ContieneKebabs.appendChild(botonPersonalizar);
-
                     contenedorKebabs.appendChild(ContieneKebabs);
                 });
             }
@@ -102,11 +96,6 @@ function obtenerKebabs() {
                     });
                     ContieneKebabs.appendChild(botonPedir);
 
-                    const botonPersonalizar = document.createElement('button');
-                    botonPersonalizar.textContent = 'Personalizar';
-                    botonPersonalizar.className = 'boton-personalizar';
-                    ContieneKebabs.appendChild(botonPersonalizar);
-
                     contenedorKebabs.appendChild(ContieneKebabs);
                 });
             }
@@ -125,3 +114,8 @@ function AñadirAlCarrito(kebab) {
 }
 
 obtenerKebabs();
+
+document.getElementById('descargar-pdf').addEventListener('click', function() {
+    window.location.href = '../Metodos/DescargarPDF.php';
+});
+

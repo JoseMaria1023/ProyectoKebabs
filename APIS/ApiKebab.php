@@ -18,7 +18,7 @@ class ApiKebab {
                 $this->actualizarKebab();
                 break;
             case 'DELETE':
-                $this->eliminarKebab();
+                $this->eliminarKebabs();
                 break;
         }
     }
@@ -28,7 +28,7 @@ class ApiKebab {
         $Kebabs = $repoKebab->getKebabs(); 
 
         if ($Kebabs) {
-            $this->enviarrespuesta(201, $Kebabs); 
+            $this->enviarrespuesta(200, $Kebabs); 
         }
     }
 
@@ -83,20 +83,15 @@ class ApiKebab {
     }
 
     private function eliminarKebabs() {
-        $datos = json_decode(file_get_contents("php://input"), true);
-        
-        if (isset($datos['id'])) {
-            $id = $datos['id'];  
-            $repoKebabs = new RepoKebabs();
-            $resultado = $repoKebabs->eliminarKebab($id);  
-    
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+
+            $repoKebab = new RepoKebabs();
+            $resultado = $repoKebab->eliminarKebab($id);
+
             if ($resultado) {
-                $this->enviarrespuesta(200, ["message" => "Kebab eliminado correctamente."]);
-            } else {
-                $this->enviarrespuesta(400, ["message" => "No se pudo eliminar el kebab."]);
-            }
-        } else {
-            $this->enviarrespuesta(400, ["message" => "ID no proporcionado."]);
+                $this->enviarrespuesta(200);
+            } 
         }
     }
     

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (IngredientesParaEditar) {
         document.getElementById('id-ingredientes').value = IngredientesParaEditar.id;
+        document.getElementById('nombre').value = IngredientesParaEditar.nombre;
         document.getElementById('Precio').value = IngredientesParaEditar.precio;
     }
 });
@@ -12,6 +13,7 @@ document.getElementById('form-editar-ingredientes').addEventListener('submit', f
 
     const ingredientes = {
         id: document.getElementById('id-ingredientes').value,
+        nombre: document.getElementById('nombre').value,
         Precio: parseFloat(document.getElementById('Precio').value),
     };
 
@@ -24,6 +26,6 @@ document.getElementById('form-editar-ingredientes').addEventListener('submit', f
     })
         .then((respuesta) => respuesta.json())
         .then((data) => {
-            window.location.href = '../vistas_admin/GestionarIngredientes.php';
+            window.location.href = 'http://localhost/proyecto_kebabs/proyectokebabs/vistas_admin/PrincipalAdmin.php?menuAdmin=Ingredientes';
         });
 });

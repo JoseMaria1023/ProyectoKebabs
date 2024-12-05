@@ -66,7 +66,7 @@ class ApiIngredientes {
                 $repoIngreAlergenos->guardarAlergenoIngrediente($idIngrediente, $alergeno);
             }
             
-            $this->enviarrespuesta(200, ["message" => "Nuevo Ingrediente registrado"]);
+            $this->enviarrespuesta(200, []);
         } 
     }
     
@@ -75,28 +75,27 @@ class ApiIngredientes {
     
         $id = $datos['id'];
         $Precio = $datos['Precio'];
+        $nombre = $datos['nombre'];
     
-        $ingredientes = new Ingredientes(null, $Precio, null);
+        $ingredientes = new Ingredientes($nombre, $Precio, null);
         $ingredientes->setId($id);
     
         $repoIngredientes = new RepoIngredientes();
         $repoIngredientes->actualizarIngredientes($ingredientes);
     
-        $this->enviarrespuesta(200, ["message" => "Ingrediente actualizado correctamente."]);
+        $this->enviarrespuesta(200, []);
     }
 
     private function eliminarIngredientes() {
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
     
-                $repoIngredientes = new RepoIngredientes();
-                $resultado = $repoIngredientes->eliminarIngredientes($id);
+            $repoIngrediente = new RepoIngredientes();
+            $repoIngrediente->eliminarIngredientes($id);
     
-                if ($resultado) {
-                    $this->enviarrespuesta(200);
-                } 
-            }
+            $this->enviarrespuesta(200, []);  
         }
+    }
     
 
     private function enviarrespuesta($status, $data) {

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const celdaNombre = document.createElement('td');
                 celdaNombre.textContent = pedido.nombre_kebab;
-                fila.appendChild(celdaTotal);
+                fila.appendChild(celdaNombre);
 
                 const celdaAcciones = document.createElement('td');
 
@@ -57,7 +57,6 @@ function editarPedido(pedido) {
     window.location.href = '../vistas_admin/EditarPedidos.php';
 }
 
-
 function eliminarPedido(id) {
     fetch('../APIS/ApiPedido.php?id=' + id, {
         method: 'DELETE',
@@ -66,5 +65,8 @@ function eliminarPedido(id) {
         if (respuesta.ok) {
             window.location.reload();
         } 
+    })
+    .catch(() => {
+        return fetch('APIS/ApiPedido.php');
     });
 }

@@ -22,7 +22,6 @@
             </div>
         </div>
 
-        <button id="descargar-pdf">Descargar Pedidos en PDF</button>
     </div>
 
     <script src="../Js/MisPedidos.js"></script>

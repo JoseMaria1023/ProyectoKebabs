@@ -31,8 +31,6 @@ class ApiSesion {
                 "rol" => $usuario['rol'],
                 "usuarioId" => $usuario['id'] 
             ]);
-        } else {
-            $this->enviarrespuesta(401, ["error" => "Credenciales incorrectas"]);
         }
     }
     private function obtenerSesion() {

@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="perfil-botones">
-            <button id="editarPerfil" class="boton">Editar Perfil</button>
+            <button id="editarPerfil" class="boton" >Editar Perfil</button>
             <button id="cerrarSesion" class="boton">Cerrar Sesión</button>
         </div>
     </div>

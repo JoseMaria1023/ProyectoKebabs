@@ -12,6 +12,9 @@
 <body>
     
     <form id="form-editar-ingredientes">
+    <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="" required>
+        <br>
         <label for="Precio">Precio:</label>
         <input type="number" id="Precio" name="Precio" value="" step="0.01" required>
         <br>

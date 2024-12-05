@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // Verifica la estructura de los datos
+        console.log(data);
 
         if (data.success) {
             if (data.usuario) {  
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     pedidoDiv.appendChild(total);
 
                     const nombreKebab = document.createElement('p');
-                    nombreKebab.textContent = 'Nombre del kebab: ' + pedido.nombreKebab; // Asegúrate de que este campo existe
+                    nombreKebab.textContent = 'Nombre del kebab: ' + pedido.nombreKebab; 
                     pedidoDiv.appendChild(nombreKebab);
 
                     listaPedidos.appendChild(pedidoDiv);

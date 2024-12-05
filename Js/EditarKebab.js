@@ -27,8 +27,7 @@ document.getElementById('form-editar-kebab').addEventListener('submit', function
     })
     .then(respuesta => {
         if (respuesta.ok) {
-            window.location.href = '../vistas_admin/GestionarKebabs.php'; 
-        } 
+            window.location.href = 'http://localhost/proyecto_kebabs/proyectokebabs/vistas_admin/PrincipalAdmin.php?menuAdmin=Kebabs';        } 
     })
     .catch(() => {
         return fetch('APIS/ApiKebab.php');

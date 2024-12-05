@@ -38,8 +38,6 @@ public function getNombreIngredienteById($idIngrediente) {
     
     if ($resultado) {
         return $resultado['nombre'];  
-    } else {
-        return null;  
     }
 }
     public function getUltimoId() {
@@ -61,16 +59,27 @@ public function getNombreIngredienteById($idIngrediente) {
         return $stmt->execute([$id]);
     }
     
+    
     public function getKebabs() {
         $stmt = $this->conexion->prepare(
-            "SELECT k.id, k.nombre, k.descripcion, k.precio_base, k.foto, 
-                    GROUP_CONCAT(ki.Ingrediente_nombre) AS ingredientes
-             FROM kebabs k
-             LEFT JOIN kebab_ingredientes ki ON k.id = ki.kebab_id
-             GROUP BY k.id"
+            "SELECT k.id, k.nombre, k.descripcion, k.precio_base, k.foto
+             FROM kebabs k"
         );
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+        $kebabs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
+        foreach ($kebabs as &$kebab) {
+            $stmt = $this->conexion->prepare(
+                "SELECT ki.Ingrediente_nombre
+                 FROM kebab_ingredientes ki
+                 WHERE ki.kebab_id = :kebab_id"
+            );
+            $stmt->execute(['kebab_id' => $kebab['id']]);
+            
+            $ingredientes = $stmt->fetchAll(PDO::FETCH_COLUMN);
+            $kebab['ingredientes'] = $ingredientes;
+        }
+    
+        return $kebabs;
+    }
 }

@@ -31,18 +31,17 @@ class ApiSaldo {
     }
 
     private function añadirFondos() {
-        $usuario = FuncionLogin::leer_sesion();
-        
-        if ($usuario) {
-            $datos = json_decode(file_get_contents('php://input'), true);
-
-            if (isset($datos['cantidad']) && is_numeric($datos['cantidad']) && $datos['cantidad'] > 0) {
-                $_SESSION['user']['saldo'] += $datos['cantidad'];
-                
+        if ($usuario = FuncionLogin::leer_sesion()) {
+            $cantidad = json_decode(file_get_contents('php://input'), true)['cantidad'] ?? 0;
+    
+            if (is_numeric($cantidad) && $cantidad > 0) {
+                $_SESSION['user']['saldo'] += $cantidad;
                 $this->enviarrespuesta(200, ['nuevoSaldo' => $_SESSION['user']['saldo']]);
-            } 
-        } 
+            }
+        }
     }
+    
+
 
     private function enviarrespuesta($status, $data) {
         header("Content-Type: application/json");

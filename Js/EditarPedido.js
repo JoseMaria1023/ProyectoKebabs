@@ -19,12 +19,12 @@ document.getElementById('form-editar-Pedido').addEventListener('submit', functio
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(pedido),  
+        body: JSON.stringify(pedido),
     })
-    .then(respuesta => respuesta.json())  
+    .then(respuesta => respuesta.text())
     .then(data => {
-        if (data.mensaje === "Pedido actualizado con éxito") {
-            window.location.href = '../vistas_admin/GestionarPedidos.php';  
-        } 
-    })
+        if (data) {
+            const parsedData = JSON.parse(data);
+            window.location.href = 'http://localhost/proyecto_kebabs/proyectokebabs/vistas_admin/PrincipalAdmin.php?menuAdmin=Pedidos';        } 
+    });
 });

@@ -30,7 +30,7 @@ document.getElementById('form-editar-usuario').addEventListener('submit', functi
     })
     .then(respuesta => {
         if (respuesta.ok) {
-            window.location.href = '../vistas_admin/GestionarUsuarios.php'; 
+            window.location.href = 'http://localhost/proyecto_kebabs/proyectokebabs/vistas_admin/PrincipalAdmin.php?menuAdmin=Usuarios'; 
         } 
     })
     .catch(() => {

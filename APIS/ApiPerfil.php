@@ -11,9 +11,6 @@ class ApiPerfil {
             case 'GET':
                 $this->getPerfil();
                 break;
-            default:
-                $this->enviarRespuesta(405, ["error" => "Método no permitido"]);
-                break;
         }
     }
 

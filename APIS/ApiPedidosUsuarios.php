@@ -12,7 +12,7 @@ class ApiPedidosUsuarios {
                 $this->getPedidos();
                 break;
             default:
-                $this->enviarRespuesta(405, ["error" => "Método no permitido"]);
+                $this->enviarRespuesta(405, []);
                 break;
         }
     }

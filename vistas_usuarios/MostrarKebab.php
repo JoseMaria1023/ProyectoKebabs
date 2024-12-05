@@ -10,6 +10,9 @@
 <body>
     <h1>Lista de Kebabs</h1>
     <div class="container" id="kebab-container"></div>
+
+    <button id="descargar-pdf">Descargar Menú en PDF</button>
+
 </body>
 </html>
 <script src="../Js/MostrarKebab.js"></script>

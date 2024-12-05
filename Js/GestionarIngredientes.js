@@ -60,10 +60,9 @@ function eliminarIngredientes(id) {
     })
     .then(function(respuesta) {
         if (respuesta.ok) {
-            window.location.reload();
-        } 
-    })
-    .catch(() => {
-        return fetch('APIS/ApiIngredientes.php?id=' + id);
+            window.location.reload(); 
+        }
     });
 }
+
+

@@ -39,4 +39,5 @@ document.addEventListener("DOMContentLoaded", function() {
             detallesUsuario.appendChild(rol);
         } 
     })
+    
 });
