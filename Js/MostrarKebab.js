@@ -110,7 +110,7 @@ function AñadirAlCarrito(kebab) {
         precio: kebab.precio_base
     });
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert(`Se ha añadido ${kebab.nombre} al carrito.`);
+    alert(`Se ha añadido el pedido al carrito.`);
 }
 
 obtenerKebabs();

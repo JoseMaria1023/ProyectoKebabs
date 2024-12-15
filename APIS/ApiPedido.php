@@ -33,21 +33,28 @@ class ApiPedido {
 
     public function registrarPedido() {
         $data = json_decode(file_get_contents("php://input"), true);
-
+    
         $usuarioId = $data['usuarioId'];
-        $total = $data['total'];
+        $totalPrecio = $data['totalPrecio'];  // Asegúrate de que el nombre coincide
         $nombreKebab = $data['nombreKebab'];
         $fecha = date('Y-m-d');
         $estado = 'Recibido';
-
-        $pedido = new Pedido($usuarioId, $fecha, $estado, $total, $nombreKebab);
+    
+        // Aquí puedes agregar un var_dump para verificar los datos
+        var_dump($data); // Para depuración
+    
+        $pedido = new Pedido($usuarioId, $fecha, $estado, $totalPrecio, $nombreKebab);
         $repoPedido = new RepoPedido();
-
+    
         $resultado = $repoPedido->guardarPedido($pedido);
+    
         if ($resultado) {
             $this->enviarrespuesta(200);
+        } else {
+            $this->enviarrespuesta(500, ['error' => 'No se pudo guardar el pedido']);
         }
     }
+    
 
     private function actualizarPedido() {
         $datos = json_decode(file_get_contents("php://input"), true);

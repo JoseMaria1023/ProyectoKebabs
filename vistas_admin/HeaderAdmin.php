@@ -25,15 +25,11 @@
                 
                 <li>
                     <a href="?menuAdmin=Kebabs">Gestionar Kebabs</a>
-                    <ul>
-                        <li><a href="?menuAdmin=crearkebab">Insertar Kebabs</a></li>
-                    </ul>
+
                 </li>
                 <li>
                     <a href="?menuAdmin=Ingredientes">Gestionar Ingredientes</a>
-                    <ul>
-                    <li><a href="?menuAdmin=añadiringredientes">Insertar Ingredientes</a></li>
-                    </ul>
+
                 
                 </li>
 
@@ -42,4 +38,6 @@
         </nav>
     </header>
 </body>
+<script src="../js/header.js"></script>
+<script src="js/header.js"></script>
 </html>

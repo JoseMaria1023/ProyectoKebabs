@@ -12,13 +12,15 @@
         <div class="logo">
             <img src="./imagenes/KebabLogo.png" alt="Logo de la Tienda de Kebabs"> 
         </div>
+        
         <nav>
             <ul>
                 <li><a href="?menu=inicio">Inicio</a></li>
                 <li>
-                    <a href="?menu=mostrarkebab">Menú</a>
+                    <a>Kebabs</a>
                     <ul>
-                        <li><a href="?menu=kebabpersonalizado">Kebab Personalizado</a></li>
+                        <li><a href="?menu=mostrarkebab">De la casa</a></li>
+                        <li><a href="?menu=kebabpersonalizado">Personalizado</a></li>
                     </ul>
                 </li>
                 <li><a href="?menu=contacto">Contacto</a></li>
@@ -32,4 +34,6 @@
         </nav>
     </header>
 </body>
+<script src="../js/header.js"></script>
+<script src="js/header.js"></script>
 </html>

@@ -46,13 +46,19 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(() => {
             return fetch('APIS/ApiIngredientes.php');
         });
+
+    // Funcionalidad del botón "+"
+    const btnAgregarIngrediente = document.getElementById('btnAgregarIngrediente');
+    btnAgregarIngrediente.addEventListener('click', () => {
+        // Redirigir a la página de agregar ingrediente
+        window.location.href = 'localhost/proyecto_kebabs/proyectokebabs/vistas_admin/PrincipalAdmin.php?menuAdmin=añadiringredientes'; // Cambia esta ruta si es necesario
+    });
 });
 
 function editarIngredientes(ingredientes) {
     localStorage.setItem('IngredientesParaEditar', JSON.stringify(ingredientes));
     window.location.href = '../vistas_admin/EditarIngredientes.php';
 }
-
 
 function eliminarIngredientes(id) {
     fetch('../APIS/ApiIngredientes.php?id=' + id, {
@@ -64,5 +70,3 @@ function eliminarIngredientes(id) {
         }
     });
 }
-
-

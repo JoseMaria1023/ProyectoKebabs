@@ -1,55 +1,61 @@
-body {
+/* Estilos generales */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image:url("../imagenes/durum-d-beef.jpg");
-    background-repeat: no-repeat;
-    background-size: 120%;
-        
-    
 }
 
-.bienvenida-container {
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
     width: 100%;
-    height: 100%;
+    height: 70vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../imagenes/durum-d-beef.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     text-align: center;
 }
 
-.bienvenida-content {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+.hero-content {
+    max-width: 600px;
+    padding: 20px;
 }
 
-.bienvenida-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #e63946;
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.bienvenida-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #555;
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .boton-comenzar {
     background-color: #e63946;
     color: white;
     border: none;
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-    border-radius: 5px;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .boton-comenzar:hover {
@@ -57,3 +63,61 @@ body {
     transform: scale(1.05);
 }
 
+/* Beneficios Grid */
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    width: 100%;
+    background-color: #fff;
+    margin-top: -50px;
+    box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.beneficio-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beneficio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.icono {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #e63946;
+}
+
+.beneficio-item h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.beneficio-item p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .boton-comenzar {
+        font-size: 1rem;
+    }
+}

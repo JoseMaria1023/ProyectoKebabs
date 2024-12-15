@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Botón para agregar un kebab nuevo
+    const btnAgregarKebab = document.getElementById('btnAgregarKebab');
+    btnAgregarKebab.addEventListener('click', function() {
+        // Redirigir a la página de inserción de kebab
+        window.location.href = 'http://localhost/proyecto_kebabs/proyectokebabs/vistas_admin/PrincipalAdmin.php?menuAdmin=crearkebab';
+    });
+
+    // Fetch para cargar los kebabs existentes
     fetch('../APIS/ApiKebab.php')
         .then(respuesta => respuesta.json())
         .then(data => {
@@ -44,11 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return fetch('APIS/ApiKebab.php');
         });
 });
+
 function editarKebab(kebab) {
     localStorage.setItem('kebabParaEditar', JSON.stringify(kebab));
     window.location.href = '../vistas_admin/EditarKebab.php';
 }
-
 
 function eliminarKebab(id) {
     fetch('../APIS/ApiKebab.php?id=' + id, {
@@ -62,7 +70,4 @@ function eliminarKebab(id) {
     .catch(() => {
         return fetch('APIS/ApiKebab.php');
     });
-
 }
-
-

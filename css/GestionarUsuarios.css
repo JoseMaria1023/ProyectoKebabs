@@ -1,21 +1,12 @@
 /* Estilo global */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f3f4f6;
-    color: #333;
+    background-color: #f8fafc;
+    color: #2d3748;
     margin: 0;
-    padding: 20px;
+    padding: 47px;
     line-height: 1.6;
-}
-
-/* Contenedor */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
 }
 
 /* Tabla de usuarios */
@@ -25,82 +16,92 @@ body {
     margin: 20px 0;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Cabecera */
+/* Cabecera de la tabla */
 #tabla-usuarios thead th {
-    padding: 55px 10px;
-    background-color: #1e3a8a;
+    padding: 20px;
+    background-color: #2b6cb0;
     color: #ffffff;
     text-align: left;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 1rem;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    border-bottom: 3px solid #1a436f;
 }
 
 /* Cuerpo de la tabla */
 #tabla-usuarios tbody td {
     padding: 15px 20px;
-    border-bottom: 1px solid #e5e7eb;
-    font-size: 0.9rem;
-    color: #555;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 0.95rem;
+    color: #4a5568;
+    vertical-align: middle;
+    text-align: left;
 }
 
-/* Alternar colores */
-#tabla-usuarios tbody tr:nth-child(odd) {
-    background-color: #f9fafb;
+/* Estilo de filas (eliminar alternancia de color) */
+#tabla-usuarios tbody tr {
+    background-color: #ffffff;
 }
 
+/* Filas al pasar el ratón */
 #tabla-usuarios tbody tr:hover {
-    background-color: #eef2ff;
+    background-color: #ebf4ff;
+    transition: background-color 0.2s ease;
     cursor: pointer;
 }
 
-/* Imágenes de usuario */
+/* Fotos de usuario */
 .user-photo {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #1e3a8a;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #2b6cb0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Botones */
+/* Estilo de botones */
 button {
-    padding: 10px 15px;
-    font-size: 0.85rem;
+    padding: 10px 20px;
+    font-size: 0.9rem;
     border: none;
-    border-radius: 8px;
-    font-weight: 500;
+    border-radius: 25px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Botón editar */
 .edit-btn {
-    background-color: #4ade80;
+    background-color: #48bb78;
     color: #ffffff;
 }
 
 .edit-btn:hover {
-    background-color: #22c55e;
-    transform: translateY(-2px);
+    background-color: #38a169;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(72, 187, 120, 0.4);
 }
 
 /* Botón eliminar */
 .delete-btn {
-    background-color: #f87171;
+    background-color: #f56565;
     color: #ffffff;
 }
 
 .delete-btn:hover {
-    background-color: #ef4444;
-    transform: translateY(-2px);
+    background-color: #e53e3e;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(245, 101, 101, 0.4);
 }
 
-/* Responsivo */
+/* Estilo de filas responsivas */
 @media (max-width: 768px) {
     #tabla-usuarios thead {
         display: none;
@@ -113,23 +114,16 @@ button {
 
     #tabla-usuarios tbody tr {
         margin-bottom: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        overflow: hidden;
     }
 
     #tabla-usuarios td {
-        padding: 10px 15px;
+        padding: 15px;
         text-align: right;
         position: relative;
-    }
-
-    #tabla-usuarios td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #555;
     }
 
     button {

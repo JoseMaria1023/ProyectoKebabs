@@ -1,102 +1,124 @@
-body {
+/* Estilos globales */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../imagenes/durum-d-beef.jpg");
-    background-repeat: no-repeat;
-    background-size: 155%;
+    background-color: #f0f0f0; /* Fondo limpio y claro */
+    color: #333; /* Color de texto oscuro */
+    padding: 20px;
 }
 
+/* Contenedor principal del formulario */
 form {
-    max-width: 500px; 
-    margin: 180px auto; 
-    padding: 30px;
-    background-color: #333;
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff; /* Fondo blanco para el formulario */
     border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
+    padding: 40px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    text-align: center;
 }
 
+/* Título del formulario */
+form h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600; /* Título más destacado */
+}
+
+/* Estilo de los campos de texto */
 form input[type="email"],
 form input[type="password"] {
     width: 100%;
     padding: 15px;
-    margin: 15px 0; 
-    border: none;
+    margin: 15px 0;
+    border: 2px solid #ddd;
     border-radius: 5px;
-    background-color: #444;
-    color: #fff;
-    font-size: 18px; 
-    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+    transition: border 0.3s ease, background-color 0.3s ease;
 }
 
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #007BFF; /* Borde azul cuando el campo está enfocado */
+    background-color: #fff;
+}
+
+/* Estilo de los placeholders */
 form input::placeholder {
-    color: #bbb;
-    font-size: 16px; 
+    color: #aaa;
+    font-size: 16px;
 }
 
+/* Estilo del botón de envío */
 form button {
     width: 100%;
-    padding: 15px; 
+    padding: 15px;
     border: none;
     border-radius: 5px;
-    background-color: #e76f51;
+    background-color: #007BFF;
     color: white;
-    font-size: 20px; 
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
-    background-color: #d05a4d;
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
-/* Estilos responsivos */
+form button:active {
+    transform: scale(1);
+}
+
+/* Estilos para dispositivos responsivos */
 @media (max-width: 768px) {
-    body {
-        background-size: cover; /* Ajusta el fondo para dispositivos medianos */
+    form {
+        padding: 30px; /* Ajuste de espacio en pantallas medianas */
     }
 
-    form {
-        margin: 120px auto; /* Reduce el margen superior */
-        padding: 20px; /* Menos espacio interno */
-        max-width: 90%; /* Más ancho en pantallas pequeñas */
+    form h2 {
+        font-size: 22px;
     }
 
     form input[type="email"],
     form input[type="password"] {
-        padding: 12px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     form button {
-        padding: 12px; 
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
 @media (max-width: 480px) {
     form {
-        margin: 80px auto; /* Más compacto en móviles */
-        padding: 15px; /* Espacio más reducido */
+        padding: 25px; /* Ajuste en pantallas pequeñas */
+    }
+
+    form h2 {
+        font-size: 20px;
     }
 
     form input[type="email"],
     form input[type="password"] {
-        padding: 10px;
         font-size: 14px;
     }
 
     form button {
-        padding: 10px; 
-        font-size: 16px;
-    }
-
-    body {
-        background-size: cover; /* Ajusta el fondo para móviles */
+        font-size: 14px;
     }
 }

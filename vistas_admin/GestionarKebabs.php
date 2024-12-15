@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,6 +8,7 @@
     <link rel="stylesheet" href="css/GestionarKebab.css">
 </head>
 <body>
+
     <table id="tabla-Kebabs">
         <thead>
             <tr>
@@ -16,7 +16,9 @@
                 <th>Descripcion</th>
                 <th>Precio</th>
                 <th>Foto</th>
-                <th>Acciones</th>
+                <th>Acciones
+                    <button id="btnAgregarKebab">+</button> <!-- Botón de añadir kebab como "+" -->
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +27,5 @@
 
     <script src="../Js/GestionarKebabs.js"></script>
     <script src="Js/GestionarKebabs.js"></script>
-
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,9 +16,10 @@
             <ul>
                 <li><a href="?menuLogin=inicio">Inicio</a></li>
                 <li>
-                    <a href="?menuLogin=mostrarkebab">Menú</a>
+                    <a href="#">Kebabs</a>
                     <ul>
-                        <li><a href="?menuLogin=kebabpersonalizado">Kebab Personalizado</a></li>
+                        <li><a href="?menuLogin=mostrarkebab">De la Casa</a></li>
+                        <li><a href="?menuLogin=kebabpersonalizado">Personalizado</a></li>
                     </ul>
                 </li>           
                 <li><a href="?menuLogin=mispedidos">Mis Pedidos</a></li>
@@ -28,11 +28,12 @@
                 <li><a href="?menuLogin=carrito">Carrito</a></li>
                 <li><a href="?menuLogin=miperfil">Mi Perfil</a></li>
                 <li><a href="../Metodos/CerrarSesion.php" id="cerrar-sesion" class="button">Cerrar Sesión</a></li>
-                </ul>
+            </ul>
         </nav>
     </header>
 </body>
 </html>
 <script src="../Js/MostrarSaldo.js"></script>
 <script src="Js/MostrarSaldo.js"></script>
-
+<script src="../js/header.js"></script>
+<script src="js/header.js"></script>

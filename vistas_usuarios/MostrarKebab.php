@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="css/MostrarKebab.css">
 </head>
 <body>
-    <h1>Lista de Kebabs</h1>
-    <div class="container" id="kebab-container"></div>
-
-    <button id="descargar-pdf">Descargar Menú en PDF</button>
-
+    <div class="header">
+    <button id="descargar-pdf" aria-label="Descargar menú en PDF">Descargar Menú en PDF</button>
+    </div>
+    <main class="kebab-container" id="kebab-container"></main>
+    <script src="../Js/MostrarKebab.js"></script>
+    <script src="Js/MostrarKebab.js"></script>
 </body>
 </html>
-<script src="../Js/MostrarKebab.js"></script>
-<script src="Js/MostrarKebab.js"></script>

@@ -1,7 +1,8 @@
+/* Estilo general del header */
 header { 
     background-color: #333; 
     color: white; 
-    padding: 10px 20px; 
+    padding: 3px 20px; 
     position: fixed; 
     top: 0; 
     left: 0; 
@@ -19,13 +20,17 @@ header {
 }
 
 nav {
-    margin-left: auto; 
+    margin-left: auto; /* Alineamos el menú a la derecha por defecto */
+    flex-grow: 1;
 }
 
 nav ul {
     list-style: none; 
     display: flex;
     align-items: center; 
+    justify-content: flex-end; /* Alineamos los elementos del menú a la derecha por defecto */
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -45,6 +50,7 @@ nav ul li a:hover {
     background-color: #e74c3c;
 }
 
+/* Botón especial */
 nav ul li a.button {
     background-color: #e76f51;
     padding: 10px 20px; 
@@ -54,6 +60,7 @@ nav ul li a.button:hover {
     background-color: #d05a4d; 
 }
 
+/* Submenús */
 nav ul li ul {
     display: none; 
     position: absolute;
@@ -90,6 +97,17 @@ nav ul li ul li:last-child a {
     border-bottom: none;
 }
 
-h1 {
-    font-size: 90%;
+/* Clase activa para resaltar selección */
+nav ul li a.active {
+    background-color: #e74c3c;
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
 }
+
+/* Submenú activo */
+nav ul li ul li a.active {
+    background-color: #e74c3c;
+    font-weight: bold;
+}
+

@@ -2,7 +2,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
+    padding: 60px;
+
 }
 
 .contenedor-pedidos {
@@ -11,13 +12,14 @@ body {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 50px;
+    margin-bottom: 20px;
 }
 
 .pedidos-header {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px; 
 }
 
 .foto-perfil img {

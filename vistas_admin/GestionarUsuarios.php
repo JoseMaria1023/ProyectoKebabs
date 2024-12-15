@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,26 +6,26 @@
     <title>Gestionar Usuarios</title>
     <link rel="stylesheet" href="../css/GestionarUsuarios.css">
     <link rel="stylesheet" href="css/GestionarUsuarios.css">
-
 </head>
 <body>
-    <table id="tabla-usuarios">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Dirección</th>
-                <th>Rol</th>
-                <th>Foto</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+    <div class="main-content">
+        <table id="tabla-usuarios">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Dirección</th>
+                    <th>Rol</th>
+                    <th>Foto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 
     <script src="../Js/GestionarUsuarios.js"></script>
     <script src="Js/GestionarUsuarios.js"></script>
-
 </body>
 </html>
